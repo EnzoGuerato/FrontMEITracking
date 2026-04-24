@@ -64,7 +64,8 @@ body{
 }
 
 body.dark {
-    background-color: rgb(53, 52, 52);
+background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 64, 1) 35%, rgba(0, 18, 23, 1) 100%);
 }
 
 .trilho.dark .indicador{
@@ -98,7 +99,7 @@ body.dark {
 
 .meizinho-joia{
      position: relative;
-     margin-left: -46vh;
+     margin-left: -38vh;
      margin-top: -14vh;
      height: 200px;
 }
@@ -140,5 +141,5 @@ body.dark {
 
 .links a{   
     text-decoration: none;
-    color: blue;
+    color: rgb(0, 0, 109);
 }

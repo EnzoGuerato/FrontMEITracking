@@ -15,3 +15,9 @@ trilho.addEventListener('click', () => {
         imgLua.src = lua;
     }
 });
+
+const links = document.getElementById('link')
+
+if(links != ""){
+
+}
