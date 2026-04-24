@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+
+:root{
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark-background: rgb(53, 52, 52);
+    --color-white-background:
+}
 *{
     margin: 0;
     padding: 0;
@@ -8,12 +16,13 @@ body{
     height: 100vh;
     display: flex;;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #f0f0f0be;
     transition: .5s;
+    font-family: Arial, Helvetica, sans-serif   ;
 }
 
 
-.pai-button{
+.pai-box{
     padding-top: 10px;
     padding-left: 5px;
 }
@@ -65,7 +74,7 @@ body.dark {
  /*Parte da caixa de login*/
 
  .box-login {
-    background-color: red;
+    background-color: #E05454;
     width: 800px;
     height: 500px;
     border-radius: 20px;
@@ -74,7 +83,8 @@ body.dark {
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
 }
 
 #img-escrito{
@@ -88,5 +98,47 @@ body.dark {
 
 .meizinho-joia{
      position: relative;
-     margin-left: -56Fvh;
+     margin-left: -46vh;
+     margin-top: -14vh;
+     height: 200px;
+}
+
+.box-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 4vh;
+    gap: 1vh;      
+}
+
+.box-input h1{
+    display: flex;
+    justify-content: center;
+    font-family: "Rammetto One", sans-serif;
+    padding: 20px;
+    font-size: 40px;
+    color: white;
+}
+
+.box-input input {     
+    padding: 10px;
+    width: 40vh;
+    box-sizing: border-box; 
+    border-radius: 20px;  
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: left;
+    outline: none;
+}
+
+.links{
+    display: flex;
+    gap: 10px;
+    padding-top: 2vh;
+}
+
+.links a{   
+    text-decoration: none;
+    color: blue;
 }
