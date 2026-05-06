@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap");
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dark-background: rgb(53, 52, 52);
+  --color-text-dartmode: #d6550a; 
+  ;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0be;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pai-box {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.trilho {
+  width: 80.5px;
+  height: 30.5px;
+  background-color: #4d4d4d;
+  border-radius: 150px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trilho .indicador {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+  transform: scale(0.9);
+  position: absolute;
+  left: 5px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-lua {
+  width: 33px;
+  height: 33px;
+}
+
+.trilho.dark {
+  background-color: #c3c3c3;
+}
+
+body.dark {
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 0, 64, 1) 35%,
+    rgba(0, 18, 23, 1) 100%
+  );
+}
+
+.trilho.dark .indicador {
+  left: 45px;
+  background-color: #fff;
+}
+/*Parte da caixa de login*/
+
+.box-login {
+  background: #fd5c63;
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.dark .box-login {
+  background: #302f2f;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+#img-escrito {
+  width: 300px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-top: -2vw;
+}
+
+.meizinho-joia {
+  position: relative;
+  margin-left: -38vh;
+  margin-top: -14vh;
+  height: 200px;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 4vh;
+  gap: 1vh;
+}
+
+.box-input h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Rammetto One", sans-serif;
+  padding: 20px;
+  font-size: 40px;
+  color: white;
+  transform-style: .3s;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+
+.box-input input {
+  padding: 10px;
+  width: 40vh;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-black);
+  -decoration: none;
+  text-decoration: none;
+  color: var(--color-black);
+  -align: left;
+  outline: none;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  padding-top: 2vh;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--color-black);
+  -decoration: none;
+  color: #e2dfdf;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.links a:hover{
+  color: rgb(255, 255, 255);
+}
+
+body.dark .links a {
+  color: #fff;
+  transition: .2s;
+}
+
+body.dark .links a:hover {
+  color: var(--color-text-dartmode);
+}
+
+.entrar {
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5px;
+  transition: .5s;
+}
+
+.entrar:hover{
+  background-color: rgb(221, 9, 9);
+  color: #fff;
+}
+
+.entrar h2:hover{
+  color: #fff;
+}
+
+body.dark .entrar:hover{
+  background-color: var(--color-text-dartmode);
+}
+
+.entrar a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 10px;
+}
+
+#aviso{
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+}
+
+
+#avisosenha{
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+}
