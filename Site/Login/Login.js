@@ -28,23 +28,3 @@ function validar() {
   }
 }
 
-function validarsenha() {
-  const valorsenha = document.getElementById("senha").value;
-  const avisosenha = document.getElementById("avisosenha");
-
-  const testeMaius = /[A-Z]/.test(valorsenha);
-  const testEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(valorsenha);
-
-  if (!testeMaius) {
-    avisosenha.textContent = "A senha deve conter uma letra maiúscula.";
-    return false;
-  }
-
-  if (!testEspecial) {
-    avisosenha.textContent = "A senha deve ter caracteres especiais.";
-    return false;
-  }
-
-  avisosenha.textContent = "";
-  return true;
-}
