@@ -1,7 +1,7 @@
 
 
 <div align="center">
-  <img src="Site/imgs/logo meizinho/meizinhoescrito.png" alt="Logo MEI track" width="400">
+  <img src="Site/Login/logo meizinho/meizinhoescrito.png" alt="Logo MEI track" width="400">
   
   # 🚀 MEI track: Plataforma de Aprendizado de Gestão
   **Sua plataforma definitiva de ensino e comunidade para Microempreendedores.**
@@ -27,7 +27,7 @@ Sabemos que empreender pode gerar muitas dúvidas, por isso criamos uma platafor
 Esse é o nosso mascote, o **MEIzinho**! Ele está aqui para acompanhar você em cada etapa da sua jornada na plataforma, tornando a experiência de aprendizado muito mais leve.
 
 <div align="center">
-  <img src="Site/imgs/logo meizinho/Meizinhosolo.png" alt="MEIzinho descansando" width="250">
+  <img src="Site/Login/logo meizinho/Meizinhosolo.png" alt="MEIzinho descansando" width="250">
   <br>
   <i>MEIzinho tirando aquele merecido descanso depois de compartilhar muito conhecimento! 💤</i>
 </div>
