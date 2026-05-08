@@ -11,7 +11,7 @@
 <body>
     
     <!--NavBar-->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-transparent">
             <div class="container-fluid">
             <a class="navbar-brand" href="#"><img style="width:100px;" src="logo meizinho/Meizinhodandojoia.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
                             <div class="indicador" id="btn-mudar">
                               <img
                                 class="img-lua"
-                                src="/Site/Login/logo meizinho/trilho/iconlua(branca).png"
+                                src="/Site/img/logo meizinho/trilho/iconlua(branca).png"
                                 alt="Lua"
                                 id="img-lua"
                               />
@@ -46,7 +46,79 @@
             </div>
         </nav>
     <!--Fim NavBar-->
+
+    <!--Carrossel-->
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="logo meizinho/CARROSEL1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="logo meizinho/CARROSEL2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="logo meizinho/CARRROSEL3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!--Fim Carrossel-->
+
+    <!--Feed-->
+      <div style="padding: 2vh;">
+
+      <!--Perfil-->
+        <div class="Profile">
+          <img class="profile_img" src="logo meizinho/profile.png" alt="">
+          <h1 style="font-size: 5vh;">OLÁ <strong style="color: #fa7f2f; font-size: 8vh;">USUÁRIO</strong></h1>
+        </div>
+      <!-- Fim Perfil-->
+
+        <hr>
+
+          <div style=" display: flex; justify-content: center; align-items: center;">
+            <div style="display: flex;" class="buttons">
+              <button class="button_home"><strong>Ver Planos</strong></button>
+              <button class="button_home" style="margin-left: 5vh;"><strong>Teste Gratuito</strong></button>
+            </div>
+          </div>
+
+          <div class="container text-center">
+            <h2 class="display-3 fw-bold text-warning">
+                <span style="color: #fa7f2f; text-align: justify; font-size: 2vh;" id="autotexto"></span>
+            </h2>
+          </div>
+      </div>
+
+      <hr>
+    <!--Feed-->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="Home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed('#autotexto', {
+        strings: [
+            'Conhecimento é a chave para o sucesso.',
+            'Aprenda a administrar seu negócio.',
+            'Faça seu MEI crescer com estratégia.'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
+    </script>
 </body>
 </html>

@@ -220,3 +220,31 @@ body.dark .entrar:hover{
   color: rgb(255, 255, 255);
   font-size: 13px;
 }
+
+.button_home{
+  padding: 2vh; border-radius: 5vh; border: 0; background-color: #fa7f2f; color: white; font-size: 20px;
+}
+
+.profile_img{
+  width: 200px; margin-right: 5vh; border-radius: 100%;
+}
+
+.Profile{
+  display: flex; align-items: center;
+}
+
+/* mobile version */
+
+@media (width<1000px) {
+  .button_home{
+    padding: 1vh; border-radius: 3vh; border: 0; background-color: #fa7f2f; color: white; font-size: 10px;
+  }
+
+  .profile_img{
+    width: 150px; margin-right: 0vh; border-radius: 100%;
+  }
+
+  .Profile{
+    display: grid; align-items: center;  margin: 1vh; place-items: center;
+  }
+}
