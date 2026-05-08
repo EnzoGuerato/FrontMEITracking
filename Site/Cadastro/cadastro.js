@@ -51,10 +51,3 @@ function validarsenha() {
     avisosenha.textContent = "";
     return true;
   }
-
-// Parte lógica do Cadastro:
-
-document.getElementById('consoleForm').addEventListener('submit', function(event) {
-  let user
-
-});
