@@ -1,3 +1,4 @@
+// Mudar a cor de fundo
 const trilho = document.getElementById("trilho");
 const body = document.querySelector("body");
 const imgLua = document.getElementById("img-lua");
@@ -16,6 +17,7 @@ trilho.addEventListener("click", () => {
   }
 });
 
+//Validação de e-mail
 function validaremail() {
     const valor = document.getElementById("email").value;
     const aviso = document.getElementById("aviso");
@@ -28,6 +30,7 @@ function validaremail() {
     }
   }
 
+//validação de senha
 function validarsenha() {
     const valorsenha = document.getElementById("senha").value;
     const avisosenha = document.getElementById("avisosenha");

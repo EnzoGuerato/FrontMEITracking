@@ -20,6 +20,7 @@ body {
   background-color: #f0f0f0be;
   transition: 0.5s;
   font-family: Arial, Helvetica, sans-serif;
+  transition: 20s;
 }
 
 .pai-box {
@@ -90,6 +91,7 @@ body.dark {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: .5s;
 }
 
 body.dark .box-login {
@@ -192,12 +194,11 @@ body.dark .links a:hover {
 }
 
 .entrar:hover{
-  background-color: rgb(221, 9, 9);
-  color: #fff;
+  background-color: var(--color-white);
 }
 
 .entrar h2:hover{
-  color: #fff;
+  color: #000;
 }
 
 body.dark .entrar:hover{
