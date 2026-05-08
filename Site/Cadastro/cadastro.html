@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
     <title>Cadstro Mei track</title>
 </head>
 <body>
+
     <div class="box-pai">
-        <input type="text" id="user" name="user" required placeholder="Nome">
-        <input type="email" id='email' name="email" required placeholder="e-mail">
-        <input type="text" id="senha" name="senha" required placeholder="Senha">
-        <input type="text" id="conf_senha" name="conf_senha" required placeholder="Confirmar senha">
+      <img class="meizinho-img" src="/Site/img/logo meizinho/meizinho/meizinho dormindo.png" alt="Logo meizinho">  
+      <h1>Cadastre-se</h1>
+          <!--Inputs de cadastro-->
+
+          <input type="text" placeholder="Nome">
+          <input id="email" type="email" placeholder="e-mail">
+          <input type="text" placeholder="Senha">
+          <input type="text" placeholder="Confirmar senha">
+          
+          <!--Botão de entrada-->
+          <button class="cadastrar-se" onclick="validar(), validarsenha(), validaremail()">
+            <a href="#"><h2>Cadastrar-se</h2></a>
+          </button>
+          <br>
+
+          <a class="voltar" href="http://127.0.0.1:5500/Site/Login/Login.html">Voltar</a>
     </div>
 
+    <!--Parte do Vlibras-->
     <script src="cadastro.js"></script>
+    <script src="/Site/Login/Login.js"></script>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
