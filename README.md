@@ -38,7 +38,7 @@ Esse é o nosso mascote, o **MEIzinho**! Ele está aqui para acompanhar você em
 
 Este repositório contém o projeto de Trabalho de Conclusão de Curso (TCC) do Ensino Médio Integrado ao **Técnico em Desenvolvimento de Sistemas**. O trabalho foi desenvolvido e apresentado na **Etec Cidade do Livro**, em Lençóis Paulista - SP, no ano de 2026.
 
-## 🗄️ BackEnd: [BackMEITracking](https://github.com/felipesobrinhovergiliosv-pixel/TCC2026)
+## 🗄️ [BackMEITracking](https://github.com/felipesobrinhovergiliosv-pixel/TCC2026)
 
 ### 👨‍💻 Desenvolvedores:
 * [**Enzo Canale Guerato**](https://github.com/EnzoGuerato)
