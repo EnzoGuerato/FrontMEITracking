@@ -44,7 +44,7 @@ Este repositório contém o projeto de Trabalho de Conclusão de Curso (TCC) do 
 * [**Enzo Canale Guerato**](https://github.com/EnzoGuerato)
 * [**Felipe Sobrinho Vergilio**](https://github.com/felipesobrinhovergiliosv-pixel)
 * [**Miguel Pelegrin dos Santos**](https://github.com/MiguelPelegrin)
-* [Vinicius Sanches](https://github.com/vinizims)
+* [**Vinicius Gabriel Sanches**](https://github.com/vinizims)
 
 ### 🤝 Agradecimentos Especiais:
 Dedicamos este projeto e deixamos nosso muito obrigado aos professores que foram fundamentais na realização deste trabalho:
