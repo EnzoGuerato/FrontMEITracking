@@ -13,24 +13,28 @@
       <h1>Cadastre-se</h1>
           <!--Inputs de cadastro-->
 
-          <input type="text" placeholder="Nome">
+          <input id="nome" type="text" placeholder="Nome de Usuário">
           <input id="email" type="email" placeholder="e-mail">
-          <input type="text" placeholder="Senha">
-          <input type="text" placeholder="Confirmar senha">
+          <p id="aviso" style="color: white; font-size: 13px;"></p>
+
+          <input id="senha" type="password" placeholder="Senha">
+          <input id="senha" type="password" placeholder="Senha">
+
+          <input id="confirma-senha" type="password" placeholder="Confirmar senha">
           
           <!--Botão de entrada-->
-          <button class="cadastrar-se" onclick="validar(), validarsenha(), validaremail()">
-            <a href="#"><h2>Cadastrar-se</h2></a>
+          <button class="cadastrar-se" onclick="fazerCadastro(event)">
+            <h2>Cadastrar-se</h2>
           </button>
           <br>
 
-          <a class="voltar" href="http://127.0.0.1:5500/Site/Login/Login.html">Voltar</a>
+          <a class="voltar" href="../Login/Login.html">Voltar</a>
     </div>
 
-    <!--Parte do Vlibras-->
+    <script src="../Rest/Rest.js"></script>
     <script src="cadastro.js"></script>
-    <script src="/Site/Login/Login.js"></script>
 
+    <!--Parte do Vlibras-->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
