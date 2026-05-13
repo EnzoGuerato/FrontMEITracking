@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap");
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dark-background: rgb(53, 52, 52);
+  --color-text-dartmode: #d6550a; 
+  ;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0be;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 20s;
+  display: flex;
+  justify-content: center;
+}
+
+.pai-planos{
+    display: flex;
+    justify-content: center;
+}
+
+.mei-premium{
+    border: 20px 20px 20px #d6550a;
+    width: 31.11vh;
+    height: 46.85vh;    
+    background-color: red;
+    position: relative;
+    border-radius: 20px;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;    
+    text-align: center;
+}
+.mei-premium {
+
+}
+
+.valor{
+    
+}
+
+#icon-check{
+    width: 20px;
+    height: 20px;
+}
+
+.mega-mei-premium{
+    border: 20px 20px 20px #d6550a;
+    width: 31.11vh;
+    height: 46.85vh;    
+    background-color: red;
+}
+
+.lista-beneficios{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10vw;
+}
+
+.lista-beneficios span{
+    font-size: 19px;
+}
+
+.texto-informativo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.texto-informativo p {
+    max-width: 700px;        
+    text-align: center;     
+    line-height: 1.6;       
+    font-family: sans-serif; 
+    color: #555;             
+    font-size: 14px;
+}
+
+.texto-informativo strong {
+    color: #d6550a; 
+}

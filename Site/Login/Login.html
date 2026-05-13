@@ -1,69 +1,68 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.css" />
-    <title>Login MEitrack</title>
-  </head>
-  <body>
-    <!--Parte do Alternador de Cores-->
-    <div class="pai-box">
-      <div class="trilho" id="trilho">
-        <div class="indicador" id="btn-mudar">
-          <img
-            class="img-lua"
-            src="/Site/img/logo meizinho/trilho/iconlua(branca).png"
-            alt="Icon de lua"
-            id="img-lua"
-          />
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="login.css" />
+  <title>Login MEitrack</title>
+</head>
+
+<body>
+  <!--Parte do Alternador de Cores-->
+  <div class="pai-box">
+    <div class="trilho" id="trilho">
+      <div class="indicador" id="btn-mudar">
+        <img class="img-lua" src="/Site/img/logo meizinho/trilho/iconlua(branca).png" alt="Icon de lua" id="img-lua" />
       </div>
     </div>
+  </div>
 
-    <img id="img-escrito" src="/Site/img/logo meizinho/meizinho/meizinhoescrito.png" alt="Logo escrita"/>
+  <img id="img-escrito" src="/Site/img/logo meizinho/meizinho/meizinhoescrito.png" alt="Logo escrita" />
 
-    <!--Parte do Login-->
-    <div class="box-login">
-      <div class="conteudo-box">
-        <img
-          class="meizinho-joia"
-          src="/Site/img/logo meizinho/meizinho/Meizinhodandojoia.png"
-          alt="Meiznho dando um joia"
-        />
-        <div class="box-input">
-          <h1>Login</h1>
+  <!--Parte do Login-->
+  <div class="box-login">
+    <div class="conteudo-box">
+      <img class="meizinho-joia" src="/Site/img/logo meizinho/meizinho/Meizinhodandojoia.png"
+        alt="Meiznho dando um joia" />
+      <div class="box-input">
+        <h1>Login</h1>
 
-          <input id="email" type="email" placeholder="E-mail" maxlength="70" />
-          <p id="aviso"></p>
+        <input id="email" type="email" placeholder="E-mail" maxlength="70" />
+        <p id="aviso"></p>
 
-          <input id="senha" type="text" placeholder="Senha" />
-          <p id="avisosenha"></p>
+        <input id="senha" type="text" placeholder="Senha" />
+        <p id="avisosenha"></p>
 
-          <button class="entrar" onclick="fazerLogin(event)">
-            <h2>Entrar</h2>
-          </button>
-        </div>
-      </div>
-      <div class="links">
-        <a href="#" id="link"><p>Esqueci a senha</p></a>
-        <a href="http://127.0.0.1:5500/Site/Cadastro/cadastro.html" id="link"><p>Registrar-se</p></a>
+        <button class="entrar" onclick="fazerLogin(event)">
+          <h2>Entrar</h2>
+        </button>
       </div>
     </div>
-    <script src="../Rest/Rest.js"></script>
-    <script src="login.js"></script>
-
-
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
+    <div class="links">
+      <a href="#" id="link">
+        <p>Esqueci a senha</p>
+      </a>
+      <a href="http://127.0.0.1:5500/Site/Cadastro/cadastro.html" id="link">
+        <p>Registrar-se</p>
+      </a>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-  </body>
+  </div>
+  <script src="../Rest/Rest.js"></script>
+  <script src="login.js"></script>
+
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
 </html>
