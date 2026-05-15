@@ -87,131 +87,84 @@ nav a:hover {
   background-position: center;
   position: relative;
   display: flex;
-  align-items: center;x
+  align-items: center;
   padding-left: 80px;
-
 }
-
 
 /* OVERLAY */
 .overlay {
-
   position: absolute;
-
   width: 100%;
-
   height: 100%;
-
   background: rgba(0, 0, 0, 0.7);
-
 }
 
 
 /* CONTEÚDO */
 .ContentText {
-
   position: relative;
-
   z-index: 2;
-
   max-width: 700px;
-
 }
 
 
 /* TÍTULO */
 .ContentText h1 {
-
   font-size: 70px;
-
   line-height: 80px;
-
   margin-bottom: 20px;
-
 }
 
 
 /* TEXTO */
 .ContentText p {
-
   font-size: 22px;
-
   color: #d1d1d1;
-
   margin-bottom: 40px;
-
 }
 
 
 /* BOTÕES */
 .buttons {
-
   display: flex;
-
   gap: 20px;
-
 }
 
 
 /* BOTÕES */
-.premiumBtn,
-.exploreBtn {
-
+.premiumBtn, .exploreBtn {
   padding: 18px 35px;
-
   border: none;
-
   border-radius: 6px;
-
   cursor: pointer;
-
   font-size: 18px;
-
   font-weight: bold;
-
   transition: 0.3s;
-
 }
-
 
 /* PREMIUM */
 .premiumBtn {
-
   background: #ff7b00;
-
   color: white;
-
 }
-
 
 /* EXPLORAR */
 .exploreBtn {
-
   background: transparent;
-
   border: 2px solid white;
-
   color: white;
-
 }
-
 
 /* HOVER */
 .premiumBtn:hover,
 .exploreBtn:hover {
-
   transform: scale(1.05);
-
 }
 
 
 /* cards */
-
-
 .SectionCard {
-
   padding: 80px;
-
 }
 
 
@@ -350,49 +303,52 @@ nav a:hover {
 
 /* ATIVO */
 .activePlan {
-
   background: #ff7b00 !important;
-
 }
 
 
 /* CONTAINER */
 .plansContainer {
-
   display: flex;
-
   justify-content: center;
-
   gap: 40px;
-
   flex-wrap: wrap;
-
 }
 
 
 /* CARD */
 .planCard {
-
   width: 320px;
-
   background: #1b1b1b;
-
   border-radius: 20px;
-
   padding: 40px;
-
   transition: 0.3s;
 
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+}
+
+
+.planCard button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7b00;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* ISSO JOGA O BOTÃO PARA BAIXO */
+  margin-top: auto; 
 }
 
 
 /* CARD PRINCIPAL */
 .featured {
-
   border: 2px solid #ff7b00;
-
   transform: scale(1.05);
-
 }
 
 
@@ -413,6 +369,15 @@ nav a:hover {
 
   margin: 20px 0;
 
+}
+
+.badge-anual {
+  color: #ff7b00;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 
@@ -464,6 +429,7 @@ nav a:hover {
   cursor: pointer;
 
 }
+
 
 @media (prefers-color-scheme: dark) {
 

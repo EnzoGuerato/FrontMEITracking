@@ -1,91 +1,73 @@
 /* BOTÃO PREMIUM */
 const premiumBtn = document.querySelector(".premiumBtn");
 
-
-/* EVENTO */
-premiumBtn.addEventListener("click", () => {
-
-    alert("Bem-vindo ao Premium!");
-
-});
-
-
-/* LOGIN */
-const loginBtn = document.querySelector(".loginBtn");
-
-
-/* EVENTO */
-loginBtn.addEventListener("click", () => {
-
-    alert("tem q logar nessa prr.");
-
-});
-
+if (premiumBtn) {
+    premiumBtn.addEventListener("click", () => {
+        alert("Bem-vindo ao Premium!");
+    });
+}
 
 /* BOTÕES PLANOS */
 const monthlyBtn = document.getElementById("monthlyBtn");
-
 const yearlyBtn = document.getElementById("yearlyBtn");
 
-
-/* PREÇOS */
+/* PREÇOS (O GratisPrice foi removido da lógica de alteração para não mudar) */
 const premiumPrice = document.getElementById("premiumPrice");
-
-const Premium_IAPrice = document.getElementById("premium_IAPrice");
-
+const premium_IAPrice = document.getElementById("premium_IAPrice");
 
 /* TEXTOS */
 const premiumText = document.getElementById("premiumText");
-
 const premium_IAText = document.getElementById("premium_IAText");
 
-
-
-/* MENSAL*/
-
-
+/* MENSAL */
 monthlyBtn.addEventListener("click", () => {
-
-    /* CLASSE */
+    // Troca de Classes
     monthlyBtn.classList.add("activePlan");
-
     yearlyBtn.classList.remove("activePlan");
 
+    // Atualiza Preços
+    if (premiumPrice) premiumPrice.innerHTML = "R$14,99";
+    if (premium_IAPrice) premium_IAPrice.innerHTML = "R$19,99";
 
-    /* PREÇOS */
-    premiumPrice.innerHTML = "R$14,99";
-
-    premium_IAPrice.innerHTML = "R$19,99";
-
-
-    /* TEXTO */
-    premiumText.innerHTML = "por mês";
-
-    premium_IAText.innerHTML = "por mês";
-
+    // Atualiza Textos
+    if (premiumText) premiumText.innerHTML = "por mês";
+    if (premium_IAText) premium_IAText.innerHTML = "por mês";
 });
 
-
-/* ANUAL  */
-
-
+/* ANUAL */
 yearlyBtn.addEventListener("click", () => {
-
-    /* CLASSE */
+    // Troca de Classes
     yearlyBtn.classList.add("activePlan");
-
     monthlyBtn.classList.remove("activePlan");
 
+    // Atualiza Preços
+    if (premiumPrice) premiumPrice.innerHTML = "R$149,99";
+    if (premium_IAPrice) premium_IAPrice.innerHTML = "R$199,99";
 
-    /* PREÇOS */
-    premiumPrice.innerHTML = "R$149,99";
+    // Atualiza Textos
+    if (premiumText) premiumText.innerHTML = "por ano";
+    if (premium_IAText) premium_IAText.innerHTML = "por ano";
+});
 
-    premium_IAPrice.innerHTML = "R$199,99";
+/* Seleciona todas as etiquetas de uma vez */
+const badgesAnuais = document.querySelectorAll(".badge-anual");
 
+/* No evento do botão MENSAL */
+monthlyBtn.addEventListener("click", () => {
+    // ... seu código de preços ...
+    
+    // Esconde todas as etiquetas
+    badgesAnuais.forEach(badge => {
+        badge.style.display = "none";
+    });
+});
 
-    /* TEXTO */
-    premiumText.innerHTML = "por ano";
-
-    premium_IAText.innerHTML = "por ano";
-
+/* No evento do botão ANUAL */
+yearlyBtn.addEventListener("click", () => {
+    // ... seu código de preços ...
+    
+    // Mostra todas as etiquetas
+    badgesAnuais.forEach(badge => {
+        badge.style.display = "inline-block";
+    });
 });
