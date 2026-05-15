@@ -1,0 +1,27 @@
+/* ========================= */
+/* TAMANHO DAS FONTES */
+/* ========================= */
+
+/* padrão */
+body{
+    font-size: 16px;
+}
+
+/* textos maiores */
+body.font-grande{
+    font-size: 19px;
+}
+
+/* textos muito grandes */
+body.font-x-grande{
+    font-size: 22px;
+}
+
+/* mantém títulos equilibrados */
+body.font-grande h1{
+    font-size: calc(2rem + 0.5vw);
+}
+
+body.font-x-grande h1{
+    font-size: calc(2.2rem + 0.5vw);
+}
