@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,59 +7,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Planos Mei-track</title>
 </head>
-
 <body>
+    <section class="plansSection">
+        <h2>Escolha seu Plano Premium</h2>
 
-    <div class="pai-planos">
-        <div class="muda-plano">
-
+        <div class="toggleContainer">
+            <button id="monthlyBtn" class="toggle-btn activePlan">Mensal</button>
+            <button id="yearlyBtn" class="toggle-btn">Anual</button>
         </div>
-        <div class="mei-premium">
-            <h1>Oferta </h1>
 
-            <h2>Mei-premium</h2>
-
-            <h2 class="valor">R$20,00</h2>
-
-            <div class="lista-beneficios">
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Sem anuncio</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Vidas infinitas</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Emojis personalizados</span>
+        <div class="plansContainer">
+            <div class="planCard">
+                <h3>Premium</h3>
+                <h1 id="premiumPrice">R$14,99</h1>
+                <p id="premiumText">por mês</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Sem anúncios</li>
+                    <li><i class="fas fa-heart"></i> Vida infinita</li>
+                    <li><i class="fas fa-smile"></i> Emojis personalizados</li>
+                    <li><i class="fas fa-bolt"></i> Revisão de erros simples</li>
+                </ul>
+                <button class="subscribe-btn">ASSINAR</button>
             </div>
 
-        </div>
-
-        <div class="mega-mei-premium">
-            <h1>Oferta </h1>
-
-            <h2>Mei-premium</h2>
-
-            <h2 class="valor">R$20,00</h2>
-
-            <div class="lista-beneficios-premium">
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Sem anuncio</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Vidas infinitas</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Emojis personalizados</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Revisão de erros </span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>chat bot premium</span>
+            <div class="planCard featured">
+                <div class="badge">MAIS POPULAR</div>
+                <h3>Premium I.A</h3>
+                <h1 id="premium_IAPrice">R$19,99</h1>
+                <p id="premium_IAText">por mês</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Sem anúncios</li>
+                    <li><i class="fas fa-heart"></i> Vida infinita</li>
+                    <li><i class="fas fa-star"></i> Emojis exclusivos</li>
+                    <li><i class="fas fa-brain"></i> Revisão detalhada (I.A)</li>
+                    <li><i class="fas fa-robot"></i> Chatbot Premium 24h</li>
+                </ul>
+                <button class="subscribe-btn">ASSINAR</button>
             </div>
         </div>
+    </section>
 
-        <div class="texto-informativo">
-            <p>
-                A renovação do plano ocorre de forma automática conforme o valor padrão escolhido. 
-                Caso você utilize uma oferta promocional, o desconto será aplicado no período inicial, 
-                retornando ao preço normal após esse prazo. <strong>O cancelamento é livre e pode ser feito a qualquer momento.</strong> 
-                Note que preços, benefícios e condições podem sofrer alterações. 
-                Pagamentos não recorrentes não garantem a continuidade da promoção após o primeiro ciclo.
-            </p>
-        </div>
-    </div>
-
-
-
-
-    <script src="planos.js"></script>
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -68,9 +54,7 @@
         </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script src="planos.js"></script>
 </body>
-
 </html>
