@@ -1,0 +1,18 @@
+/* Botão Assinar */
+.subscribe-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+    background: var(--primary-hover);
+    letter-spacing: 1px;
+}

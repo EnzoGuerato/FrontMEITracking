@@ -1,0 +1,16 @@
+/* Dark Mode do Navegador */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+    }
+    .plansSection h2 {
+        color: white;
+    }
+}
+
+/* Adaptação para Telas Menores */
+@media (max-width: 768px) {
+    .featured {
+        transform: scale(1);
+    }
+}

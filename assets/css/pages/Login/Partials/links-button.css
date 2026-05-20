@@ -1,0 +1,54 @@
+.links {
+  display: flex;
+  gap: 10px;
+  padding-top: 2vh;
+}
+
+.links a {
+  text-decoration: none;
+  color: #e2dfdf;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.links a:hover {
+  color: rgb(255, 255, 255);
+}
+
+body.dark .links a {
+  color: #fff;
+  transition: .2s;
+}
+
+body.dark .links a:hover {
+  color: var(--color-text-dartmode);
+}
+
+.entrar {
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5px;
+  transition: .5s;
+}
+
+.entrar:hover {
+  background-color: var(--color-white);
+}
+
+.entrar h2:hover {
+  color: #000;
+}
+
+body.dark .entrar:hover {
+  background-color: var(--color-text-dartmode);
+}
+
+.entrar a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 10px;
+}

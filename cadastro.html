@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./assets/css/pages/Cadastro/Cadastro.css">
+    <title>Cadstro Mei track</title>
+</head>
+<body>
+
+    <div class="box-pai">
+      <img class="meizinho-img" src="/Site/img/logo meizinho/meizinho/meizinho dormindo.png" alt="Logo meizinho">  
+      <h1>Cadastre-se</h1>
+          <!--Inputs de cadastro-->
+
+          <input id="nome" type="text" placeholder="Nome de Usuário">
+          <input id="email" type="email" placeholder="e-mail">
+          <p id="aviso" style="color: white; font-size: 13px;"></p>
+
+          <input id="senha" type="password" placeholder="Senha">
+          <input id="senha" type="password" placeholder="Senha">
+
+          <input id="confirma-senha" type="password" placeholder="Confirmar senha">
+          
+          <!--Botão de entrada-->
+          <button class="cadastrar-se" onclick="fazerCadastro(event)">
+            <h2>Cadastrar-se</h2>
+          </button>
+          <br>
+
+          <a class="voltar" href="../Login/Login.html">Voltar</a>
+    </div>
+
+    <script src="../Rest/Rest.js"></script>
+    <script src="./assets/js/Pages/Cadastro/Cadastro.js"></script>
+
+    <!--Parte do Vlibras-->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+</body>
+</html>

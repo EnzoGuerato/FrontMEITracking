@@ -1,0 +1,117 @@
+/* PLANOS VIP */
+.plansSection {
+  padding: 100px 80px;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* TÍTULO */
+.plansSection h2 {
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+/* CONTÊINER DO TOGGLE */
+.toggleContainer {
+  width: 250px;
+  margin: auto;
+  background: #1f1f1f;
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+/* BOTÕES DO TOGGLE */
+.toggleContainer button {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* PLANO SELECIONADO */
+.activePlan {
+  background: #ff7b00 !important;
+}
+
+/* CONTAINER DOS PLANS */
+.plansContainer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* CARD DE PLANO INDIVIDUAL */
+.planCard {
+  width: 320px;
+  background: #1b1b1b;
+  border-radius: 20px;
+  padding: 40px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+}
+
+/* CARD EM DESTAQUE (Vantajoso) */
+.featured {
+  border: 2px solid #ff7b00;
+  transform: scale(1.05);
+}
+
+/* HOVER DO CARD DE PLANO */
+.planCard:hover {
+  transform: translateY(-10px);
+}
+
+/* PREÇO */
+.planCard h1 {
+  color: #ff7b00;
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+/* ETIQUETA ANUAL */
+.badge-anual {
+  color: #ff7b00;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* TEXTOS E LISTAS INTERNAS */
+.planCard p {
+  color: #bcbcbc;
+  margin-bottom: 30px;
+}
+
+.planCard ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.planCard li {
+  margin-bottom: 15px;
+}
+
+/* BOTÃO DE SUBMISSÃO DO CARD */
+.planCard button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7b00;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: auto; /* Alinha o botão sempre no rodapé do card */
+}

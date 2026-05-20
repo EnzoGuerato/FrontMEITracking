@@ -1,0 +1,37 @@
+/* DARK MODE BODY */
+body.dark {
+  background: linear-gradient(
+      90deg,
+      rgba(2,0,36,1) 0%,
+      rgba(0,0,64,1) 35%,
+      rgba(0,18,23,1) 1000%
+  );
+  color: white;
+}
+
+/* NAVBAR */
+body.dark .navbar .nav-link,
+body.dark .navbar .navbar-brand {
+  color: white !important;
+}
+
+/* TEXTOS */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark span,
+body.dark strong {
+  color: white;
+}
+
+/* BOTÕES */
+body.dark .button_home {
+  background-color: #fa7f2f;
+  color: white;
+}
+
+/* HOVER */
+body.dark .nav-link:hover {
+  color: #fa7f2f !important;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home s/info</title>
+    <link rel="stylesheet" href="./assets/css/pages/Homesinfo/Homesinfo.css">
+    <link rel="stylesheet" href="../Home.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img class="img-meizinho" src="/Site/img/logo meizinho/meizinho/meizinhoescrito.png" alt="">
+        </div>
+        <!-- Botão para login -->
+        <a href="http://127.0.0.1:5500/Site/Login/Login.html">
+        <button class="loginBtn">
+            Entrar
+        </button>
+        </a>
+    </header>
+
+    <section class="fundo">
+        <!-- Overlay -->
+        <div class="overlay"></div>
+        <!-- Conteúdo -->
+        <div class="ContentText">
+
+            <h1>
+                Gestão sem complicação
+            </h1>
+
+            <p>
+                Bem-vindo a melhor plataforma de aprendizado <br>
+                sobre negocios e MEIs
+            </p>
+
+            <!-- Botões -->
+            <div class="buttons">
+
+                <button class="premiumBtn">
+                    TESTE PREMIUM
+                </button>
+
+                <button class="exploreBtn">
+                    EXPLORAR
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+    <!--vips-->
+    <section class="plansSection">
+
+        <!-- Título -->
+        <h2>
+            Escolha seu Plano Premium
+        </h2>
+
+        <!-- Alternador -->
+        <div class="toggleContainer">
+
+            <!-- Mensal -->
+            <button id="monthlyBtn" class="activePlan">
+                Mensal
+            </button>
+
+            <!-- Anual -->
+            <button id="yearlyBtn">
+                Anual
+            </button>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="plansContainer">
+            <div class="planCard featured">
+                <h3>Gratis</h3>
+                <h1 id="GratisPrice">Grátis</h1> <ul>
+                    <li>Com anúncios</li>
+                    <li>Vida limitada</li>
+                    <li>Sem celo</li>
+                </ul>
+                <button>ASSINAR</button>
+            </div>
+        
+                <div class="planCard featured">
+                    <h3>Premium I.A</h3>
+                    <h1 id="premium_IAPrice">R$19,99</h1>
+                    <p id="premium_IAText">por mês</p>
+                    <h3 class="badge-anual" style="display: none;">2 meses gratis</h3>
+                    
+                    <br>
+                    <ul>
+                        <li>Sem anúncios</li>
+                        <li>Vida infinita</li>
+                        <li>emojis excluvios</li>
+                        <li>chat bot premium</li>
+                        <li>Revisão de erros</li>
+                        <li>Celo premium I.A</li>
+                    </ul>
+                    <button>ASSINAR</button>
+                </div>
+            
+                <div class="planCard featured">
+                    <h3>Premium</h3>
+                    <h1 id="premiumPrice">R$14,99</h1>
+                    <p id="premiumText">por mês</p> 
+                    <h3 class="badge-anual" style="display: none;">2 meses gratis</h3>
+                    <ul>
+                        <li>Sem anúncios</li>
+                        <li>vida infinita</li>
+                        <li>emojis excluvios</li>
+                        <li>Celo premium</li>
+                    </ul>
+                    <button>ASSINAR</button>
+                </div>
+        </div>
+
+    </section>
+    <script src="./assets/js/Pages/Homesinfo/Homesinfo.js"></script>
+    <script src="../Home.js"></script>
+    <script src="../../global.js"></script>
+</body>
+
+</html>

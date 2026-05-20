@@ -1,0 +1,46 @@
+.box-pai {
+  background: var(--color-box-white);
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-pai h1 {
+  font-family: "Rammetto One", sans-serif;
+  color: var(--color-text-white);
+  margin-bottom: 5vh;
+}
+
+.box-pai input {
+  width: 45vh;
+  height: 5vh;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  margin-bottom: 2vh;
+}
+
+.meizinho-img {
+  margin: 0;
+  border: 0;
+  width: 27vh;
+  position: relative;
+  margin-left: -36vw;
+  margin-top: -7VW;
+}
+
+.voltar {
+  color: var(--color-text-black);
+  text-decoration: none;
+  cursor: pointer;
+}

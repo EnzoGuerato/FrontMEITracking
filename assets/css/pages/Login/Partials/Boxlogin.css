@@ -1,0 +1,35 @@
+.box-login {
+  background: #fd5c63;
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .5s;
+}
+
+body.dark .box-login {
+  background: #302f2f;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+#img-escrito {
+  width: 300px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-top: -2vw;
+}
+
+.meizinho-joia {
+  position: relative;
+  margin-left: -38vh;
+  margin-top: -14vh;
+  height: 200px;
+}

@@ -1,0 +1,76 @@
+/* FUNDO PRINCIPAL */
+.fundo {
+  width: 100%;
+  height: 100vh;
+  background-image: url("#vazio");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* CONTEÚDO */
+.ContentText {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+/* TÍTULO */
+.ContentText h1 {
+  font-size: 70px;
+  line-height: 80px;
+  margin-bottom: 20px;
+}
+
+/* TEXTO */
+.ContentText p {
+  font-size: 22px;
+  color: #d1d1d1;
+  margin-bottom: 40px;
+}
+
+/* BOTÕES GERAL */
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.premiumBtn, .exploreBtn {
+  padding: 18px 35px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* PREMIUM */
+.premiumBtn {
+  background: #ff7b00;
+  color: white;
+}
+
+/* EXPLORAR */
+.exploreBtn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* HOVER DOS BOTÕES */
+.premiumBtn:hover,
+.exploreBtn:hover {
+  transform: scale(1.05);
+}

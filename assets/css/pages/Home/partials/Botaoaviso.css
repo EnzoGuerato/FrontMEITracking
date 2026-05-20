@@ -1,0 +1,39 @@
+.entrar {
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5px;
+  transition: .5s;
+}
+
+.entrar:hover {
+  background-color: rgb(221, 9, 9);
+  color: #fff;
+}
+
+.entrar h2:hover {
+  color: #fff;
+}
+
+body.dark .entrar:hover {
+  background-color: var(--color-text-dartmode);
+}
+
+.entrar a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 10px;
+}
+
+#aviso {
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+}
+
+#avisosenha {
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+}

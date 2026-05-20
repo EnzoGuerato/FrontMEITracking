@@ -1,0 +1,23 @@
+.featured {
+    border: 3px solid var(--primary);
+    transform: scale(1.05);
+    background: #252525;
+}
+
+.featured:hover {
+    transform: scale(1.08) translateY(-15px);
+}
+
+/* Badge "Mais Popular" */
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}

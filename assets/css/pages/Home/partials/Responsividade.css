@@ -1,0 +1,32 @@
+/* mobile version */
+@media screen and (max-width: 999px) {
+  .button_home {
+    padding: 1vh; 
+    border-radius: 3vh; 
+    border: 0; 
+    background-color: #fa7f2f; 
+    color: white; 
+    font-size: 10px;
+  }
+
+  .profile_img {
+    width: 100px; 
+    margin-right: 0vh; 
+    border-radius: 100%;
+  }
+
+  .Profile {
+    display: grid; 
+    align-items: center;  
+    margin: 1vh; 
+    place-items: center;
+  }
+
+  .user_name {
+    font-size: 3vh;
+  }
+
+  .ola {
+    font-size: 2vh;
+  }
+}

@@ -1,0 +1,37 @@
+.planCard h3 {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.planCard h1 {
+    color: var(--primary);
+    font-size: 3.5rem;
+    margin: 15px 0 5px 0;
+}
+
+.planCard p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Lista de Benefícios */
+.planCard ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.planCard li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.planCard li i {
+    color: var(--primary);
+    width: 20px;
+}

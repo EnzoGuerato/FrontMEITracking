@@ -1,0 +1,33 @@
+.box-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 4vh;
+  gap: 1vh;
+}
+
+.box-input h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Rammetto One", sans-serif;
+  padding: 20px;
+  font-size: 40px;
+  color: white;
+  transform-style: .3s;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.box-input input {
+  padding: 10px;
+  width: 40vh;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-black);
+  outline: none;
+}

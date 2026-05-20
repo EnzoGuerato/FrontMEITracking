@@ -1,0 +1,42 @@
+/* SEÇÃO DE CARDS */
+.SectionCard {
+  padding: 80px;
+}
+
+/* TÍTULO */
+.SectionCard h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+/* CONTAINER */
+.ContainerCard {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* CARD INDIVIDUAL */
+.Card {
+  width: 260px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* IMAGEM DO CARD */
+.Card img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* HOVER DO CARD */
+.Card:hover {
+  transform: translateY(-10px);
+}
+
+/* TÍTULO INTERNO DO CARD */
+.Card h3 {
+  margin-top: 12px;
+}
