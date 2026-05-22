@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações · MEI Track</title>
+    <link rel="stylesheet" href="./assets/css/pages/Configuracoes/Configuracoes.css">
+</head>
+
+<body>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header>
+        <div class="logo">
+            <span class="logo-text">MEI<em>Track</em></span>
+        </div>
+
+        <nav>
+            <a href="HomesInfo.html">Início</a>
+            <a href="Home.html">Dashboard</a>
+            <a href="planos.html">Planos</a>
+            <a href="configuracoes.html" class="nav-active">Configurações</a>
+        </nav>
+
+        <button class="loginBtn" onclick="window.location.href='Login.html'">
+            Entrar
+        </button>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="config-hero">
+        <div class="config-hero__content">
+            <h1>Configurações</h1>
+            <p>Personalize sua experiência no MEI Track do jeito que preferir.</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="config-main">
+
+        <!-- ── APARÊNCIA ── -->
+        <section class="config-section">
+            <div class="config-section__header">
+                <div>
+                    <h2>Aparência</h2>
+                    <p>Ajuste o visual da plataforma para todas as páginas.</p>
+                </div>
+            </div>
+
+            <!-- Modo escuro -->
+            <div class="config-card">
+                <div class="config-card__info">
+                    <h3>Modo Escuro</h3>
+                    <p>Ativa o tema dark em todas as páginas da plataforma.</p>
+                </div>
+                <label class="toggle" aria-label="Ativar modo escuro">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="toggle__track">
+                        <span class="toggle__thumb"></span>
+                    </span>
+                </label>
+            </div>
+
+            <!-- Tamanho da fonte -->
+            <div class="config-card">
+                <div class="config-card__info">
+                    <h3>Tamanho da Fonte</h3>
+                    <p>Ajusta o tamanho do texto em todas as páginas.</p>
+                </div>
+                <div class="font-control">
+                    <button class="font-btn" id="fontDecrease" aria-label="Diminuir fonte">A−</button>
+                    <span class="font-value" id="fontValue">100%</span>
+                    <button class="font-btn font-btn--primary" id="fontIncrease" aria-label="Aumentar fonte">A+</button>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="config-preview">
+                <p class="config-preview__label">Pré-visualização</p>
+                <div class="config-preview__box">
+                    <p id="previewText">
+                        Este é um exemplo de como o texto aparecerá em todas as páginas do MEI Track.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ASSINATURA ── -->
+        <section class="config-section">
+            <div class="config-section__header">
+                <div>
+                    <h2>Assinatura</h2>
+                    <p>Gerencie seu plano atual e benefícios.</p>
+                </div>
+            </div>
+
+            <!-- Plano atual -->
+            <div class="config-card config-card--plan">
+                <div class="plan-badge">Plano Atual</div>
+                <div class="plan-info">
+                    <h3 class="plan-name">Premium I.A</h3>
+                    <p class="plan-price">R$19,99 <span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>✓ Sem anúncios</li>
+                        <li>✓ Vida infinita</li>
+                        <li>✓ Emojis exclusivos</li>
+                        <li>✓ Chat bot premium</li>
+                        <li>✓ Revisão de erros</li>
+                    </ul>
+                </div>
+                <div class="plan-actions">
+                    <button class="btn-plan btn-plan--change" disabled title="Em breve">
+                        Mudar Plano
+                    </button>
+                    <button class="btn-plan btn-plan--cancel" disabled title="Em breve">
+                        Cancelar Assinatura
+                    </button>
+                    <p class="plan-actions__note">Gerenciamento de assinatura em breve.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="config-footer">
+        <p>© 2025 MEI Track · Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./assets/js/pages/Configuracoes/Configuracoes.js"></script>
+</body>
+</html>

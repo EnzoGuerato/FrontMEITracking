@@ -1,0 +1,46 @@
+/* =====================================================================
+   Configuracoes · Hero / destaque
+   (Mesmo padrão visual do Destaque.css da Homesinfo)
+   ===================================================================== */
+.config-hero {
+  width: 100%;
+  min-height: 38vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 80px 64px;
+  background:
+    radial-gradient(700px 400px at 85% 20%, rgba(245, 138, 61, 0.3), transparent 60%),
+    radial-gradient(600px 350px at 10% 80%, rgba(255, 179, 122, 0.35), transparent 60%),
+    linear-gradient(180deg, var(--mei-cream) 0%, var(--mei-cream-2) 100%);
+  transition: background var(--motion-slow);
+}
+
+.config-hero__content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  color: var(--mei-ink);
+  margin-bottom: 14px;
+  line-height: 1.05;
+}
+
+.config-hero__content p {
+  font-size: 1.1rem;
+  color: var(--mei-ink-soft);
+  max-width: 520px;
+}
+
+/* Dark mode */
+body.dark .config-hero {
+  background:
+    radial-gradient(700px 400px at 85% 20%, rgba(245, 138, 61, 0.12), transparent 60%),
+    radial-gradient(600px 350px at 10% 80%, rgba(255, 179, 122, 0.1), transparent 60%),
+    linear-gradient(180deg, var(--color-background) 0%, var(--color-surface-alt) 100%);
+}
+
+body.dark .config-hero__content h1 {
+  color: var(--color-text);
+}
+
+body.dark .config-hero__content p {
+  color: var(--color-text-soft);
+}

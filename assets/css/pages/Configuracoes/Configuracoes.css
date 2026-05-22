@@ -1,0 +1,9 @@
+/* =====================================================================
+   Configuracoes · Entry Point
+   ===================================================================== */
+@import url('../../global/Global.css');
+@import url('./partials/Menu.css');
+@import url('./partials/Hero.css');
+@import url('./partials/Secoes.css');
+@import url('./partials/Assinatura.css');
+@import url('./partials/Responsividade.css');

@@ -1,0 +1,132 @@
+/* =====================================================================
+   Configuracoes · Card de assinatura
+   ===================================================================== */
+.config-card--plan {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  border: 2px solid var(--mei-orange);
+  background: linear-gradient(180deg, #fff 0%, var(--mei-cream-2) 100%);
+}
+
+.plan-badge {
+  display: inline-block;
+  background: var(--mei-orange-glow);
+  color: var(--mei-orange-deep);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.plan-info {
+  width: 100%;
+}
+
+.plan-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--mei-ink);
+  margin-bottom: 6px;
+}
+
+.plan-price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--mei-orange-deep);
+  margin-bottom: 16px;
+}
+
+.plan-price span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--mei-muted);
+}
+
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.plan-features li {
+  color: var(--mei-ink-soft);
+  font-size: 0.9rem;
+}
+
+/* ── Ações ── */
+.plan-actions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--mei-line);
+}
+
+.btn-plan {
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast), opacity var(--motion-fast);
+}
+
+.btn-plan:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-plan--change {
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-plan--change:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-plan--cancel {
+  background: transparent;
+  border: 2px solid var(--mei-danger);
+  color: var(--mei-danger);
+}
+
+.btn-plan--cancel:not(:disabled):hover {
+  background: var(--mei-danger);
+  color: #fff;
+}
+
+.plan-actions__note {
+  font-size: 0.8rem;
+  color: var(--mei-muted);
+  margin-left: auto;
+  font-style: italic;
+}
+
+/* ── Dark mode: assinatura ── */
+body.dark .config-card--plan {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+  border-color: var(--mei-orange-soft);
+}
+
+body.dark .plan-name {
+  color: var(--color-text);
+}
+
+body.dark .plan-features li {
+  color: var(--color-text-soft);
+}
+
+body.dark .plan-actions {
+  border-color: var(--color-border);
+}

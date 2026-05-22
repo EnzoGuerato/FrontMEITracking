@@ -1,0 +1,75 @@
+/* =====================================================================
+   Configuracoes · Responsividade
+   ===================================================================== */
+@media (max-width: 900px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  nav {
+    display: none; /* menu mobile pode ser adicionado futuramente */
+  }
+
+  .config-hero {
+    padding: 100px 20px 48px;
+    min-height: auto;
+  }
+
+  .config-main {
+    padding: 40px 20px 56px;
+    gap: 40px;
+  }
+
+  .config-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  .config-card__info p {
+    max-width: 100%;
+  }
+
+  .font-control {
+    align-self: flex-end;
+  }
+
+  .toggle {
+    align-self: flex-end;
+  }
+
+  .config-preview {
+    padding: 20px;
+  }
+
+  .plan-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plan-actions__note {
+    margin-left: 0;
+  }
+
+  .btn-plan {
+    width: 100%;
+    text-align: center;
+  }
+
+  .config-footer {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .config-section__header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .plan-features {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
