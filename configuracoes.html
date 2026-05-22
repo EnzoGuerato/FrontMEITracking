@@ -9,23 +9,31 @@
 
 <body>
 
-    <!-- ===== CABEÇALHO ===== -->
-    <header>
-        <div class="logo">
-            <span class="logo-text">MEI<em>Track</em></span>
-        </div>
-
-        <nav>
-            <a href="HomesInfo.html">Início</a>
-            <a href="Home.html">Dashboard</a>
-            <a href="planos.html">Planos</a>
-            <a href="configuracoes.html" class="nav-active">Configurações</a>
-        </nav>
-
-        <button class="loginBtn" onclick="window.location.href='Login.html'">
-            Entrar
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img style="width:100px;" src="logo meizinho/Meizinhodandojoia.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-    </header>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="configuracoes.html">Configurações</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="HomesInfo.html">Premium</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Login.html">Exit</a>
+        </li>
+        </div>
+        </div>
+    </nav>
+<!--Fim NavBar-->
 
     <!-- ===== HERO ===== -->
     <section class="config-hero">
