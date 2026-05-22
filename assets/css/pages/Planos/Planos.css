@@ -3,6 +3,7 @@
    Compartilhado por: planos.html e seção premium da Home.
    ===================================================================== */
 @import url('../../global/Global.css');
+@import url('../../global/Navbar.css');
 @import url('./partials/Alterarplano.css');
 @import url('./partials/Cardplano.css');
 @import url('./partials/Beneficios.css');
@@ -18,7 +19,7 @@
   min-height: 100vh;
   width: min(var(--container-lg), 100%);
   margin: 0 auto;
-  padding: clamp(56px, 9vw, 90px) var(--space-lg) var(--space-2xl);
+  padding: clamp(80px, 12vw, 110px) var(--space-lg) var(--space-2xl);
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: var(--space-xl);

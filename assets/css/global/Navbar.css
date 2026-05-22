@@ -1,0 +1,103 @@
+/* =====================================================================
+   Navbar Global · MEI Track
+   Estilo compartilhado por todas as páginas (baseado na Home).
+   Requer Bootstrap para estrutura, este arquivo cuida da aparência.
+   ===================================================================== */
+
+.navbar {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: 12px var(--space-lg);
+  transition: background var(--motion-slow), box-shadow var(--motion-slow);
+}
+
+.navbar .container-fluid {
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+/* Logo */
+.navbar .navbar-brand img {
+  height: 44px;
+  width: auto;
+  transition: transform var(--motion-base), filter var(--motion-base);
+}
+
+.navbar .navbar-brand:hover img {
+  transform: rotate(-4deg) scale(1.05);
+}
+
+/* Links */
+.navbar .nav-link {
+  color: var(--mei-ink) !important;
+  font-weight: 700;
+  position: relative;
+  padding: 8px 14px !important;
+  transition: color var(--motion-fast);
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--mei-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-base);
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.navbar .nav-link.active {
+  color: var(--mei-orange-deep) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--color-border);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(245, 138, 61, 0.25);
+}
+
+/* ── Dark mode ── */
+body.dark .navbar {
+  background: #2A1E17;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .navbar .nav-link {
+  color: var(--color-text) !important;
+}
+
+body.dark .navbar .nav-link:hover {
+  color: var(--mei-orange-soft) !important;
+}
+
+body.dark .navbar .nav-link.active {
+  color: var(--mei-orange-soft) !important;
+}
+
+body.dark .navbar .nav-link.active::after,
+body.dark .navbar .nav-link:hover::after {
+  background: var(--mei-orange-soft);
+}
+
+/* Logo no dark: leve brilho para destacar sobre fundo escuro */
+body.dark .navbar .navbar-brand img {
+  filter: brightness(1.1) drop-shadow(0 0 6px rgba(245,138,61,.3));
+}
+
+body.dark .navbar-toggler {
+  border-color: var(--color-border);
+}
+
+body.dark .navbar-toggler-icon {
+  filter: invert(0.85) sepia(0.3) saturate(2) hue-rotate(340deg);
+}

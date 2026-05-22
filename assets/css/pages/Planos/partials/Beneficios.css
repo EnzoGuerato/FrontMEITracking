@@ -3,7 +3,7 @@
    ===================================================================== */
 .planCard h3 {
   font-size: 1rem;
-  color: var(--mei-muted);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -16,7 +16,7 @@
 }
 
 .planCard p {
-  color: var(--mei-muted);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-lg);
 }
 
@@ -30,7 +30,7 @@
   position: relative;
   margin-bottom: 12px;
   padding-left: 22px;
-  color: var(--mei-ink-soft);
+  color: var(--color-text-soft);
   font-size: .95rem;
 }
 
@@ -41,4 +41,25 @@
   top: 0;
   color: var(--mei-orange-deep);
   font-weight: 800;
+}
+
+/* ── Dark mode: benefícios ── */
+body.dark .planCard h3 {
+  color: var(--color-text-muted);
+}
+
+body.dark .planCard h1 {
+  color: var(--mei-orange-soft);
+}
+
+body.dark .planCard p {
+  color: var(--color-text-muted);
+}
+
+body.dark .planCard li {
+  color: var(--color-text-soft);
+}
+
+body.dark .planCard li::before {
+  color: var(--mei-orange-soft);
 }

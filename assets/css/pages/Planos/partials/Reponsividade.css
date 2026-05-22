@@ -39,36 +39,48 @@
 }
 
 /* =====================================================================
-   Planos · Tema escuro (manual e automático)
+   Planos · Tema escuro
    ===================================================================== */
-body.dark .planCard,
-body.dark .mega-mei-premium,
-body.dark .texto-informativo {
-  background: #2A1E17;
-  color: var(--mei-cream);
-  border-color: #4A3326;
+body.dark .pai-planos {
+  background:
+    radial-gradient(700px 400px at 50% -10%, rgba(245,138,61,.1), transparent 60%),
+    radial-gradient(760px 420px at 0% 100%, rgba(255,179,122,.08), transparent 60%),
+    var(--color-background);
 }
 
-body.dark .planCard p,
-body.dark .planCard li,
-body.dark .planCard h3,
-body.dark .texto-informativo p {
+body.dark .mega-mei-premium {
+  background: var(--color-surface);
+  border-color: var(--mei-orange-soft);
+  color: var(--color-text);
+}
+
+body.dark .mega-mei-premium h1,
+body.dark .mega-mei-premium h2 {
+  color: var(--color-text);
+}
+
+body.dark .mega-mei-premium .valor {
   color: var(--mei-orange-soft);
 }
 
-@media (prefers-color-scheme: dark) {
-  body:not(.force-light) .planCard,
-  body:not(.force-light) .mega-mei-premium,
-  body:not(.force-light) .texto-informativo {
-    background: #2A1E17;
-    color: var(--mei-cream);
-    border-color: #4A3326;
-  }
+body.dark .mega-mei-premium .lista-beneficios-premium span {
+  color: var(--color-text-soft);
+}
 
-  body:not(.force-light) .planCard p,
-  body:not(.force-light) .planCard li,
-  body:not(.force-light) .planCard h3,
-  body:not(.force-light) .texto-informativo p {
-    color: var(--mei-orange-soft);
-  }
+body.dark .texto-informativo {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+body.dark .texto-informativo p {
+  color: var(--color-text-soft);
+}
+
+body.dark .texto-informativo strong {
+  color: var(--color-text);
+}
+
+body.dark #icon-check {
+  background: var(--color-surface-alt);
+  color: var(--mei-orange-soft);
 }

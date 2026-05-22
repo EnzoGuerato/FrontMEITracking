@@ -5,7 +5,7 @@
 .featured {
   border: 2px solid var(--mei-orange);
   transform: scale(1.04);
-  background: linear-gradient(180deg, #fff 0%, var(--mei-cream-2) 100%);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
 }
 
 .planCard.featured:hover,
@@ -26,4 +26,16 @@
 
 .mega-mei-premium {
   box-shadow: var(--shadow-md);
+}
+
+/* ── Dark mode: destaques ── */
+body.dark .planCard.featured,
+body.dark .featured {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+  border-color: var(--mei-orange-soft);
+}
+
+body.dark .badge-anual {
+  background: rgba(245,138,61,.2);
+  color: var(--mei-orange-soft);
 }

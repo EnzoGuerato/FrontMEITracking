@@ -3,13 +3,14 @@
    ===================================================================== */
 .SectionCard {
   padding: 80px;
-  background: var(--mei-cream);
+  background: var(--color-background);
+  transition: background var(--motion-slow);
 }
 
 .SectionCard h2 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: var(--mei-ink);
+  color: var(--color-text);
   margin-bottom: 40px;
 }
 
@@ -25,7 +26,7 @@
   padding: 16px;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: transform var(--motion-base), box-shadow var(--motion-base);
+  transition: transform var(--motion-base), box-shadow var(--motion-base), background var(--motion-slow);
 }
 
 .Card:hover {
@@ -44,7 +45,21 @@
   margin-top: 14px;
   font-family: var(--font-display);
   font-size: 1.15rem;
-  color: var(--mei-ink);
+  color: var(--color-text);
+}
+
+/* ── Dark mode: vitrine ── */
+body.dark .SectionCard {
+  background: var(--color-background);
+}
+
+body.dark .Card {
+  background: var(--color-surface);
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+}
+
+body.dark .Card h3 {
+  color: var(--color-text);
 }
 
 @media (max-width: 768px) {

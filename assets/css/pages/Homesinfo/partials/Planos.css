@@ -4,6 +4,7 @@
 .plansSection {
   padding: 100px 80px;
   background: linear-gradient(180deg, var(--mei-cream-2) 0%, var(--mei-cream) 100%);
+  transition: background var(--motion-slow);
 }
 
 .plansSection h2 {
@@ -30,7 +31,7 @@
   padding: 12px;
   border-radius: var(--radius-pill);
   background: transparent;
-  color: var(--mei-ink-soft);
+  color: var(--color-text-soft);
   font-weight: 700;
   transition: background var(--motion-base), color var(--motion-base);
 }
@@ -56,7 +57,7 @@
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  transition: transform var(--motion-base), box-shadow var(--motion-base);
+  transition: transform var(--motion-base), box-shadow var(--motion-base), background var(--motion-slow);
 }
 
 .planCard:hover {
@@ -67,7 +68,7 @@
 .featured {
   border: 2px solid var(--mei-orange);
   transform: scale(1.04);
-  background: linear-gradient(180deg, #fff 0%, var(--mei-cream-2) 100%);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
 }
 
 .planCard h1 {
@@ -89,7 +90,7 @@
 }
 
 .planCard p {
-  color: var(--mei-muted);
+  color: var(--color-text-muted);
   margin-bottom: 24px;
 }
 
@@ -100,7 +101,7 @@
 
 .planCard li {
   margin-bottom: 12px;
-  color: var(--mei-ink-soft);
+  color: var(--color-text-soft);
 }
 
 .planCard button {
@@ -118,6 +119,46 @@
 .planCard button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+/* ── Dark mode: planos ── */
+body.dark .plansSection {
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface-alt) 100%);
+}
+
+body.dark .plansSection h2 {
+  color: var(--color-text);
+}
+
+body.dark .planCard {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+body.dark .featured {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+  border-color: var(--mei-orange-soft);
+}
+
+body.dark .planCard h1 {
+  color: var(--mei-orange-soft);
+}
+
+body.dark .planCard h3 {
+  color: var(--color-text-muted);
+}
+
+body.dark .planCard li {
+  color: var(--color-text-soft);
+}
+
+body.dark .planCard p {
+  color: var(--color-text-muted);
+}
+
+body.dark .badge-anual {
+  background: rgba(245,138,61,.2);
+  color: var(--mei-orange-soft);
 }
 
 @media (max-width: 768px) {

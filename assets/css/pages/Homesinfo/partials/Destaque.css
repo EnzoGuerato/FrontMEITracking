@@ -12,6 +12,7 @@
     radial-gradient(800px 500px at 90% 20%, rgba(245,138,61,.35), transparent 60%),
     radial-gradient(700px 400px at 10% 80%, rgba(255,179,122,.4), transparent 60%),
     linear-gradient(180deg, var(--mei-cream) 0%, var(--mei-cream-2) 100%);
+  transition: background var(--motion-slow);
 }
 
 .overlay {
@@ -81,6 +82,32 @@
 .exploreBtn:hover {
   background: var(--mei-orange-deep);
   color: #fff;
+}
+
+/* ── Dark mode: hero ── */
+body.dark .fundo {
+  background:
+    radial-gradient(800px 500px at 90% 20%, rgba(245,138,61,.12), transparent 60%),
+    radial-gradient(700px 400px at 10% 80%, rgba(255,179,122,.1), transparent 60%),
+    linear-gradient(180deg, var(--color-background) 0%, var(--color-surface-alt) 100%);
+}
+
+body.dark .ContentText h1 {
+  color: var(--color-text);
+}
+
+body.dark .ContentText p {
+  color: var(--color-text-soft);
+}
+
+body.dark .exploreBtn {
+  border-color: var(--mei-orange-soft);
+  color: var(--mei-orange-soft);
+}
+
+body.dark .exploreBtn:hover {
+  background: var(--mei-orange-soft);
+  color: var(--color-background);
 }
 
 @media (max-width: 900px) {

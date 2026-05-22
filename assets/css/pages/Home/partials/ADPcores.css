@@ -5,7 +5,7 @@ body.dark {
   background:
     radial-gradient(1000px 500px at 10% 0%, rgba(245,138,61,.12), transparent 60%),
     #1E1410;
-  color: var(--mei-cream);
+  color: var(--color-text);
 }
 
 body.dark .navbar {
@@ -15,20 +15,11 @@ body.dark .navbar {
 
 body.dark .navbar .nav-link,
 body.dark .navbar .navbar-brand {
-  color: var(--mei-cream) !important;
+  color: var(--color-text) !important;
 }
 
 body.dark .navbar .nav-link:hover {
   color: var(--mei-orange-soft) !important;
-}
-
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark p,
-body.dark span,
-body.dark strong {
-  color: var(--mei-cream);
 }
 
 body.dark .button_home {
@@ -42,4 +33,12 @@ body.dark .user_name {
 
 body.dark .banner-img {
   box-shadow: 0 16px 28px rgba(0,0,0,.34);
+}
+
+body.dark .Profile {
+  background: var(--color-surface);
+}
+
+body.dark .ola {
+  color: var(--color-text-soft);
 }
