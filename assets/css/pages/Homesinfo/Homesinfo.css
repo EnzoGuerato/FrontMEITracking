@@ -1,5 +1,9 @@
-@import url(./partials/Destaque.css);
-@import url(./partials/Menu.css);
-@import url(./partials/Planos.css);
-@import url(./partials/Preferencias.css);
-@import url(./partials/Vitrine.css);
+/* =====================================================================
+   Homesinfo · Entry Point
+   ===================================================================== */
+@import url('../../global/Global.css');
+@import url('./partials/Menu.css');
+@import url('./partials/Destaque.css');
+@import url('./partials/Vitrine.css');
+@import url('./partials/Planos.css');
+@import url('./partials/Preferencias.css');

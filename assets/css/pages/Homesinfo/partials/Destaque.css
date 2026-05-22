@@ -1,76 +1,100 @@
-/* FUNDO PRINCIPAL */
+/* =====================================================================
+   Homesinfo · Hero / destaque principal
+   ===================================================================== */
 .fundo {
   width: 100%;
-  height: 100vh;
-  background-image: url("#vazio");
-  background-size: cover;
-  background-position: center;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 80px;
+  padding: 120px 80px 80px;
+  background:
+    radial-gradient(800px 500px at 90% 20%, rgba(245,138,61,.35), transparent 60%),
+    radial-gradient(700px 400px at 10% 80%, rgba(255,179,122,.4), transparent 60%),
+    linear-gradient(180deg, var(--mei-cream) 0%, var(--mei-cream-2) 100%);
 }
 
-/* OVERLAY */
 .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  display: none;
 }
 
-/* CONTEÚDO */
 .ContentText {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  max-width: 720px;
 }
 
-/* TÍTULO */
 .ContentText h1 {
-  font-size: 70px;
-  line-height: 80px;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  color: var(--mei-ink);
   margin-bottom: 20px;
 }
 
-/* TEXTO */
-.ContentText p {
-  font-size: 22px;
-  color: #d1d1d1;
-  margin-bottom: 40px;
+.ContentText h1 span,
+.ContentText h1 em {
+  color: var(--mei-orange-deep);
+  font-style: normal;
 }
 
-/* BOTÕES GERAL */
+.ContentText p {
+  font-size: 1.15rem;
+  color: var(--mei-ink-soft);
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.premiumBtn, .exploreBtn {
-  padding: 18px 35px;
+.premiumBtn,
+.exploreBtn {
+  padding: 16px 32px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  transition: 0.3s;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-base), color var(--motion-base);
 }
 
-/* PREMIUM */
 .premiumBtn {
-  background: #ff7b00;
-  color: white;
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  box-shadow: var(--shadow-md);
 }
 
-/* EXPLORAR */
+.premiumBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(230,106,31,.35);
+}
+
 .exploreBtn {
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid var(--mei-orange-deep);
+  color: var(--mei-orange-deep);
 }
 
-/* HOVER DOS BOTÕES */
-.premiumBtn:hover,
 .exploreBtn:hover {
-  transform: scale(1.05);
+  background: var(--mei-orange-deep);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .fundo {
+    min-height: auto;
+    padding: 110px 20px 64px;
+  }
+
+  .ContentText p {
+    font-size: 1rem;
+  }
+
+  .premiumBtn,
+  .exploreBtn {
+    width: 100%;
+  }
 }

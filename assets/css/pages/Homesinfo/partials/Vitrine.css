@@ -1,42 +1,58 @@
-/* SEÇÃO DE CARDS */
+/* =====================================================================
+   Homesinfo · Vitrine de conteúdo
+   ===================================================================== */
 .SectionCard {
   padding: 80px;
+  background: var(--mei-cream);
 }
 
-/* TÍTULO */
 .SectionCard h2 {
-  font-size: 40px;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--mei-ink);
   margin-bottom: 40px;
 }
 
-/* CONTAINER */
 .ContainerCard {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
 }
 
-/* CARD INDIVIDUAL */
 .Card {
-  width: 260px;
-  transition: 0.3s;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
+  transition: transform var(--motion-base), box-shadow var(--motion-base);
 }
 
-/* IMAGEM DO CARD */
+.Card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
 .Card img {
   width: 100%;
-  height: 370px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 
-/* HOVER DO CARD */
-.Card:hover {
-  transform: translateY(-10px);
-}
-
-/* TÍTULO INTERNO DO CARD */
 .Card h3 {
-  margin-top: 12px;
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--mei-ink);
+}
+
+@media (max-width: 768px) {
+  .SectionCard {
+    padding: 56px 16px;
+  }
+
+  .Card img {
+    height: 250px;
+  }
 }

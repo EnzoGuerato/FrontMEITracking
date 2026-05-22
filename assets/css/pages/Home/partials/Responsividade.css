@@ -1,32 +1,51 @@
-/* mobile version */
+/* =====================================================================
+   Home · Responsividade
+   ===================================================================== */
 @media screen and (max-width: 999px) {
-  .button_home {
-    padding: 1vh; 
-    border-radius: 3vh; 
-    border: 0; 
-    background-color: #fa7f2f; 
-    color: white; 
-    font-size: 10px;
-  }
-
-  .profile_img {
-    width: 100px; 
-    margin-right: 0vh; 
-    border-radius: 100%;
+  .navbar {
+    padding-inline: var(--space-sm);
   }
 
   .Profile {
-    display: grid; 
-    align-items: center;  
-    margin: 1vh; 
+    display: grid;
     place-items: center;
+    text-align: center;
+    gap: 14px;
+    margin: 12px;
+    padding: 20px;
+  }
+
+  .profile_img {
+    width: 120px;
+    height: 120px;
   }
 
   .user_name {
-    font-size: 3vh;
+    font-size: 1.8rem;
   }
 
   .ola {
-    font-size: 2vh;
+    font-size: 1.1rem;
+  }
+
+  .button_home {
+    padding: 10px 18px;
+    font-size: .85rem;
+  }
+
+  .banner-img {
+    width: 100% !important;
+    border-radius: var(--radius-md);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .buttons {
+    width: 100%;
+    padding-inline: var(--space-md);
+  }
+
+  .button_home {
+    width: 100%;
   }
 }

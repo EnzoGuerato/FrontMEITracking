@@ -1,7 +1,10 @@
-@import url('../../../Global/Global.css');
-
-@import url('../../pages/Login/Partials/Boxlogin.css');
-@import url('../../pages/Login/Partials/Contentbox.css');
-@import url('../../pages/Login/Partials/links-button.css');
-@import url('../../pages/Login/Partials/Modo.css');
-@import url('../../pages/Login/Partials/Msgerro.css');
+/* =====================================================================
+   Login · Entry Point
+   Ordem: estrutura -> conteúdo -> links/botões -> tema -> mensagens.
+   ===================================================================== */
+@import url('../../global/Global.css');
+@import url('./Partials/Boxlogin.css');
+@import url('./Partials/Contentbox.css');
+@import url('./Partials/links-button.css');
+@import url('./Partials/Modo.css');
+@import url('./Partials/Msgerro.css');

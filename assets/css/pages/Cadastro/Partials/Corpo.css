@@ -1,46 +1,101 @@
+/* =====================================================================
+   Cadastro · Estrutura da página
+   ===================================================================== */
+body {
+  display: grid;
+  place-items: center;
+  padding: var(--space-3xl) var(--space-md);
+  background:
+    radial-gradient(900px 450px at 90% -10%, rgba(245,138,61,.22), transparent 60%),
+    radial-gradient(800px 420px at 0% 100%, rgba(255,179,122,.22), transparent 60%),
+    var(--color-background);
+}
+
 .box-pai {
-  background: var(--color-box-white);
-  width: 800px;
-  height: 500px;
-  border-radius: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  width: min(820px, 94vw);
+  padding: clamp(30px, 5vw, 52px) clamp(22px, 5vw, 56px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--mei-orange) 0%, var(--mei-orange-deep) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  box-shadow: var(--shadow-lg);
 }
 
 .box-pai h1 {
-  font-family: "Rammetto One", sans-serif;
-  color: var(--color-text-white);
-  margin-bottom: 5vh;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 2.3rem);
+  color: #fff;
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 0 rgba(0,0,0,.08);
 }
 
 .box-pai input {
-  width: 45vh;
-  height: 5vh;
-  border-radius: 20px;
-  box-sizing: border-box;
-  border: none;
-  padding: 10px;
-  text-decoration: none;
-  margin-bottom: 2vh;
+  width: min(430px, 82vw);
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background: #fff;
+  color: var(--mei-ink);
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-sm);
+  outline: none;
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.box-pai input::placeholder {
+  color: var(--mei-muted);
+}
+
+.box-pai input:focus {
+  border-color: var(--mei-orange-deep);
+  box-shadow: 0 0 0 4px rgba(255,179,122,.45);
+}
+
+#aviso {
+  width: min(430px, 82vw);
+  text-align: left;
+  margin: -4px 0 6px;
+  font-weight: 700;
 }
 
 .meizinho-img {
-  margin: 0;
-  border: 0;
-  width: 27vh;
-  position: relative;
-  margin-left: -36vw;
-  margin-top: -7VW;
+  position: absolute;
+  top: -58px;
+  left: -36px;
+  width: 180px;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
 }
 
 .voltar {
-  color: var(--color-text-black);
-  text-decoration: none;
-  cursor: pointer;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 700;
+  margin-top: var(--space-sm);
+}
+
+.voltar:hover {
+  color: var(--mei-cream);
+}
+
+/* =====================================================================
+   Cadastro · Responsividade
+   ===================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: var(--space-2xl);
+  }
+
+  .box-pai {
+    padding: 34px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .meizinho-img {
+    width: 132px;
+    top: -42px;
+    left: -18px;
+  }
 }

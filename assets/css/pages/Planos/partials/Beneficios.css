@@ -1,37 +1,44 @@
+/* =====================================================================
+   Planos · Tipografia e lista de benefícios dos cards
+   ===================================================================== */
 .planCard h3 {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 1rem;
+  color: var(--mei-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .planCard h1 {
-    color: var(--primary);
-    font-size: 3.5rem;
-    margin: 15px 0 5px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  color: var(--mei-orange-deep);
+  margin: 12px 0 6px;
 }
 
 .planCard p {
-    color: var(--text-muted);
-    margin-bottom: 30px;
+  color: var(--mei-muted);
+  margin-bottom: var(--space-lg);
 }
 
-/* Lista de Benefícios */
 .planCard ul {
-    list-style: none;
-    text-align: left;
-    margin-bottom: 40px;
+  list-style: none;
+  text-align: left;
+  margin-bottom: 28px;
 }
 
 .planCard li {
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  color: var(--mei-ink-soft);
+  font-size: .95rem;
 }
 
-.planCard li i {
-    color: var(--primary);
-    width: 20px;
+.planCard li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--mei-orange-deep);
+  font-weight: 800;
 }

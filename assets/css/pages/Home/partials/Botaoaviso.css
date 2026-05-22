@@ -1,39 +1,31 @@
+/* =====================================================================
+   Home · Botões utilitários e mensagens de validação
+   ===================================================================== */
 .entrar {
-  border-radius: 20px;
   border: none;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 5px;
-  transition: .5s;
+  background: var(--mei-orange);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  height: 36px;
+  padding: 0 18px;
+  font-weight: 700;
+  transition: background var(--motion-base), transform var(--motion-fast);
 }
 
 .entrar:hover {
-  background-color: rgb(221, 9, 9);
-  color: #fff;
-}
-
-.entrar h2:hover {
-  color: #fff;
-}
-
-body.dark .entrar:hover {
-  background-color: var(--color-text-dartmode);
+  background: var(--mei-orange-deep);
+  transform: translateY(-1px);
 }
 
 .entrar a {
+  color: inherit;
   text-decoration: none;
-  color: var(--color-black);
-  font-size: 10px;
+  font-size: 0.9rem;
 }
 
-#aviso {
-  color: rgb(255, 255, 255);
-  font-size: 13px;
-}
-
+#aviso,
 #avisosenha {
-  color: rgb(255, 255, 255);
+  color: var(--mei-danger);
   font-size: 13px;
+  font-weight: 700;
 }

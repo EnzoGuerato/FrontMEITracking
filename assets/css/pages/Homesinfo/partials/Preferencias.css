@@ -1,0 +1,9 @@
+/* =====================================================================
+   Homesinfo · Bloco de preferências
+   Mantido para compatibilidade com futuras integrações.
+   ===================================================================== */
+.preferencias {
+  padding: 60px 80px;
+  background: var(--mei-cream);
+  color: var(--mei-ink);
+}

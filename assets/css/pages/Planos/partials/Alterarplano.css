@@ -1,25 +1,32 @@
-/* Toggle Switch Estilo Pílula */
+/* =====================================================================
+   Planos · Alternador mensal/anual
+   ===================================================================== */
 .toggleContainer {
-    background: #e0e0e0;
-    display: inline-flex;
-    padding: 5px;
-    border-radius: 50px;
-    margin-bottom: 50px;
+  width: min(280px, 100%);
+  background: var(--color-surface);
+  display: inline-flex;
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+  
+
 }
 
+.toggleContainer button,
 .toggle-btn {
-    border: none;
-    padding: 10px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-    background: transparent;
-    color: #666;
+  flex: 1;
+  border: none;
+  padding: 10px 28px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--mei-ink-soft);
+  font-weight: 700;
+  transition: background var(--motion-base), color var(--motion-base);
 }
 
 .activePlan {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 4px 10px rgba(255, 123, 0, 0.3);
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(230, 106, 31, .35);
 }

@@ -1,54 +1,57 @@
+/* =====================================================================
+   Login · Botão principal e links auxiliares
+   ===================================================================== */
 .links {
   display: flex;
-  gap: 10px;
-  padding-top: 2vh;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  padding-top: var(--space-md);
 }
 
 .links a {
+  color: #FFE9D6;
   text-decoration: none;
-  color: #e2dfdf;
-  cursor: pointer;
-  transition: .2s;
+  font-weight: 700;
+  font-size: .9rem;
+  transition: color var(--motion-fast);
 }
 
 .links a:hover {
-  color: rgb(255, 255, 255);
+  color: #fff;
 }
 
 body.dark .links a {
-  color: #fff;
-  transition: .2s;
+  color: var(--mei-orange-soft);
 }
 
 body.dark .links a:hover {
-  color: var(--color-text-dartmode);
+  color: var(--mei-orange);
 }
 
 .entrar {
-  border-radius: 20px;
+  width: min(430px, 82vw);
+  height: 46px;
+  margin-top: var(--space-sm);
   border: none;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 5px;
-  transition: .5s;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--mei-ink);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--motion-fast), background var(--motion-base), color var(--motion-base);
 }
 
 .entrar:hover {
-  background-color: var(--color-white);
+  background: var(--mei-orange-deep);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
-.entrar h2:hover {
-  color: #000;
-}
-
-body.dark .entrar:hover {
-  background-color: var(--color-text-dartmode);
-}
-
-.entrar a {
-  text-decoration: none;
-  color: var(--color-black);
-  font-size: 10px;
+.entrar h2 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: .98rem;
+  font-weight: 800;
+  color: inherit;
+  line-height: 1;
 }

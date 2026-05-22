@@ -1,37 +1,45 @@
-/* DARK MODE BODY */
+/* =====================================================================
+   Home · Tema escuro (tons quentes da marca)
+   ===================================================================== */
 body.dark {
-  background: linear-gradient(
-      90deg,
-      rgba(2,0,36,1) 0%,
-      rgba(0,0,64,1) 35%,
-      rgba(0,18,23,1) 1000%
-  );
-  color: white;
+  background:
+    radial-gradient(1000px 500px at 10% 0%, rgba(245,138,61,.12), transparent 60%),
+    #1E1410;
+  color: var(--mei-cream);
 }
 
-/* NAVBAR */
+body.dark .navbar {
+  background: #2A1E17;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+
 body.dark .navbar .nav-link,
 body.dark .navbar .navbar-brand {
-  color: white !important;
+  color: var(--mei-cream) !important;
 }
 
-/* TEXTOS */
+body.dark .navbar .nav-link:hover {
+  color: var(--mei-orange-soft) !important;
+}
+
 body.dark h1,
 body.dark h2,
 body.dark h3,
 body.dark p,
 body.dark span,
 body.dark strong {
-  color: white;
+  color: var(--mei-cream);
 }
 
-/* BOTÕES */
 body.dark .button_home {
-  background-color: #fa7f2f;
-  color: white;
+  background: var(--mei-orange);
+  color: #fff;
 }
 
-/* HOVER */
-body.dark .nav-link:hover {
-  color: #fa7f2f !important;
+body.dark .user_name {
+  color: var(--mei-orange-soft) !important;
+}
+
+body.dark .banner-img {
+  box-shadow: 0 16px 28px rgba(0,0,0,.34);
 }

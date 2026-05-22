@@ -1,22 +1,45 @@
+/* =====================================================================
+   Cadastro · Tema escuro
+   1) Classe `.dark` (manual)  2) Preferência do sistema (automático).
+   ===================================================================== */
+body.dark {
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(245,138,61,.14), transparent 60%),
+    var(--color-background);
+}
+
+body.dark .box-pai {
+  background: linear-gradient(160deg, #3A2418 0%, #2A1E17 100%);
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+body.dark .box-pai input {
+  background: #FBE8D6;
+  color: var(--mei-ink);
+}
+
+body.dark .voltar {
+  color: var(--mei-orange-soft);
+}
+
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #020024;
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(0, 0, 64, 1) 35%,
-      rgba(0, 18, 23, 1) 100%
-    );
+  body:not(.force-light) {
+    background:
+      radial-gradient(1200px 600px at 20% 0%, rgba(245,138,61,.14), transparent 60%),
+      var(--color-background);
   }
 
-  .box-pai {
-    background: #302f2f;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  body:not(.force-light) .box-pai {
+    background: linear-gradient(160deg, #3A2418 0%, #2A1E17 100%);
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
   }
 
-  .voltar {
-    color: var(--color-text-white);
-    text-decoration: none;
-    cursor: pointer;
+  body:not(.force-light) .box-pai input {
+    background: #FBE8D6;
+    color: var(--mei-ink);
+  }
+
+  body:not(.force-light) .voltar {
+    color: var(--mei-orange-soft);
   }
 }

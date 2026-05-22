@@ -1,4 +1,8 @@
-@import url('./Partials/Animacoes.css');
+/* =====================================================================
+   Cadastro · Entry Point
+   Ordem: estrutura da página -> interações -> tema.
+   ===================================================================== */
+@import url('../../global/Global.css');
 @import url('./Partials/Corpo.css');
+@import url('./Partials/Animacoes.css');
 @import url('./Partials/Mode.css');
-@import url('../../../Global/Global.css');

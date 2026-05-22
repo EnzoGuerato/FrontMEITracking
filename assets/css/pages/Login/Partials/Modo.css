@@ -1,50 +1,55 @@
+/* =====================================================================
+   Login · Switch de tema
+   ===================================================================== */
+.pai-box {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  padding: var(--space-xs);
+}
+
 .trilho {
-  width: 80.5px;
-  height: 30.5px;
-  background-color: #4d4d4d;
-  border-radius: 150px;
+  width: 70px;
+  height: 30px;
   position: relative;
-  cursor: pointer;
   display: flex;
-  justify-content: center;
   align-items: center;
+  border-radius: var(--radius-pill);
+  background-color: var(--mei-ink);
+  transition: background-color var(--motion-slow);
 }
 
 .trilho .indicador {
-  width: 30px;
-  height: 30px;
-  background-color: #000;
-  border-radius: 50%;
-  transform: scale(0.9);
   position: absolute;
-  left: 5px;
-  transition: 0.5s;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--mei-orange);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  transition: left var(--motion-slow), background-color var(--motion-slow);
 }
 
 .img-lua {
-  width: 33px;
-  height: 33px;
+  width: 18px;
+  height: 18px;
 }
 
-/* Alterações visuais quando a classe .dark é ativada via JS */
 .trilho.dark {
-  background-color: #c3c3c3;
-}
-
-body.dark {
-  background: #020024;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(0, 0, 64, 1) 35%,
-    rgba(0, 18, 23, 1) 100%
-  );
+  background-color: var(--mei-cream);
 }
 
 .trilho.dark .indicador {
-  left: 45px;
-  background-color: #fff;
+  left: 42px;
+  background-color: var(--mei-orange-deep);
+}
+
+body.dark {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(245,138,61,.15), transparent 60%),
+    var(--color-background);
 }

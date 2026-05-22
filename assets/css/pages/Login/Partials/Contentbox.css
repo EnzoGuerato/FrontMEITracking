@@ -1,33 +1,40 @@
+/* =====================================================================
+   Login · Conteúdo do formulário
+   ===================================================================== */
 .box-input {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-top: 4vh;
-  gap: 1vh;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
 }
 
 .box-input h1 {
-  display: flex;
-  justify-content: center;
-  font-family: "Rammetto One", sans-serif;
-  padding: 20px;
-  font-size: 40px;
-  color: white;
-  transform-style: .3s;
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  color: #fff;
+  margin-bottom: var(--space-xs);
+  text-shadow: 0 2px 0 rgba(0,0,0,.08);
 }
 
 .box-input input {
-  padding: 10px;
-  width: 40vh;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--color-black);
+  width: min(430px, 82vw);
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--mei-ink);
+  padding: 0 var(--space-md);
   outline: none;
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.box-input input::placeholder {
+  color: var(--mei-muted);
+}
+
+.box-input input:focus {
+  border-color: var(--mei-orange-deep);
+  box-shadow: 0 0 0 4px rgba(255,179,122,.45);
 }

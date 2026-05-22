@@ -1,9 +1,17 @@
-#aviso {
-  color: rgb(255, 255, 255);
+/* =====================================================================
+   Login · Mensagens de erro/validação
+   ===================================================================== */
+#aviso,
+#avisosenha {
+  width: min(430px, 82vw);
+  color: #FFE9D6;
   font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  margin-top: -4px;
 }
 
-#avisosenha {
-  color: rgb(255, 255, 255);
-  font-size: 13px;
+body.dark #aviso,
+body.dark #avisosenha {
+  color: var(--mei-orange-soft);
 }

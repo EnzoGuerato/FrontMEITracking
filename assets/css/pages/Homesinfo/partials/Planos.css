@@ -1,117 +1,137 @@
-/* PLANOS VIP */
+/* =====================================================================
+   Homesinfo · Seção de planos premium
+   ===================================================================== */
 .plansSection {
   padding: 100px 80px;
-  background: rgba(0, 0, 0, 0);
+  background: linear-gradient(180deg, var(--mei-cream-2) 0%, var(--mei-cream) 100%);
 }
 
-/* TÍTULO */
 .plansSection h2 {
   text-align: center;
-  font-size: 45px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--mei-ink);
   margin-bottom: 40px;
 }
 
-/* CONTÊINER DO TOGGLE */
 .toggleContainer {
-  width: 250px;
-  margin: auto;
-  background: #1f1f1f;
-  border-radius: 50px;
-  padding: 5px;
+  width: 280px;
+  margin: 0 auto 60px;
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  padding: 6px;
   display: flex;
-  margin-bottom: 60px;
+  box-shadow: var(--shadow-sm);
 }
 
-/* BOTÕES DO TOGGLE */
 .toggleContainer button {
   flex: 1;
   border: none;
-  padding: 15px;
-  border-radius: 50px;
-  cursor: pointer;
+  padding: 12px;
+  border-radius: var(--radius-pill);
   background: transparent;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
+  color: var(--mei-ink-soft);
+  font-weight: 700;
+  transition: background var(--motion-base), color var(--motion-base);
 }
 
-/* PLANO SELECIONADO */
 .activePlan {
-  background: #ff7b00 !important;
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep)) !important;
+  color: #fff !important;
 }
 
-/* CONTAINER DOS PLANS */
 .plansContainer {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
-/* CARD DE PLANO INDIVIDUAL */
 .planCard {
   width: 320px;
-  background: #1b1b1b;
-  border-radius: 20px;
-  padding: 40px;
-  transition: 0.3s;
+  min-height: 540px;
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  min-height: 550px;
+  transition: transform var(--motion-base), box-shadow var(--motion-base);
 }
 
-/* CARD EM DESTAQUE (Vantajoso) */
-.featured {
-  border: 2px solid #ff7b00;
-  transform: scale(1.05);
-}
-
-/* HOVER DO CARD DE PLANO */
 .planCard:hover {
   transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
 }
 
-/* PREÇO */
+.featured {
+  border: 2px solid var(--mei-orange);
+  transform: scale(1.04);
+  background: linear-gradient(180deg, #fff 0%, var(--mei-cream-2) 100%);
+}
+
 .planCard h1 {
-  color: #ff7b00;
-  font-size: 50px;
-  margin: 20px 0;
+  color: var(--mei-orange-deep);
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  margin: 16px 0;
 }
 
-/* ETIQUETA ANUAL */
 .badge-anual {
-  color: #ff7b00;
-  padding: 4px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-block;
+  align-self: flex-start;
+  background: var(--mei-orange-glow);
+  color: var(--mei-orange-deep);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: .8rem;
   margin-bottom: 10px;
 }
 
-/* TEXTOS E LISTAS INTERNAS */
 .planCard p {
-  color: #bcbcbc;
-  margin-bottom: 30px;
+  color: var(--mei-muted);
+  margin-bottom: 24px;
 }
 
 .planCard ul {
   list-style: none;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .planCard li {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  color: var(--mei-ink-soft);
 }
 
-/* BOTÃO DE SUBMISSÃO DO CARD */
 .planCard button {
   width: 100%;
-  padding: 16px;
+  margin-top: auto;
+  padding: 14px;
   border: none;
-  border-radius: 8px;
-  background: #ff7b00;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: auto; /* Alinha o botão sempre no rodapé do card */
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  font-weight: 700;
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.planCard button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .plansSection {
+    padding: 64px 16px;
+  }
+
+  .featured {
+    transform: scale(1);
+  }
+
+  .planCard {
+    width: 100%;
+    max-width: 360px;
+    min-height: auto;
+  }
 }

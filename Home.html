@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/pages/Home/Home.css">
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="../home/info/homeInfo.css">
+    <link rel="stylesheet" href="./assets/css/pages/Planos/Planos.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Home</title>
 </head>
@@ -47,7 +47,7 @@
   <!--Fim Carrossel-->
 
     <!--Feed-->
-      <div style="padding: 2vh;">
+      <div style="padding: 2v;">
 
       <!--Perfil-->
         <div class="Profile">
@@ -68,19 +68,22 @@
             Escolha seu Plano Premium
         </h2>
 
-        <!-- Alternador -->
-        <div class="toggleContainer">
+        <div style="    display: flex;
+        justify-content: center;">
+            <!-- Alternador -->
+            <div class="toggleContainer">
 
-            <!-- Mensal -->
-            <button id="monthlyBtn" class="activePlan">
-                Mensal
-            </button>
+                <!-- Mensal -->
+                <button id="monthlyBtn" class="activePlan">
+                    Mensal
+                </button>
 
-            <!-- Anual -->
-            <button id="yearlyBtn">
-                Anual
-            </button>
+                <!-- Anual -->
+                <button id="yearlyBtn">
+                    Anual
+                </button>
 
+            </div>
         </div>
 
         <!-- Cards -->
@@ -156,7 +159,7 @@
       <div style=" display: flex; justify-content: center; align-items: center;">
         <div style="display: flex;" class="buttons">
           <button class="button_home"><strong>Ver Planos</strong></button>
-          <button class="button_home" style="margin-left: 5vh;"><strong>Teste Gratuito</strong></button>
+          <button class="button_home"><strong>Teste Gratuito</strong></button>
         </div>
       </div>
 

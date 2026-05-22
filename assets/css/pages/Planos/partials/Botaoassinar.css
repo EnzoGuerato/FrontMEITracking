@@ -1,18 +1,23 @@
-/* Botão Assinar */
+/* =====================================================================
+   Planos · Botões de assinatura
+   ===================================================================== */
+.planCard button,
 .subscribe-btn {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 12px;
-    background: var(--primary);
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
+  width: 100%;
+  margin-top: auto;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform var(--motion-fast), box-shadow var(--motion-base), letter-spacing var(--motion-base);
 }
 
+.planCard button:hover,
 .subscribe-btn:hover {
-    background: var(--primary-hover);
-    letter-spacing: 1px;
+  transform: translateY(-2px);
+  letter-spacing: .6px;
+  box-shadow: 0 14px 30px rgba(230,106,31,.35);
 }

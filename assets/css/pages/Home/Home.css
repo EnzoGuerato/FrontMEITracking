@@ -1,4 +1,105 @@
-@import url(./partials/ADPcores.css);
-@import url(./partials/Botaoaviso.css);
-@import url(./partials/Cartaoperfil.css);
-@import url(./partials/Responsividade.css);
+/* =====================================================================
+   Home · Entry Point
+   ===================================================================== */
+@import url('../../global/Global.css');
+@import url('./partials/ADPcores.css');
+@import url('./partials/Botaoaviso.css');
+@import url('./partials/Cartaoperfil.css');
+@import url('./partials/Responsividade.css');
+
+/* =====================================================================
+   Home · Base da página
+   ===================================================================== */
+body {
+  background:
+    radial-gradient(960px 500px at 100% 0%, rgba(245,138,61,.18), transparent 62%),
+    radial-gradient(820px 420px at 0% 100%, rgba(255,179,122,.2), transparent 60%),
+    var(--color-background);
+}
+
+/* =====================================================================
+   Home · Navbar (integração com Bootstrap)
+   ===================================================================== */
+.navbar {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: 12px var(--space-lg);
+}
+
+.navbar .container-fluid {
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.navbar .navbar-brand img {
+  transition: transform var(--motion-base);
+}
+
+.navbar .navbar-brand:hover img {
+  transform: rotate(-4deg) scale(1.05);
+}
+
+.navbar .nav-link {
+  color: var(--mei-ink) !important;
+  font-weight: 700;
+  position: relative;
+  padding: 8px 14px !important;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--mei-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-base);
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.navbar .nav-link.active {
+  color: var(--mei-orange-deep) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--color-border);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(245,138,61,.25);
+}
+
+/* =====================================================================
+   Home · Blocos de conteúdo
+   ===================================================================== */
+.banner-img {
+  width: min(var(--container-lg), 96vw) !important;
+  max-height: clamp(180px, 42vh, 460px);
+  margin: var(--space-lg) auto 0;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+.Profile {
+  max-width: var(--container-lg);
+  margin: var(--space-xl) auto var(--space-lg);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.button_home strong {
+  font: inherit;
+}

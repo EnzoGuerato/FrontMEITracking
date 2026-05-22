@@ -1,37 +1,53 @@
-.button_home {
-  padding: 2vh; 
-  border-radius: 5vh; 
-  border: 0; 
-  background-color: #fa7f2f; 
-  color: white; 
-  font-size: 20px;
+/* =====================================================================
+   Home · Card de perfil do usuário
+   ===================================================================== */
+.Profile {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(20px, 4vw, 32px);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin: 24px;
 }
 
 .profile_img {
-  width: 200px; 
-  margin-right: 5vh; 
-  border-radius: 100%;
-}
-
-.Profile {
-  display: flex; 
-  align-items: center;
-}
-
-.user_name {
-  color: #fa7f2f; 
-  font-size: 8vh;
+  width: clamp(120px, 20vw, 180px);
+  height: clamp(120px, 20vw, 180px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--mei-orange);
+  box-shadow: var(--shadow-md);
 }
 
 .ola {
-  font-size: 5vh;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  color: var(--color-text-soft);
 }
 
 .user_name {
-  color: #fa7f2f !important; /* Força a cor laranja sobre outras regras */
+  font-family: var(--font-display);
+  color: var(--mei-orange-deep) !important;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
 }
 
-.banner-img {
-  width: 100%;
-  height: auto;
+.button_home {
+  padding: 14px 28px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.button_home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(230,106,31,.35);
 }

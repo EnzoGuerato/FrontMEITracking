@@ -1,16 +1,74 @@
-/* Dark Mode do Navegador */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-    }
-    .plansSection h2 {
-        color: white;
-    }
+/* =====================================================================
+   Planos · Responsividade
+   ===================================================================== */
+@media (max-width: 1024px) {
+  .pai-planos {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Adaptação para Telas Menores */
 @media (max-width: 768px) {
-    .featured {
-        transform: scale(1);
-    }
+  .pai-planos {
+    padding: 56px 16px;
+    gap: var(--space-lg);
+  }
+
+  .plansSection {
+    padding: 60px 16px;
+  }
+
+  .featured,
+  .planCard.featured {
+    transform: scale(1);
+  }
+
+  .planCard {
+    width: 100%;
+    max-width: 360px;
+    min-height: auto;
+  }
+
+  .mei-premium,
+  .mega-mei-premium {
+    padding: 24px;
+  }
+
+  .valor {
+    font-size: 2.4rem;
+  }
+}
+
+/* =====================================================================
+   Planos · Tema escuro (manual e automático)
+   ===================================================================== */
+body.dark .planCard,
+body.dark .mega-mei-premium,
+body.dark .texto-informativo {
+  background: #2A1E17;
+  color: var(--mei-cream);
+  border-color: #4A3326;
+}
+
+body.dark .planCard p,
+body.dark .planCard li,
+body.dark .planCard h3,
+body.dark .texto-informativo p {
+  color: var(--mei-orange-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.force-light) .planCard,
+  body:not(.force-light) .mega-mei-premium,
+  body:not(.force-light) .texto-informativo {
+    background: #2A1E17;
+    color: var(--mei-cream);
+    border-color: #4A3326;
+  }
+
+  body:not(.force-light) .planCard p,
+  body:not(.force-light) .planCard li,
+  body:not(.force-light) .planCard h3,
+  body:not(.force-light) .texto-informativo p {
+    color: var(--mei-orange-soft);
+  }
 }

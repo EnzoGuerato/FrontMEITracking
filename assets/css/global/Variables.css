@@ -1,6 +1,102 @@
+/* =====================================================================
+   MEI TRACK · Design Tokens Globais
+   Sistema visual unificado para todas as páginas (base: Homesinfo).
+   ===================================================================== */
 :root {
-  --color-background-white: #f0f0f0be;
-  --color-box-white: #fd5c63;
-  --color-text-white: #fff;
-  --color-text-black: #000;
+  /* 1) Paleta principal da marca */
+  --mei-orange:        #F58A3D;
+  --mei-orange-deep:   #E66A1F;
+  --mei-orange-soft:   #FFB37A;
+  --mei-orange-glow:   #FFD9B8;
+
+  /* 2) Neutros quentes */
+  --mei-cream:         #FFF7EE;
+  --mei-cream-2:       #FDEFE0;
+  --mei-paper:         #FFFFFF;
+  --mei-line:          #F0DCC6;
+
+  /* 3) Escala de texto */
+  --mei-ink:           #3D2418;
+  --mei-ink-soft:      #6B4A38;
+  --mei-muted:         #9C7E6C;
+
+  /* 4) Estados e feedback */
+  --mei-success:       #6BA368;
+  --mei-danger:        #E0524B;
+  --mei-warning:       #D08A33;
+
+  /* 5) Tokens semânticos (tema claro) */
+  --color-background:        var(--mei-cream);
+  --color-surface:           var(--mei-paper);
+  --color-surface-alt:       var(--mei-cream-2);
+  --color-border:            var(--mei-line);
+  --color-primary:           var(--mei-orange);
+  --color-primary-hover:     var(--mei-orange-deep);
+  --color-primary-contrast:  #ffffff;
+  --color-text:              var(--mei-ink);
+  --color-text-soft:         var(--mei-ink-soft);
+  --color-text-muted:        var(--mei-muted);
+
+  /* 6) Compatibilidade com variáveis legadas do projeto */
+  --color-background-white:  var(--mei-cream);
+  --color-box-white:         var(--mei-orange);
+  --color-text-white:        #ffffff;
+  --color-text-black:        var(--mei-ink);
+  --color-white:             #ffffff;
+  --color-black:             var(--mei-ink);
+  --color-text-dartmode:     var(--mei-orange-soft);
+  --primary:                 var(--mei-orange);
+  --primary-hover:           var(--mei-orange-deep);
+  --bg-dark:                 #2A1E17;
+  --text-main:               #ffffff;
+  --text-muted:              var(--mei-muted);
+
+  /* 7) Tipografia */
+  --font-display:            "Rammetto One", "Baloo 2", system-ui, sans-serif;
+  --font-body:               "Nunito", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* 8) Elevação e cantos */
+  --shadow-sm:               0 2px 6px rgba(61, 36, 24, 0.08);
+  --shadow-md:               0 10px 25px rgba(230, 106, 31, 0.18);
+  --shadow-lg:               0 20px 45px rgba(61, 36, 24, 0.18);
+  --radius-sm:               8px;
+  --radius-md:               14px;
+  --radius-lg:               22px;
+  --radius-pill:             999px;
+
+  /* 9) Escala de layout */
+  --space-2xs:               4px;
+  --space-xs:                8px;
+  --space-sm:                12px;
+  --space-md:                16px;
+  --space-lg:                24px;
+  --space-xl:                32px;
+  --space-2xl:               48px;
+  --space-3xl:               64px;
+  --container-sm:            720px;
+  --container-md:            960px;
+  --container-lg:            1200px;
+
+  /* 10) Movimento */
+  --motion-fast:             .2s ease;
+  --motion-base:             .3s ease;
+  --motion-slow:             .45s ease;
+}
+
+/* =====================================================================
+   Tema escuro coeso com a marca (warm dark).
+   Aplicável com classe `.dark` no body ou em contêiner raiz.
+   ===================================================================== */
+body.dark,
+.dark {
+  --color-background:       #1E1410;
+  --color-surface:          #2A1E17;
+  --color-surface-alt:      #36261C;
+  --color-border:           #4A3326;
+  --color-text:             #FBE8D6;
+  --color-text-soft:        #E7CBB1;
+  --color-text-muted:       #B89A82;
+  --color-primary:          var(--mei-orange-soft);
+  --color-primary-hover:    var(--mei-orange);
+  --color-primary-contrast: #1E1410;
 }

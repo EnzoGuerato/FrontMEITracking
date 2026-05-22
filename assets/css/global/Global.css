@@ -1,3 +1,7 @@
+/* =====================================================================
+   Entry Point · Design System Mei Track
+   Ordem: Tokens -> Tipografia -> Reset/Base.
+   ===================================================================== */
+@import url(Variables.css);
 @import url(Fonts.css);
 @import url(Normalize.css);
-@import url(Variables.css);

@@ -1,29 +1,29 @@
+/* =====================================================================
+   Cadastro · Botão principal e microinterações
+   ===================================================================== */
 .cadastrar-se {
-  border-radius: 20px;
-  border: none;
-  width: 30vh;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  top: 5px;
-  background-color: #f5f5f5;
-  cursor: pointer;
   overflow: hidden;
+  width: min(430px, 82vw);
+  height: 48px;
+  margin-top: var(--space-xs);
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: #fff;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cadastrar-se::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #e45a0a;
+  inset: 0;
+  background: linear-gradient(90deg, var(--mei-orange-deep), #B84A0F);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 1s ease;
+  transition: transform var(--motion-slow);
   z-index: 0;
 }
 
@@ -32,18 +32,20 @@
 }
 
 .cadastrar-se h2 {
-  color: var(--color-text-black);
   position: relative;
   z-index: 1;
-  transition: .5s;
+  font-family: var(--font-display);
+  font-size: .95rem;
+  color: var(--mei-ink);
+  transition: color var(--motion-base);
 }
 
 .cadastrar-se:hover h2 {
-  color: white;
+  color: #fff;
 }
 
-.cadastrar-se a {
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
+@media (prefers-reduced-motion: reduce) {
+  .cadastrar-se::before {
+    transition-duration: .01ms;
+  }
 }
