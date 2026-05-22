@@ -6,7 +6,7 @@
   align-items: flex-start;
   gap: 20px;
   border: 2px solid var(--mei-orange);
-  background: linear-gradient(180deg, #fff 0%, var(--mei-cream-2) 100%);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
 }
 
 .plan-badge {
@@ -28,7 +28,7 @@
 .plan-name {
   font-family: var(--font-display);
   font-size: 1.6rem;
-  color: var(--mei-ink);
+  color: var(--color-text);
   margin-bottom: 6px;
 }
 
@@ -42,7 +42,7 @@
 .plan-price span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--mei-muted);
+  color: var(--color-text-muted);
 }
 
 .plan-features {
@@ -53,7 +53,7 @@
 }
 
 .plan-features li {
-  color: var(--mei-ink-soft);
+  color: var(--color-text-soft);
   font-size: 0.9rem;
 }
 
@@ -65,7 +65,7 @@
   align-items: center;
   gap: 12px;
   padding-top: 8px;
-  border-top: 1px solid var(--mei-line);
+  border-top: 1px solid var(--color-border);
 }
 
 .btn-plan {
@@ -108,7 +108,7 @@
 
 .plan-actions__note {
   font-size: 0.8rem;
-  color: var(--mei-muted);
+  color: var(--color-text-muted);
   margin-left: auto;
   font-style: italic;
 }
@@ -123,10 +123,18 @@ body.dark .plan-name {
   color: var(--color-text);
 }
 
+body.dark .plan-price {
+  color: var(--mei-orange-soft);
+}
+
 body.dark .plan-features li {
   color: var(--color-text-soft);
 }
 
 body.dark .plan-actions {
   border-color: var(--color-border);
+}
+
+body.dark .plan-actions__note {
+  color: var(--color-text-muted);
 }

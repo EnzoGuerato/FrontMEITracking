@@ -32,6 +32,8 @@ body {
 }
 
 .navbar .navbar-brand img {
+  height: 44px;
+  width: auto;
   transition: transform var(--motion-base);
 }
 
