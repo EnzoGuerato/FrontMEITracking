@@ -1,39 +1,177 @@
-body{
-    background: linear-gradient(
-        90deg,
-        rgba(2,0,36,1) 0%,
-        rgba(0,0,64,1) 35%,
-        rgba(0,18,23,1) 1000%)
+/* =====================================================================
+   Recsenha · Estrutura da página
+   ===================================================================== */
+body {
+  display: grid;
+  place-items: center;
+  padding: clamp(72px, 12vh, 110px) var(--space-md) var(--space-2xl);
+  background:
+    radial-gradient(920px 480px at 100% -10%, rgba(245,138,61,.2), transparent 62%),
+    radial-gradient(760px 420px at 0% 100%, rgba(255,179,122,.2), transparent 60%),
+    var(--color-background);
 }
 
 .container-pai {
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    height: 100vh;           
+  display: grid;
+  place-items: center;
+  width: 100%;
 }
 
+/* =====================================================================
+   Recsenha · Logo escrita (acima da box)
+   ===================================================================== */
+#img-escrito {
+  width: clamp(180px, 24vw, 250px);
+  height: auto;
+  margin-bottom: var(--space-sm);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.15));
+}
+
+/* =====================================================================
+   Recsenha · Caixa principal
+   ===================================================================== */
 .box-recsenha {
-    background-color: red;
-    width: 40vw;
-    height: 20vw;
-    display: flex;
-    flex-direction: column;
-    align-items:baseline;
-    justify-content: center;
-    position: relative;
+  position: relative;
+  width: min(840px, 94vw);
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--mei-orange) 0%, var(--mei-orange-deep) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  box-shadow: var(--shadow-lg);
+  transition: background var(--motion-slow), box-shadow var(--motion-slow);
 }
 
-.box-recsenha #text{
-    position: relative;
-    left: 10vw;
+.conteudo-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.box-recsenha input{
-    width: 20vw;
-    height: 1vw;
+body.dark .box-recsenha {
+  background: linear-gradient(160deg, #3A2418 0%, #2A1E17 100%);
+  box-shadow: 0 20px 50px rgba(0,0,0,.55);
 }
 
-.box-recsenha p{
-    font-family: Arial, Helvetica, sans-serif;
+.meizinho-joia {
+  position: absolute;
+  left: -90px;
+  top: -50px;
+  height: 200px;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.18));
+}
+
+/* =====================================================================
+   Recsenha · Conteúdo do formulário
+   ===================================================================== */
+.box-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.box-input h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  color: #fff;
+  margin-bottom: var(--space-xs);
+  text-shadow: 0 2px 0 rgba(0,0,0,.08);
+}
+
+.box-input label {
+  width: min(430px, 82vw);
+  color: #FFE9D6;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.box-input input {
+  width: min(430px, 82vw);
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--mei-ink);
+  padding: 0 var(--space-md);
+  outline: none;
+  font-family: var(--font-body);
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.box-input input::placeholder {
+  color: var(--mei-muted);
+}
+
+.box-input input:focus {
+  border-color: var(--mei-orange-deep);
+  box-shadow: 0 0 0 4px rgba(255,179,122,.45);
+}
+
+/* =====================================================================
+   Recsenha · Botão de envio
+   ===================================================================== */
+.box-input button[type="submit"] {
+  width: min(430px, 82vw);
+  height: 46px;
+  margin-top: var(--space-xs);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--mei-ink);
+  font-family: var(--font-body);
+  font-size: .98rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--motion-fast), background var(--motion-base), color var(--motion-base);
+}
+
+.box-input button[type="submit"]:hover {
+  background: var(--mei-orange-deep);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =====================================================================
+   Recsenha · Mensagem de resultado
+   ===================================================================== */
+#result {
+  width: min(430px, 82vw);
+  color: #FFE9D6;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  margin-top: -4px;
+  font-family: var(--font-body);
+}
+
+body.dark #result {
+  color: var(--mei-orange-soft);
+}
+
+/* =====================================================================
+   Recsenha · Responsividade
+   ===================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 88px;
+  }
+
+  .box-recsenha {
+    border-radius: var(--radius-md);
+  }
+
+  .meizinho-joia {
+    position: static;
+    height: 140px;
+    transform: none;
+    margin: 0 auto var(--space-sm);
+  }
 }

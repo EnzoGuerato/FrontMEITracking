@@ -38,6 +38,7 @@ body.dark .links a:hover {
   background: #fff;
   color: var(--mei-ink);
   box-shadow: var(--shadow-sm);
+  cursor: pointer;
   transition: transform var(--motion-fast), background var(--motion-base), color var(--motion-base);
 }
 

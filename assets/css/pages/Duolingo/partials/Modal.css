@@ -1,0 +1,154 @@
+/* =====================================================================
+   Duolingo · Modal de lição interativa
+   ===================================================================== */
+.container-licao {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--duo-surface);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho-licao {
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.botao-fechar {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.barra-progresso-licao {
+  flex: 1;
+  background-color: var(--duo-border);
+  height: 16px;
+  border-radius: 99px;
+  overflow: hidden;
+  transition: background-color var(--motion-base);
+}
+
+body.modo-escuro .barra-progresso-licao {
+  background-color: var(--duo-surface-alt);
+}
+
+.preenchimento-progresso {
+  background-color: var(--duo-verde);
+  height: 100%;
+  width: 0%;
+  border-radius: 99px;
+  transition: width .2s ease;
+}
+
+.vidas-licao {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.corpo-licao {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.corpo-licao h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.grade-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.botao-opcao {
+  background: var(--duo-surface);
+  border: 2px solid var(--duo-border);
+  border-bottom: 4px solid var(--duo-border);
+  border-radius: var(--duo-radius);
+  padding: 14px 20px;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--duo-text);
+  cursor: pointer;
+  transition: background var(--motion-fast), border-color var(--motion-fast);
+}
+
+.botao-opcao:hover {
+  background-color: var(--duo-surface-alt);
+}
+
+.botao-opcao.selecionado {
+  background-color: #ddf4ff !important;
+  border-color: #84d8ff !important;
+  color: var(--duo-azul) !important;
+}
+
+body.modo-escuro .botao-opcao.selecionado {
+  background-color: #183446 !important;
+  border-color: var(--duo-azul) !important;
+}
+
+.rodape-licao {
+  border-top: 2px solid var(--duo-border);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  transition: border-color var(--motion-base);
+}
+
+.mensagem-feedback {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.mensagem-feedback.correto { color: var(--duo-verde); }
+.mensagem-feedback.errado  { color: var(--duo-perigo); }
+
+.botao-verificar {
+  background-color: var(--duo-verde);
+  border: none;
+  border-bottom: 4px solid var(--duo-verde-borda);
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: var(--duo-radius);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.botao-verificar:disabled {
+  background-color: var(--duo-border) !important;
+  border-bottom-color: #cccccc !important;
+  color: var(--duo-muted) !important;
+  cursor: not-allowed;
+}
+
+body.modo-escuro .botao-verificar:disabled {
+  background-color: var(--duo-surface-alt) !important;
+  border-bottom-color: var(--duo-bg) !important;
+  color: #4b4b4b !important;
+}

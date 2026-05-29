@@ -1,21 +1,35 @@
 /* =====================================================================
    Login · Estrutura da página
    ===================================================================== */
-body {
-  display: grid;
-  place-items: center;
-  padding: clamp(72px, 12vh, 110px) var(--space-md) var(--space-2xl);
-  background:
-    radial-gradient(920px 480px at 100% -10%, rgba(245,138,61,.2), transparent 62%),
-    radial-gradient(760px 420px at 0% 100%, rgba(255,179,122,.2), transparent 60%),
-    var(--color-background);
-}
+   body {
+    margin: 0; /* Remove margens invisíveis do navegador */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;     /* Centraliza horizontalmente */
+    min-height: 100vh;
+    
+    /* Reduzimos o padding para não empurrar a caixa para baixo em telas menores */
+    padding: var(--space-md); 
+    
+    background:
+      radial-gradient(920px 480px at 100% -10%, rgba(245,138,61,.2), transparent 62%),
+      radial-gradient(760px 420px at 0% 100%, rgba(255,179,122,.2), transparent 60%),
+      var(--color-background);
+  }
 
 #img-escrito {
   width: clamp(180px, 24vw, 250px);
   height: auto;
   margin-bottom: var(--space-sm);
   filter: drop-shadow(0 4px 10px rgba(0,0,0,.15));
+}
+
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .box-login {
@@ -28,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
   box-shadow: var(--shadow-lg);
   transition: background var(--motion-slow), box-shadow var(--motion-slow);
 }

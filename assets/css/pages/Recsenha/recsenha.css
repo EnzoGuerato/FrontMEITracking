@@ -1,1 +1,6 @@
-@import url(./Partials/boxrec.css);
+/* =====================================================================
+   Recsenha · Entry Point
+   Ordem: estrutura -> conteúdo -> links/botões -> mensagens.
+   ===================================================================== */
+@import url('../../global/Global.css');
+@import url('./Partials/boxrec.css');

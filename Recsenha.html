@@ -2,22 +2,34 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/pages/Recsenha/recsenha.css">
-    <title>REcuperar senha</title>
+    <title>Recuperar Senha · MEI Track</title>
+    <script src="./assets/js/global/Preferencias.js" defer></script>
 </head>
 <body>
+
+    <img id="img-escrito" src="duolingo/logo meizinho/meizinhoescrito.png" alt="Logo MEI Track" />
+
     <div class="container-pai">
         <div class="box-recsenha">
-            <h1>Recuperar-senha</h1>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required placeholder="Email">
-            <button type="submit">Enviar</button> 
-            
-            <div id="result"></div>
+            <img class="meizinho-joia" src="duolingo/logo meizinho/Meizinhodandojoia.png" alt="Meizinho dando um joia" />
+            <div class="conteudo-box">
+                <div class="box-input">
+                    <h1>Recuperar Senha</h1>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+
+                    <button type="submit">Enviar</button>
+
+                    <div id="result"></div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <script src="./assets/js/Pages/Recsenha/recsenha.js"></script>
+
+    <script src="./assets/js/pages/Recsenha/Partials/recsenha.js"></script>
 </body>
 </html>
