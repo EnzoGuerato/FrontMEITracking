@@ -27,6 +27,7 @@
      Aplica/remove a classe .dark no <body> e salva no localStorage.
   ================================================================ */
   function applyDark(isDark) {
+    document.documentElement.classList.toggle('dark', isDark);
     document.body.classList.toggle('dark', isDark);
     if (darkToggle) darkToggle.checked = isDark;
     localStorage.setItem(KEY_DARK, isDark ? '1' : '0');

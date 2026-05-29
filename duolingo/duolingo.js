@@ -12,6 +12,8 @@ let estadoApp = {
   rankingInvertido: false,
   tamanhoFonte: "normal" // Opções: normal, grande, gigante
 };
+const KEY_DARK_MODE = "meitrack_dark_mode";
+const LEGACY_KEY_DARK_MODE = "modo_escuro";
 
 const bancoLicoesExpandido = {
   1: { 
@@ -376,7 +378,17 @@ btnCheatOfensiva.addEventListener("click", () => { estadoApp.ofensiva++; atualiz
 btnCheatM1.addEventListener("click", () => { estadoApp.progressoM1 = 3; atualizarInterface(); });
 
 const btnAlternarTema = document.getElementById("btn-alternar-tema");
-btnAlternarTema.addEventListener("click", () => { document.body.classList.toggle("modo-escuro"); localStorage.setItem("modo_escuro", document.body.classList.contains("modo-escuro")); });
+function aplicarModoEscuro(ativo) {
+  document.documentElement.classList.toggle("dark", ativo);
+  document.body.classList.toggle("dark", ativo);
+  document.body.classList.toggle("modo-escuro", ativo);
+  localStorage.setItem(KEY_DARK_MODE, ativo ? "1" : "0");
+  localStorage.setItem(LEGACY_KEY_DARK_MODE, String(ativo));
+}
+
+btnAlternarTema.addEventListener("click", () => {
+  aplicarModoEscuro(!document.body.classList.contains("modo-escuro"));
+});
 
 // Lógica para alternar o tamanho da fonte (Normal -> Grande -> Gigante -> Normal)
 btnTamanhoFonte.addEventListener("click", () => {
@@ -393,7 +405,8 @@ btnTamanhoFonte.addEventListener("click", () => {
 (function() {
   const salvos = localStorage.getItem("estado_meizinho_v3");
   if (salvos) estadoApp = JSON.parse(salvos);
-  if(localStorage.getItem("modo_escuro") === "true") document.body.classList.add("modo-escuro");
+  const temaEscuroAtivo = localStorage.getItem(KEY_DARK_MODE) === "1" || localStorage.getItem(LEGACY_KEY_DARK_MODE) === "true";
+  aplicarModoEscuro(temaEscuroAtivo);
   verificarSincroniaOfensiva();
   atualizarInterface();
 })();
