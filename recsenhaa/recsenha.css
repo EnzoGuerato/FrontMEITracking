@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-pai {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.box-recsenha {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.box-recsenha h1 {
+    color: #1a1a1a;
+    font-size: 26px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+form label {
+    color: #4a5568;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+form input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 24px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2d3748;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+form input[type="email"]:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+form button {
+    background-color: #3182ce;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+form button:hover {
+    background-color: #2b6cb0;
+}
+
+form button:active {
+    transform: scale(0.98);
+}
+
+#result {
+    margin-top: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    min-height: 22px;
+}
