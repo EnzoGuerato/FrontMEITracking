@@ -920,27 +920,40 @@ body.modo-escuro [style*="color: #aaa"] {
     .fonte-gigante h2 { font-size: 1.7rem !important; }
   }
   
-  /* ============================================
-     ACESSO À BARRA DIREITA EM MOBILE (opcional)
-     Adicione a classe .aberta via JS para exibir
-     ============================================ */
   @media (max-width: 768px) {
-    .barra-direita.aberta {
+    /* Barra direita: empilha acima do conteúdo, sem ficar fixa */
+    .barra-direita {
+      position: static;
+      width: 100%;
+      height: auto;
+      right: auto;
+      top: auto;
+      border-left: none;
+      border-bottom: 1px solid var(--color-border);
+      padding: 16px;
       display: flex;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 85%;
-      max-width: 360px;
-      height: 100vh;
-      z-index: 60;
-      box-shadow: -8px 0 24px rgba(0, 0, 0, 0.18);
-      animation: slideInRight 0.25s ease;
+      flex-direction: column;
+      gap: 12px;
+      transform: none;
+      box-shadow: none;
     }
   
-    @keyframes slideInRight {
-      from { transform: translateX(100%); }
-      to { transform: translateX(0); }
+    /* Cards internos lado a lado quando couber */
+    .barra-direita > * {
+      width: 100%;
+    }
+  
+    /* Conteúdo principal ocupa toda largura, sem margem reservada para barra direita */
+    .conteudo {
+      margin-right: 0;
+      margin-left: 0;
+      padding-bottom: 80px; /* espaço para a nav inferior */
+    }
+  
+    /* Barra do topo acompanha largura */
+    .barra-topo {
+      width: 100%;
+      max-width: 100%;
     }
   }
   
