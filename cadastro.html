@@ -15,14 +15,13 @@
       <h1>Cadastre-se</h1>
           <!--Inputs de cadastro-->
 
-          <input id="nome" type="text" placeholder="Nome de Usuário">
-          <input id="email" type="email" placeholder="e-mail">
+          <input id="nome" name="user" type="text" placeholder="Nome de Usuário">
+          <input id="email" name="email" type="email" placeholder="email">
           <p id="aviso" style="color: white; font-size: 13px;"></p>
 
-          <input id="senha" type="password" placeholder="Senha">
-          <input id="senha" type="password" placeholder="Senha">
+          <input id="senha" name="senha" type="password" placeholder="Senha">
 
-          <input id="confirma-senha" type="password" placeholder="Confirmar senha">
+          <input id="confirma-senha" name="conf_senha" type="password" placeholder="Confirmar senha">
           
           <!--Botão de entrada-->
           <button class="cadastrar-se" onclick="fazerCadastro(event)">
@@ -30,11 +29,11 @@
           </button>
           <br>
 
-          <a class="voltar" href="../Login/Login.html">Voltar</a>
+          <a class="voltar" href="Login.html">Voltar</a>
     </div>
 
-    <script src="../Rest/Rest.js"></script>
-    <script src="./assets/js/Pages/Cadastro/Cadastro.js"></script>
+    <script src="./assets/js/API/Rest.js"></script>
+    <script src="./assets/js/pages/Cadastro/cadastro.js"></script>
 
     <!--Parte do Vlibras-->
     <div vw class="enabled">
