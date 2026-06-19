@@ -76,6 +76,28 @@ body.modo-escuro {
   color: var(--color-text);
 }
 
+.dropdown-menu {
+  width: 420px !important;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.dropdown-menu .barra-direita {
+  position: static;
+  width: 100%;
+  height: auto;
+  border: none;
+  box-shadow: none;
+  padding: 20px;
+}
+
+.perfil-dropdown {
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 95vw;
+  max-width: 350px;
+}
 /* Classes para alteração do tamanho da fonte */
 .fonte-grande {
   font-size: 1.25rem !important;
@@ -103,6 +125,9 @@ body.modo-escuro {
   font-size: 1.35rem !important;
 }
 
+#dropdow{
+  font-family: var(--font-body); font-size: 10px; padding: 5px;
+}
 /* Menu Lateral Esquerdo */
 .barra-lateral {
   width: 256px;
@@ -196,7 +221,7 @@ body.modo-escuro .menu.ativo {
   height: 60px;
   background: color-mix(in srgb, var(--color-surface) 92%, transparent);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 0 40px;
   border-bottom: 1px solid var(--color-border);
@@ -723,7 +748,11 @@ body.modo-escuro [style*="color: #aaa"] {
       flex-direction: column;
       padding-bottom: 70px; /* espaço para o menu inferior fixo */
     }
-  
+      .dropdown-menu {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
+
     /* Menu lateral vira barra inferior fixa */
     .barra-lateral {
       position: fixed;
@@ -957,3 +986,285 @@ body.modo-escuro [style*="color: #aaa"] {
     }
   }
   
+
+/* ============================================================
+   DROPDOWN DE PERFIL — Design system MEI Track
+   ============================================================ */
+
+/* Container relativo para posicionar o painel abaixo do botão */
+.perfil-wrapper {
+  position: relative;
+}
+
+/* ── Botão gatilho ── */
+.perfil-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: 99px;
+  padding: 6px 14px 6px 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-text);
+  transition: background var(--motion-fast), border-color var(--motion-fast),
+              box-shadow var(--motion-fast);
+}
+
+.perfil-btn:hover,
+.perfil-btn:focus-visible {
+  background: var(--color-surface);
+  border-color: var(--mei-orange-soft);
+  box-shadow: 0 0 0 3px rgba(245, 138, 61, 0.18);
+  outline: none;
+}
+
+.perfil-btn__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--mei-orange-soft);
+}
+
+.perfil-btn__nome {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.perfil-btn__seta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  transition: transform var(--motion-fast);
+}
+
+.perfil-btn[aria-expanded="true"] .perfil-btn__seta {
+  transform: rotate(180deg);
+}
+
+/* ── Painel dropdown ── */
+.perfil-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 300px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(61, 36, 24, 0.14);
+  z-index: 200;
+  overflow: hidden;
+  animation: dropdown-in 0.18s ease;
+}
+
+.perfil-dropdown[hidden] {
+  display: none;
+}
+
+@keyframes dropdown-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* No mobile a animação usa translateX(-50%) para centralizar,
+   então não podemos sobrescrever com translateY sozinho */
+@media (max-width: 768px) {
+  @keyframes dropdown-in {
+    from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+}
+
+/* ── Cabeçalho do painel ── */
+.perfil-dropdown__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+}
+
+.perfil-dropdown__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+.perfil-dropdown__nome {
+  font-size: 15px;
+  font-weight: 900;
+  display: block;
+  color: #fff;
+}
+
+.perfil-dropdown__nivel {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.85;
+  color: #fff;
+}
+
+/* ── Stats rápidos ── */
+.perfil-dropdown__stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 16px;
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.perfil-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.perfil-stat__icone { font-size: 18px; }
+
+.perfil-stat__valor {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.perfil-stat__label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Divisor ── */
+.perfil-dropdown__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 16px;
+}
+
+/* ── Seções internas ── */
+.perfil-dropdown__secao {
+  padding: 12px 16px;
+}
+
+.perfil-dropdown__secao-titulo {
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+/* ── Missões no dropdown ── */
+.perfil-missao {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.perfil-missao:last-child { margin-bottom: 0; }
+
+.perfil-missao__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-soft);
+}
+
+.perfil-missao__barra {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.perfil-missao__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 99px;
+  background: var(--mei-orange);
+  transition: width 0.3s ease;
+}
+
+.perfil-missao__fill--ouro {
+  background: #d9a441;
+}
+
+/* ── Ranking no dropdown ── */
+.perfil-ranking {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perfil-ranking__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.perfil-ranking__item--player {
+  color: var(--mei-orange-deep);
+}
+
+.perfil-ranking__pos  { width: 22px; text-align: center; flex-shrink: 0; }
+.perfil-ranking__nome { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.perfil-ranking__pts  { color: var(--mei-orange-deep); font-weight: 800; flex-shrink: 0; }
+
+/* ── Modo escuro ── */
+body.modo-escuro .perfil-btn {
+  background: var(--color-surface-alt);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+body.modo-escuro .perfil-dropdown {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+body.modo-escuro .perfil-dropdown__stats {
+  background: var(--color-surface-alt);
+}
+
+body.modo-escuro .perfil-stat__valor { color: var(--color-text); }
+
+/* ── Responsivo: dropdown centralizado no mobile ── */
+@media (max-width: 768px) {
+  .perfil-btn__nome { display: none; }
+
+  /* No mobile o wrapper não pode ser o âncora de posição,
+     pois o botão fica no canto direito e o painel transbordaria.
+     Usamos position:fixed + centralização via left/transform. */
+  .perfil-wrapper {
+    position: static;
+  }
+
+  .perfil-dropdown {
+    position: fixed;
+    top: 56px;           /* logo abaixo da barra de topo (56px no mobile) */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(320px, 94vw);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    z-index: 300;
+  }
+}

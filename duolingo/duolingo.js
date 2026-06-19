@@ -94,6 +94,23 @@ const nomeExibicao = document.getElementById("nome-exibicao-perfil");
 const ulRanking = document.getElementById("lista-ranking");
 const conteudoPrincipal = document.getElementById("conteudo-principal");
 
+// Dropdown de perfil
+const perfilWrapper  = document.getElementById("perfil-wrapper");
+const perfilBtn      = document.getElementById("perfil-btn");
+const perfilDropdown = document.getElementById("perfil-dropdown");
+const perfilBtnNome  = document.getElementById("perfil-btn-nome");
+const perfilDdNome   = document.getElementById("perfil-dropdown-nome");
+const statOfensiva   = document.getElementById("stat-ofensiva");
+const statMoedas     = document.getElementById("stat-moedas");
+const statVidas      = document.getElementById("stat-vidas");
+const ddLatM1        = document.getElementById("dd-lat-m1");
+const ddLatM2        = document.getElementById("dd-lat-m2");
+const ddBarraM1      = document.getElementById("dd-barra-m1");
+const ddBarraM2      = document.getElementById("dd-barra-m2");
+const ddBtnM1        = document.getElementById("dd-btn-m1");
+const ddBtnM2        = document.getElementById("dd-btn-m2");
+const ddListaRanking = document.getElementById("dd-lista-ranking");
+
 const btnNavAprender = document.getElementById("nav-aprender");
 const btnNavMissoes = document.getElementById("nav-missoes");
 const btnNavConfig = document.getElementById("nav-config");
@@ -197,17 +214,90 @@ function aplicarTamanhoFonte() {
   }
 }
 
+function atualizarDropdownPerfil() {
+  // Cabeçalho
+  if (perfilBtnNome) perfilBtnNome.textContent = estadoApp.nomeUsuario;
+  if (perfilDdNome)  perfilDdNome.textContent  = estadoApp.nomeUsuario;
+
+  // Stats rápidos
+  if (statOfensiva) statOfensiva.textContent = estadoApp.ofensiva;
+  if (statMoedas)   statMoedas.textContent   = estadoApp.moedas;
+  if (statVidas)    statVidas.textContent     = estadoApp.vidasGlobais;
+
+  // Missão 1
+  const pctM1 = Math.min((estadoApp.progressoM1 / 3) * 100, 100);
+  if (ddLatM1)  ddLatM1.textContent      = estadoApp.progressoM1;
+  if (ddBarraM1) ddBarraM1.style.width   = pctM1 + '%';
+  if (ddBtnM1) {
+    ddBtnM1.disabled    = estadoApp.progressoM1 < 3;
+    ddBtnM1.textContent = estadoApp.progressoM1 >= 3 ? 'Recolher +50 🪙' : '+50 🪙';
+  }
+
+  // Missão 2
+  const pctM2 = Math.min((estadoApp.progressoM2 / 300) * 100, 100);
+  if (ddLatM2)  ddLatM2.textContent      = estadoApp.progressoM2;
+  if (ddBarraM2) ddBarraM2.style.width   = pctM2 + '%';
+  if (ddBtnM2) {
+    ddBtnM2.disabled    = estadoApp.progressoM2 < 300;
+    ddBtnM2.textContent = estadoApp.progressoM2 >= 300 ? 'Recolher +100 🪙' : '+100 🪙';
+  }
+
+  // Ranking compacto no dropdown
+  if (ddListaRanking) {
+    ddListaRanking.innerHTML = '';
+    let pInRank = listaCompetidores.find(c => c.isPlayer);
+    if (pInRank) { pInRank.moedas = estadoApp.moedas; pInRank.ofensiva = estadoApp.ofensiva; }
+    const top3 = [...listaCompetidores].sort((a, b) => b.moedas - a.moedas).slice(0, 5);
+    top3.forEach((c, idx) => {
+      const li = document.createElement('li');
+      li.className = 'perfil-ranking__item' + (c.isPlayer ? ' perfil-ranking__item--player' : '');
+      const medalhas = ['🥇', '🥈', '🥉'];
+      const pos = medalhas[idx] || `${idx + 1}`;
+      li.innerHTML = `<span class="perfil-ranking__pos">${pos}</span>
+        <span class="perfil-ranking__nome">${c.isPlayer ? estadoApp.nomeUsuario : c.nome}</span>
+        <span class="perfil-ranking__pts">🪙 ${c.moedas}</span>`;
+      ddListaRanking.appendChild(li);
+    });
+  }
+}
+
+// Abrir / fechar dropdown de perfil
+if (perfilBtn) {
+  perfilBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const aberto = !perfilDropdown.hidden;
+    perfilDropdown.hidden = aberto;
+    perfilBtn.setAttribute('aria-expanded', String(!aberto));
+  });
+}
+
+document.addEventListener('click', (e) => {
+  if (perfilWrapper && !perfilWrapper.contains(e.target)) {
+    perfilDropdown.hidden = true;
+    perfilBtn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !perfilDropdown.hidden) {
+    perfilDropdown.hidden = true;
+    perfilBtn.setAttribute('aria-expanded', 'false');
+    perfilBtn.focus();
+  }
+});
+
 function atualizarInterface() {
   localStorage.setItem("estado_meizinho_v3", JSON.stringify(estadoApp));
   elMoedas.innerText = estadoApp.moedas;
   elOfensiva.innerText = estadoApp.ofensiva;
   elVidas.innerText = estadoApp.vidasGlobais;
   nomeExibicao.innerText = estadoApp.nomeUsuario;
-  
+
   aplicarTamanhoFonte();
   renderizarTrilha();
   renderizarRanking();
   renderizarMissoes();
+  atualizarDropdownPerfil();
 }
 
 function alternarTela(abaAtiva, telaAtiva) {
@@ -282,8 +372,10 @@ function recolherPremioM2() {
 
 btnRecolherM1.addEventListener("click", recolherPremioM1);
 btnRecolherLatM1.addEventListener("click", recolherPremioM1);
+if (ddBtnM1) ddBtnM1.addEventListener("click", recolherPremioM1);
 btnRecolherM2.addEventListener("click", recolherPremioM2);
 btnRecolherLatM2.addEventListener("click", recolherPremioM2);
+if (ddBtnM2) ddBtnM2.addEventListener("click", recolherPremioM2);
 
 function renderizarRanking() {
   ulRanking.innerHTML = "";

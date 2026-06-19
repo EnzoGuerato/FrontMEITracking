@@ -34,10 +34,76 @@
     <!-- Barra de Topo Fixa Início -->
     <div class="barra-topo">
       <div class="info-topo">
+        <div class="home"><a href="../Home.html">⬅️</a></div>
         <div class="ofensiva">🔥 <span id="contador-ofensiva">0</span> dias</div>
         <div class="moedas">🪙 <span id="contador-moedas">100</span></div>
         <div class="vidas">❤️ <span id="contador-vidas">5</span> <span id="tempo-recarga" style="font-size:12px; color:#aaa; margin-left:4px;"></span></div>
       </div>
+
+      <!-- Botão de Perfil + Dropdown -->
+      <div class="perfil-wrapper" id="perfil-wrapper">
+        <button class="perfil-btn" id="perfil-btn" aria-haspopup="true" aria-expanded="false" aria-controls="perfil-dropdown">
+          <img src="miguelito/miguel.jpeg" alt="Avatar" class="perfil-btn__avatar">
+          <span class="perfil-btn__nome" id="perfil-btn-nome">Jogador_01</span>
+          <span class="perfil-btn__seta" aria-hidden="true">▾</span>
+        </button>
+
+        <div class="perfil-dropdown" id="perfil-dropdown" role="region" aria-label="Painel de perfil" hidden>
+          <!-- Cabeçalho do usuário -->
+          <div class="perfil-dropdown__header">
+            <img src="miguelito/miguel.jpeg" alt="Avatar" class="perfil-dropdown__avatar">
+            <div>
+              <strong class="perfil-dropdown__nome" id="perfil-dropdown-nome">Jogador_01</strong>
+              <span class="perfil-dropdown__nivel">Iniciante</span>
+            </div>
+          </div>
+
+          <!-- Stats rápidos -->
+          <div class="perfil-dropdown__stats">
+            <div class="perfil-stat">
+              <span class="perfil-stat__icone">🔥</span>
+              <span class="perfil-stat__valor" id="stat-ofensiva">0</span>
+              <span class="perfil-stat__label">dias</span>
+            </div>
+            <div class="perfil-stat">
+              <span class="perfil-stat__icone">🪙</span>
+              <span class="perfil-stat__valor" id="stat-moedas">100</span>
+              <span class="perfil-stat__label">moedas</span>
+            </div>
+            <div class="perfil-stat">
+              <span class="perfil-stat__icone">❤️</span>
+              <span class="perfil-stat__valor" id="stat-vidas">5</span>
+              <span class="perfil-stat__label">vidas</span>
+            </div>
+          </div>
+
+          <div class="perfil-dropdown__divider"></div>
+
+          <!-- Missões resumidas -->
+          <div class="perfil-dropdown__secao">
+            <p class="perfil-dropdown__secao-titulo">🎯 Missões Diárias</p>
+            <div class="perfil-missao">
+              <span class="perfil-missao__label">Lições (<span id="dd-lat-m1">0</span>/3)</span>
+              <div class="perfil-missao__barra"><div class="perfil-missao__fill" id="dd-barra-m1"></div></div>
+              <button id="dd-btn-m1" class="botao-recolher-pequeno" disabled>+50 🪙</button>
+            </div>
+            <div class="perfil-missao">
+              <span class="perfil-missao__label">Moedas (<span id="dd-lat-m2">0</span>/300)</span>
+              <div class="perfil-missao__barra"><div class="perfil-missao__fill perfil-missao__fill--ouro" id="dd-barra-m2"></div></div>
+              <button id="dd-btn-m2" class="botao-recolher-pequeno" disabled>+100 🪙</button>
+            </div>
+          </div>
+
+          <div class="perfil-dropdown__divider"></div>
+
+          <!-- Ranking resumido -->
+          <div class="perfil-dropdown__secao">
+            <p class="perfil-dropdown__secao-titulo">🏆 Divisão Ouro</p>
+            <ul class="perfil-ranking" id="dd-lista-ranking"></ul>
+          </div>
+        </div>
+      </div>
+      <!-- Fim Botão de Perfil + Dropdown -->
     </div>
     <!-- Barra de Topo Fixa Fim -->
 
@@ -135,9 +201,9 @@
   </main>
   <!-- Conteúdo Central Principal Fim -->
 
-  <!-- Barra Lateral Direita e Widgets alem de foto de perfil do usuario Início -->
+  <!-- Barra Lateral Direita Início -->
   <aside class="barra-direita">
-    
+
     <div class="cartao cartao-perfil">
       <img src="miguelito/miguel.jpeg" alt="Avatar Usuário">
       <div>
@@ -146,7 +212,7 @@
       </div>
     </div>
 
-    <!-- Widget Missões Diárias Lateral Modificado -->
+    <!-- Widget Missões Diárias Lateral -->
     <div class="cartao">
       <h3>🎯 Missões Diárias</h3>
       <div class="missao" style="margin-bottom: 20px;">
@@ -172,7 +238,7 @@
     </div>
 
   </aside>
-  <!-- Barra Lateral Direita e Widgets alem de foto de perfil do usuario Fim -->
+  <!-- Barra Lateral Direita Fim -->
 
   <!-- Modal de Lição Interativa Início -->
   <div id="modal-fase" class="container-licao escondido">
