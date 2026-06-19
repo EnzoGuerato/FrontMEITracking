@@ -3,44 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meizinho - Duolingo Clone</title>
+  <title>Aprendizado · MEI Track</title>
   <link rel="stylesheet" href="duolingo.css">
   <script src="../assets/js/global/Preferencias.js" defer></script>
 </head>
 <body>
 
-  <!-- Menu Lateral Esquerdo Início -->
+  <!-- ===== SISTEMA DE NOTIFICAÇÕES (Toast) ===== -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ===== MENU LATERAL ESQUERDO ===== -->
   <aside class="barra-lateral">
     <div class="logo">
-      <img src="logo meizinho/Meizinhodandojoia.png" alt="Meizinho Logo">
+      <img src="logo meizinho/meizinhoescrito.png" alt="MEI Track">
     </div>
     <nav>
       <button id="nav-aprender" class="menu ativo">
-        <span>📚 Aprender</span>
+        <span class="menu__icone">📚</span>
+        <span class="menu__label">Aprender</span>
       </button>
       <button id="nav-missoes" class="menu">
-        <span>🎯 Missões</span>
+        <span class="menu__icone">🎯</span>
+        <span class="menu__label">Missões</span>
       </button>
       <button id="nav-config" class="menu">
-        <span>⚙️ Configurar</span>
+        <span class="menu__icone">⚙️</span>
+        <span class="menu__label">Configurar</span>
       </button>
     </nav>
+    <a href="../Home.html" class="botao-voltar">
+      <span>⬅️</span>
+      <span>Voltar</span>
+    </a>
   </aside>
-  <!-- Menu Lateral Esquerdo Fim -->
 
-  <!-- Conteúdo Central Principal Início -->
+  <!-- ===== CONTEÚDO CENTRAL ===== -->
   <main class="conteudo" id="conteudo-principal">
-    
-    <!-- Barra de Topo Fixa Início -->
+
+    <!-- Barra de Topo -->
     <div class="barra-topo">
       <div class="info-topo">
-        <div class="home"><a href="../Home.html">⬅️</a></div>
-        <div class="ofensiva">🔥 <span id="contador-ofensiva">0</span> dias</div>
-        <div class="moedas">🪙 <span id="contador-moedas">100</span></div>
-        <div class="vidas">❤️ <span id="contador-vidas">5</span> <span id="tempo-recarga" style="font-size:12px; color:#aaa; margin-left:4px;"></span></div>
+        <div class="info-item">
+          <span class="info-item__icone">🔥</span>
+          <span id="contador-ofensiva">0</span>
+        </div>
+        <div class="info-item">
+          <span class="info-item__icone">🪙</span>
+          <span id="contador-moedas">100</span>
+        </div>
+        <div class="info-item">
+          <span class="info-item__icone">❤️</span>
+          <span id="contador-vidas">5</span>
+          <span id="tempo-recarga" class="recarga-timer"></span>
+        </div>
       </div>
 
-      <!-- Botão de Perfil + Dropdown -->
+      <!-- Perfil Dropdown -->
       <div class="perfil-wrapper" id="perfil-wrapper">
         <button class="perfil-btn" id="perfil-btn" aria-haspopup="true" aria-expanded="false" aria-controls="perfil-dropdown">
           <img src="logo meizinho/profile.png" alt="Avatar" class="perfil-btn__avatar" data-perfil-foto>
@@ -49,7 +67,6 @@
         </button>
 
         <div class="perfil-dropdown" id="perfil-dropdown" role="region" aria-label="Painel de perfil" hidden>
-          <!-- Cabeçalho do usuário -->
           <div class="perfil-dropdown__header">
             <img src="logo meizinho/profile.png" alt="Avatar" class="perfil-dropdown__avatar" data-perfil-foto>
             <div>
@@ -58,7 +75,6 @@
             </div>
           </div>
 
-          <!-- Stats rápidos -->
           <div class="perfil-dropdown__stats">
             <div class="perfil-stat">
               <span class="perfil-stat__icone">🔥</span>
@@ -79,7 +95,6 @@
 
           <div class="perfil-dropdown__divider"></div>
 
-          <!-- Missões resumidas -->
           <div class="perfil-dropdown__secao">
             <p class="perfil-dropdown__secao-titulo">🎯 Missões Diárias</p>
             <div class="perfil-missao">
@@ -96,185 +111,265 @@
 
           <div class="perfil-dropdown__divider"></div>
 
-          <!-- Ranking resumido -->
           <div class="perfil-dropdown__secao">
             <p class="perfil-dropdown__secao-titulo">🏆 Divisão Ouro</p>
             <ul class="perfil-ranking" id="dd-lista-ranking"></ul>
           </div>
         </div>
       </div>
-      <!-- Fim Botão de Perfil + Dropdown -->
     </div>
-    <!-- Barra de Topo Fixa Fim -->
 
-    <!-- Tela Aprender Central Início -->
+    <!-- ===== TELA: APRENDER ===== -->
     <section id="tela-aprender-central" class="unidade">
-      <div class="cabecalho-unidade">
+      <div class="cabecalho-unidade cabecalho-unidade--verde">
         <h2>UNIDADE 1</h2>
-        <p>Aprenda expressões básicas e saudações do dia a dia.</p>
+        <p>Fundamentos do MEI: aprenda a gerenciar seu negócio.</p>
       </div>
       <div class="trilha" id="container-trilha-licoes">
-        <!-- Gerado dinamicamente via JS -->
+        <!-- Gerado via JS -->
       </div>
     </section>
-    <!-- Tela Aprender Central Fim -->
 
-    <!-- Tela de Missões Central Início -->
+    <!-- ===== TELA: MISSÕES ===== -->
     <section id="tela-missoes-central" class="unidade escondido">
-      <div class="cabecalho-unidade" style="background: #ff9600; box-shadow: 0 8px 0 #e68500;">
-        <h2>CENTRAL DE MISSÕES</h2>
-        <p>Complete desafios para ganhar grandes recompensas in moedas!</p>
+      <div class="cabecalho-unidade cabecalho-unidade--laranja">
+        <h2>MISSÕES DIÁRIAS</h2>
+        <p>Complete desafios e ganhe moedas extras!</p>
       </div>
-      <div class="lista-missoes-expandida" style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
-        
-        <div class="cartao">
-          <h3>🎯 Missão Diária 1</h3>
-          <p>Conclua 3 lições da trilha de aprendizado hoje.</p>
-          <p style="font-size: 13px; font-weight: 800; margin-bottom: 5px;" id="texto-progresso-m1">Progresso: 0 / 3</p>
-          <div class="progresso" style="margin-bottom: 12px;"><div class="barra" id="barra-expandida-m1"></div></div>
-          <button id="btn-recolher-m1" class="botao-recolher" disabled>Recolher Recompensa (+50 🪙)</button>
+
+      <div class="lista-missoes">
+
+        <div class="cartao cartao-missao">
+          <div class="cartao-missao__icone">🎯</div>
+          <div class="cartao-missao__corpo">
+            <h3>Estudante Dedicado</h3>
+            <p>Conclua 3 lições da trilha de aprendizado hoje.</p>
+            <p class="missao-progresso-txt" id="texto-progresso-m1">0 / 3</p>
+            <div class="progresso"><div class="barra" id="barra-expandida-m1"></div></div>
+          </div>
+          <button id="btn-recolher-m1" class="botao-recolher" disabled>
+            <span>Recolher</span>
+            <span class="botao-recolher__bonus">+50 🪙</span>
+          </button>
         </div>
 
-        <div class="cartao">
-          <h3>🪙 Caçador de Ouro</h3>
-          <p>Ganhe um total acumulado de 300 moedas bônus.</p>
-          <p style="font-size: 13px; font-weight: 800; margin-bottom: 5px;" id="texto-progresso-m2">Progresso: 0 / 300</p>
-          <div class="progresso" style="margin-bottom: 12px;"><div class="barra segunda" id="barra-expandida-m2"></div></div>
-          <button id="btn-recolher-m2" class="botao-recolher" disabled>Recolher Recompensa (+100 🪙)</button>
+        <div class="cartao cartao-missao">
+          <div class="cartao-missao__icone">🪙</div>
+          <div class="cartao-missao__corpo">
+            <h3>Caçador de Ouro</h3>
+            <p>Acumule 300 moedas bônus em lições.</p>
+            <p class="missao-progresso-txt" id="texto-progresso-m2">0 / 300</p>
+            <div class="progresso"><div class="barra barra--ouro" id="barra-expandida-m2"></div></div>
+          </div>
+          <button id="btn-recolher-m2" class="botao-recolher" disabled>
+            <span>Recolher</span>
+            <span class="botao-recolher__bonus">+100 🪙</span>
+          </button>
         </div>
 
       </div>
     </section>
-    <!-- Tela de Missões Central Fim -->
 
-    <!-- Tela de Configurações Central Início -->
+    <!-- ===== TELA: CONFIGURAÇÕES ===== -->
     <section id="tela-config-central" class="unidade escondido">
-      <div class="cabecalho-unidade" style="background: #4b4b4b; box-shadow: 0 8px 0 #3c3c3c;">
+      <div class="cabecalho-unidade cabecalho-unidade--cinza">
         <h2>CONFIGURAÇÕES</h2>
-        <p>Gerencie sua conta e as preferências do aplicativo.</p>
+        <p>Personalize sua experiência de aprendizado.</p>
       </div>
-      
-      <div class="lista-missoes-expandida" style="margin-top: 20px;">
-        <div class="cartao" style="margin-bottom: 20px;">
-          <h3>👤 Perfil</h3>
-          <p style="color:#777; font-weight:700; margin-bottom:10px;">Altere o seu nome de usuário:</p>
-          <div style="display:flex; gap: 10px;">
-            <input type="text" id="input-nome-perfil" placeholder="Novo nome..." style="padding: 8px 12px; border: 2px solid #e5e5e5; border-radius: 12px; font-family:'Nunito'; font-weight:700; flex: 1;">
-            <button id="btn-salvar-nome" style="background:#1cb0f6; border:none; border-bottom:4px solid #1899d6; color:#fff; padding:8px 15px; border-radius:12px; font-weight:800; cursor:pointer;">Salvar</button>
+
+      <div class="lista-missoes">
+
+        <!-- Perfil -->
+        <div class="cartao config-card">
+          <div class="config-card__info">
+            <h3>👤 Perfil</h3>
+            <p>Altere o seu nome de exibição.</p>
+          </div>
+          <div class="config-card__acao">
+            <div class="input-grupo">
+              <input type="text" id="input-nome-perfil" class="input-padrao" placeholder="Novo nome de usuário..." maxlength="24">
+              <button id="btn-salvar-nome" class="botao-primario">Salvar</button>
+            </div>
           </div>
         </div>
 
-        <div class="cartao" style="margin-bottom: 20px;">
-          <h3>🎨 Aparência e Acessibilidade</h3>
-          <p style="color:#777; font-weight:700; margin-bottom:15px;">Ajuste o visual para melhorar sua experiência de leitura.</p>
-          <div style="display:flex; gap:10px; flex-wrap: wrap;">
-            <button id="btn-alternar-tema" style="background:#4b4b4b; border:none; border-bottom:4px solid #3c3c3c; color:#fff; padding:10px 20px; border-radius:12px; font-weight:800; cursor:pointer; flex:1; min-width:140px;">🌓 Modo Escuro</button>
-            <button id="btn-tamanho-fonte" style="background:#1cb0f6; border:none; border-bottom:4px solid #1899d6; color:#fff; padding:10px 20px; border-radius:12px; font-weight:800; cursor:pointer; flex:1; min-width:140px;">🔍 Fonte: Normal</button>
+        <!-- Aparência -->
+        <div class="cartao config-card">
+          <div class="config-card__info">
+            <h3>🎨 Aparência</h3>
+            <p>Ajuste o visual para sua leitura.</p>
+          </div>
+          <div class="config-card__acao config-card__acao--linha">
+            <button id="btn-alternar-tema" class="botao-secundario">🌓 Modo Escuro</button>
+            <button id="btn-tamanho-fonte" class="botao-secundario">🔍 Fonte: Normal</button>
           </div>
         </div>
 
-        <div class="cartao" style="margin-bottom: 20px;">
-          <h3>👑 Seu Plano</h3>
-          <p style="color:#777; font-weight:700; margin-bottom:15px;">Verifique os detalhes e benefícios da sua conta.</p>
-          <button id="btn-gerenciar-assinatura" style="background:linear-gradient(145deg, #ffc107, #ff9600); border:none; border-bottom:4px solid #e0a800; color:#fff; padding:12px 24px; border-radius:12px; font-weight:900; cursor:pointer; width: 100%; font-size:16px; letter-spacing:0.5px;">✨ GERENCIAR ASSINATURA</button>
-        </div>
-
-        <div class="cartao" style="margin-bottom: 20px;">
-          <h3>💾 Dados do Aplicativo</h3>
-          <p style="color:#777; font-weight:700; margin-bottom:15px;">Cuidado! Apagar os dados resetará todo o seu progresso permanentemente.</p>
-          <button id="btn-resetar-progresso" style="background:#ff4b4b; border:none; border-bottom:4px solid #ea2b2b; color:#fff; padding:10px 20px; border-radius:12px; font-weight:800; cursor:pointer;">⚠️ Resetar Todo o Progresso</button>
-        </div>
-
-        <div class="cartao">
-          <h3>🛠️ Modo Desenvolvedor (Testes)</h3>
-          <p style="color:#777; font-weight:700; margin-bottom:15px;">Adicione recursos instantaneamente para testar o sistema.</p>
-          <div style="display:flex; gap:10px; flex-wrap: wrap;">
-            <button id="btn-cheat-moedas" style="background:#ffc107; border:none; border-bottom:4px solid #e0a800; color:#fff; padding:8px 15px; border-radius:12px; font-weight:800; cursor:pointer;">+500 Moedas 🪙</button>
-            <button id="btn-cheat-ofensiva" style="background:#ff9600; border:none; border-bottom:4px solid #e68500; color:#fff; padding:8px 15px; border-radius:12px; font-weight:800; cursor:pointer;">Simular Novo Dia 🔥</button>
-            <button id="btn-cheat-m1" style="background:#58cc02; border:none; border-bottom:4px solid #46a302; color:#fff; padding:8px 15px; border-radius:12px; font-weight:800; cursor:pointer;">Forçar Missão 1 🎯</button>
+        <!-- Plano -->
+        <div class="cartao config-card">
+          <div class="config-card__info">
+            <h3>👑 Seu Plano</h3>
+            <p>Veja os detalhes e benefícios da sua conta.</p>
+          </div>
+          <div class="config-card__acao">
+            <button id="btn-gerenciar-assinatura" class="botao-premium">✨ Gerenciar Assinatura</button>
           </div>
         </div>
+
+        <!-- Dados -->
+        <div class="cartao config-card">
+          <div class="config-card__info">
+            <h3>💾 Dados do App</h3>
+            <p>Resetar apaga todo o seu progresso permanentemente.</p>
+          </div>
+          <div class="config-card__acao">
+            <button id="btn-resetar-progresso" class="botao-perigo">⚠️ Resetar Progresso</button>
+          </div>
+        </div>
+
+        <!-- Dev -->
+        <div class="cartao config-card">
+          <div class="config-card__info">
+            <h3>🛠️ Modo Desenvolvedor</h3>
+            <p>Adicione recursos para testar o sistema.</p>
+          </div>
+          <div class="config-card__acao config-card__acao--linha">
+            <button id="btn-cheat-moedas" class="botao-dev">+500 🪙</button>
+            <button id="btn-cheat-ofensiva" class="botao-dev">+1 Dia 🔥</button>
+            <button id="btn-cheat-m1" class="botao-dev">Missão 1 🎯</button>
+          </div>
+        </div>
+
       </div>
     </section>
-    <!-- Tela de Configurações Central Fim -->
 
   </main>
-  <!-- Conteúdo Central Principal Fim -->
 
-  <!-- Barra Lateral Direita Início -->
+  <!-- ===== BARRA LATERAL DIREITA ===== -->
   <aside class="barra-direita">
 
     <div class="cartao cartao-perfil">
-      <img src="logo meizinho/profile.png" alt="Avatar Usuário" data-perfil-foto>
-      <div>
+      <img src="logo meizinho/profile.png" alt="Avatar" class="cartao-perfil__avatar" data-perfil-foto>
+      <div class="cartao-perfil__info">
         <h3 id="nome-exibicao-perfil" data-perfil-nome>Jogador_01</h3>
         <p>Iniciante</p>
       </div>
     </div>
 
-    <!-- Widget Missões Diárias Lateral -->
     <div class="cartao">
-      <h3>🎯 Missões Diárias</h3>
-      <div class="missao" style="margin-bottom: 20px;">
-        <p>Completar lições (<span id="txt-lat-m1">0</span>/3)</p>
-        <div class="progresso" style="margin-bottom: 8px;"><div class="barra" id="barra-lateral-m1"></div></div>
+      <h3 class="cartao__titulo">🎯 Missões Diárias</h3>
+      <div class="missao-lateral">
+        <div class="missao-lateral__header">
+          <span>Completar lições</span>
+          <span class="missao-lateral__contagem"><span id="txt-lat-m1">0</span>/3</span>
+        </div>
+        <div class="progresso"><div class="barra" id="barra-lateral-m1"></div></div>
         <button id="btn-recolher-lat-m1" class="botao-recolher-pequeno" disabled>Recolher +50 🪙</button>
       </div>
-      <div class="missao">
-        <p>Ganhar Moedas (<span id="txt-lat-m2">0</span>/300)</p>
-        <div class="progresso" style="margin-bottom: 8px;"><div class="barra segunda" id="barra-lateral-m2"></div></div>
+      <div class="missao-lateral">
+        <div class="missao-lateral__header">
+          <span>Ganhar moedas</span>
+          <span class="missao-lateral__contagem"><span id="txt-lat-m2">0</span>/300</span>
+        </div>
+        <div class="progresso"><div class="barra barra--ouro" id="barra-lateral-m2"></div></div>
         <button id="btn-recolher-lat-m2" class="botao-recolher-pequeno" disabled>Recolher +100 🪙</button>
       </div>
     </div>
 
     <div class="cartao">
-      <div class="topo-ranking">
-        <h3>🏆 Divisão Ouro</h3>
+      <div class="cartao-ranking__topo">
+        <h3 class="cartao__titulo">🏆 Divisão Ouro</h3>
         <button class="botao-alternar" id="btn-ordenar-ranking">Inverter ↕</button>
       </div>
-      <ul id="lista-ranking">
-        <!-- Renderizado via JS -->
-      </ul>
+      <ul id="lista-ranking" class="lista-ranking"></ul>
     </div>
 
   </aside>
-  <!-- Barra Lateral Direita Fim -->
 
-  <!-- Modal de Lição Interativa Início -->
-  <div id="modal-fase" class="container-licao escondido">
-    <div class="cabecalho-licao">
-      <button class="botao-fechar" id="fechar-fase">❌</button>
+  <!-- ===== MODAL DE LIÇÃO ===== -->
+  <div id="modal-fase" class="modal-licao escondido">
+    <div class="modal-licao__cabecalho">
+      <button class="botao-fechar-modal" id="fechar-fase" aria-label="Fechar lição">✕</button>
       <div class="barra-progresso-licao">
-        <div class="preenchimento-progresso" id="progresso-fase"></div>
+        <div class="barra-progresso-licao__fill" id="progresso-fase"></div>
       </div>
-      <div class="vidas-licao">Vidas da Lição: <span id="vidas-modal">❤️ 3</span></div>
-    </div>
-
-    <div class="corpo-licao">
-      <p id="contador-perguntas-fase" style="font-weight: 800; color: #aaa; margin-bottom: 5px; font-size: 14px;"></p>
-      <h2 id="titulo-pergunta">Como se diz "Obrigado" em inglês?</h2>
-      <div class="grade-opcoes" id="container-opcoes">
-        <!-- Injetado dinamicamente via JS -->
+      <div class="vidas-licao">
+        <span>❤️</span>
+        <span id="vidas-modal">3</span>
       </div>
     </div>
 
-    <div class="rodape-licao">
-      <div id="caixa-feedback" class="mensagem-feedback escondido"></div>
+    <div class="modal-licao__corpo">
+      <p id="contador-perguntas-fase" class="contador-perguntas"></p>
+      <h2 id="titulo-pergunta">Carregando pergunta...</h2>
+      <div class="grade-opcoes" id="container-opcoes"></div>
+    </div>
+
+    <div class="modal-licao__rodape">
+      <div id="caixa-feedback" class="caixa-feedback escondido"></div>
       <button class="botao-verificar" id="btn-verificar-opcao" disabled>VERIFICAR</button>
     </div>
   </div>
-  <!-- Modal de Lição Interativa Fim -->
 
-  <!-- Modal de Assinatura Início -->
-  <div id="modal-assinatura" class="container-licao escondido" style="justify-content: center; align-items: center; background: rgba(0,0,0,0.5);">
-    <div class="cartao" style="background: #fff; max-width: 450px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative;">
-      <button id="fechar-modal-assinatura" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 18px; cursor: pointer;">❌</button>
-      <div style="text-align: center; margin-bottom: 20px;">
-        <span style="font-size: 50px;">👑</span>
-        <h2 style="font-weight: 900; color: #ff9600; margin-top: 10px;">Meizinho Plus</h2>
-        <p style="color: #777; font-weight: 700;">Status: Ativo</p>
+  <!-- ===== MODAL DE CONFIRMAÇÃO ===== -->
+  <div id="modal-confirmar" class="modal-overlay escondido">
+    <div class="modal-dialog">
+      <div class="modal-dialog__icone" id="modal-confirmar-icone">⚠️</div>
+      <h3 class="modal-dialog__titulo" id="modal-confirmar-titulo">Confirmar ação</h3>
+      <p class="modal-dialog__texto" id="modal-confirmar-texto">Tem certeza?</p>
+      <div class="modal-dialog__acoes">
+        <button class="botao-secundario" id="modal-confirmar-cancelar">Cancelar</button>
+        <button class="botao-perigo" id="modal-confirmar-ok">Confirmar</button>
       </div>
-      <button id="btn-cancelar-assinatura" style="width: 100%; background: none; border: 2px solid #ff4b4b; color: #ff4b4b; padding: 10px; border-radius: 12px; font-weight: 800; cursor: pointer;">Cancelar Renovação Automática</button>
+    </div>
+  </div>
+
+  <!-- ===== MODAL CELEBRAÇÃO (Lição Concluída) ===== -->
+  <div id="modal-celebracao" class="modal-overlay escondido">
+    <div class="modal-dialog modal-dialog--celebracao">
+      <div class="celebracao__icone">🎉</div>
+      <h3 class="celebracao__titulo">Lição Concluída!</h3>
+      <p class="celebracao__subtitulo">Você ganhou <strong id="celebracao-moedas">+25</strong> moedas!</p>
+      <div class="celebracao__stats">
+        <div class="celebracao__stat">
+          <span class="celebracao__stat-valor" id="celebracao-acertos">0</span>
+          <span class="celebracao__stat-label">Acertos</span>
+        </div>
+        <div class="celebracao__stat">
+          <span class="celebracao__stat-valor" id="celebracao-erros">0</span>
+          <span class="celebracao__stat-label">Erros</span>
+        </div>
+        <div class="celebracao__stat">
+          <span class="celebracao__stat-valor" id="celebracao-xp">25</span>
+          <span class="celebracao__stat-label">XP</span>
+        </div>
+      </div>
+      <button class="botao-primario" id="btn-fechar-celebracao">Continuar</button>
+    </div>
+  </div>
+
+  <!-- ===== MODAL ELIMINADO (Sem Vidas) ===== -->
+  <div id="modal-eliminado" class="modal-overlay escondido">
+    <div class="modal-dialog modal-dialog--erro">
+      <div class="celebracao__icone">💔</div>
+      <h3 class="celebracao__titulo">Sem vidas!</h3>
+      <p class="celebracao__subtitulo" id="modal-eliminado-texto">Você perdeu 1 vida global. Aguarde a recarga.</p>
+      <button class="botao-primario" id="btn-fechar-eliminado">Entendido</button>
+    </div>
+  </div>
+
+  <!-- ===== MODAL ASSINATURA ===== -->
+  <div id="modal-assinatura" class="modal-overlay escondido">
+    <div class="modal-dialog">
+      <button class="botao-fechar-modal modal-dialog__fechar" id="fechar-modal-assinatura" aria-label="Fechar">✕</button>
+      <div class="celebracao__icone">👑</div>
+      <h3 class="modal-dialog__titulo" style="color: var(--mei-orange-deep);">MEI Track Plus</h3>
+      <p class="modal-dialog__texto">Status: <strong style="color: var(--mei-success, #6BA368);">Ativo</strong></p>
+      <div class="modal-dialog__acoes">
+        <button id="btn-cancelar-assinatura" class="botao-secundario" style="border-color: var(--mei-danger, #E0524B); color: var(--mei-danger, #E0524B);">
+          Cancelar Renovação
+        </button>
+      </div>
     </div>
   </div>
 
