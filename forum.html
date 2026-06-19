@@ -1,14 +1,243 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Forum - MEIzinho</title>
+    <title>Fórum · MEI Track</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../FrontMEITracking/assets/css/pages/Forum/Forum.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/global/Global.css">
+    <link rel="stylesheet" href="./assets/css/global/Navbar.css">
+    <link rel="stylesheet" href="./assets/css/pages/Forum/Forum.css">
+    <script src="./assets/js/global/Preferencias.js" defer></script>
+  </head>
   <body>
-    
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="HomesInfo.html">
+          <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="HomesInfo.html">Premium</a></li>
+            <li class="nav-item"><a class="nav-link" href="duolingo/duolingo.html">Aprendizado</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="forum.html">Fórum</a></li>
+            <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
+            <li class="nav-item"><a class="nav-link" href="Login.html">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Fim NavBar -->
+
+    <!-- Hero do Fórum -->
+    <section class="forum-hero">
+      <div class="forum-hero__content">
+        <h1>Fórum da Comunidade</h1>
+        <p>Compartilhe experiências, tire dúvidas e conecte-se com outros MEIs.</p>
+      </div>
+    </section>
+
+    <!-- Layout principal -->
+    <div class="forum-layout">
+
+      <!-- Coluna esquerda: criar post -->
+      <aside class="forum-sidebar">
+
+        <div class="forum-card">
+          <h2 class="forum-card__titulo">✍️ Criar Post</h2>
+
+          <label class="forum-label" for="forum-imagem">Imagem (opcional)</label>
+          <label class="forum-upload" for="forum-imagem" id="forum-upload-label">
+            <span class="forum-upload__icone">📷</span>
+            <span class="forum-upload__texto" id="forum-upload-texto">Selecionar da galeria</span>
+            <input type="file" id="forum-imagem" accept="image/*" class="forum-upload__input">
+          </label>
+
+          <label class="forum-label" for="forum-legenda">Legenda</label>
+          <textarea
+            id="forum-legenda"
+            class="forum-textarea"
+            placeholder="Escreva sua legenda..."
+            rows="5"
+            maxlength="500"></textarea>
+          <span class="forum-contador" id="forum-contador">0 / 500</span>
+
+          <button class="forum-btn-publicar" id="forum-btn-publicar">
+            🚀 Publicar
+          </button>
+        </div>
+
+        <!-- Card de dicas -->
+        <div class="forum-card forum-card--dica">
+          <h3 class="forum-card__titulo forum-card__titulo--sm">💡 Dicas da comunidade</h3>
+          <ul class="forum-dicas">
+            <li>Seja respeitoso e construtivo.</li>
+            <li>Compartilhe apenas conteúdo relevante para MEIs.</li>
+            <li>Evite spam e conteúdo promocional.</li>
+          </ul>
+        </div>
+
+      </aside>
+
+      <!-- Coluna direita: feed de posts -->
+      <main class="forum-feed" id="forum-feed">
+
+        <!-- Filtros -->
+        <div class="forum-filtros">
+          <button class="forum-filtro ativo" data-filtro="recentes">🕐 Recentes</button>
+          <button class="forum-filtro" data-filtro="populares">🔥 Populares</button>
+          <button class="forum-filtro" data-filtro="meus">👤 Meus posts</button>
+        </div>
+
+        <!-- Posts exemplo -->
+        <article class="forum-post">
+          <div class="forum-post__header">
+            <img src="duolingo/logo meizinho/profile.png" alt="Avatar" class="forum-post__avatar">
+            <div>
+              <strong class="forum-post__autor">MEI_Fernanda</strong>
+              <span class="forum-post__data">há 2 horas</span>
+            </div>
+          </div>
+          <p class="forum-post__texto">Acabei de passar pela primeira declaração de IR como MEI e foi muito mais tranquilo usando o painel do MEI Track! Recomendo demais para quem está começando. 💪</p>
+          <div class="forum-post__acoes">
+            <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">
+              👍 <span>12</span>
+            </button>
+            <button class="forum-post__acao" aria-label="Comentar">
+              💬 <span>3</span>
+            </button>
+            <button class="forum-post__acao" aria-label="Compartilhar">
+              🔗 Compartilhar
+            </button>
+          </div>
+        </article>
+
+        <article class="forum-post">
+          <div class="forum-post__header">
+            <img src="duolingo/logo meizinho/profile.png" alt="Avatar" class="forum-post__avatar">
+            <div>
+              <strong class="forum-post__autor">Carlos_MEI</strong>
+              <span class="forum-post__data">há 5 horas</span>
+            </div>
+          </div>
+          <p class="forum-post__texto">Dúvida: preciso emitir nota fiscal para pessoa física ou só para empresas? Meu serviço é de design gráfico.</p>
+          <div class="forum-post__acoes">
+            <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">
+              👍 <span>4</span>
+            </button>
+            <button class="forum-post__acao" aria-label="Comentar">
+              💬 <span>7</span>
+            </button>
+            <button class="forum-post__acao" aria-label="Compartilhar">
+              🔗 Compartilhar
+            </button>
+          </div>
+        </article>
+
+        <article class="forum-post">
+          <div class="forum-post__header">
+            <img src="duolingo/logo meizinho/profile.png" alt="Avatar" class="forum-post__avatar">
+            <div>
+              <strong class="forum-post__autor">Ana_Costureira</strong>
+              <span class="forum-post__data">ontem</span>
+            </div>
+          </div>
+          <p class="forum-post__texto">Lembrete para todos: o prazo do DAS de maio vence dia 20/06! Não esqueçam de pagar para manter o CNPJ em dia. 📅</p>
+          <div class="forum-post__acoes">
+            <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">
+              👍 <span>31</span>
+            </button>
+            <button class="forum-post__acao" aria-label="Comentar">
+              💬 <span>9</span>
+            </button>
+            <button class="forum-post__acao" aria-label="Compartilhar">
+              🔗 Compartilhar
+            </button>
+          </div>
+        </article>
+
+      </main>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="forum-footer">
+      <p>© 2025 MEI Track · Todos os direitos reservados.</p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      // Contador de caracteres da legenda
+      const legenda = document.getElementById('forum-legenda');
+      const contador = document.getElementById('forum-contador');
+      legenda.addEventListener('input', () => {
+        contador.textContent = `${legenda.value.length} / 500`;
+      });
+
+      // Preview do nome do arquivo selecionado
+      const inputImagem = document.getElementById('forum-imagem');
+      const uploadTexto = document.getElementById('forum-upload-texto');
+      inputImagem.addEventListener('change', () => {
+        uploadTexto.textContent = inputImagem.files[0]
+          ? inputImagem.files[0].name
+          : 'Selecionar da galeria';
+      });
+
+      // Filtros de feed
+      document.querySelectorAll('.forum-filtro').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.forum-filtro').forEach(b => b.classList.remove('ativo'));
+          btn.classList.add('ativo');
+        });
+      });
+
+      // Publicar post (mock)
+      document.getElementById('forum-btn-publicar').addEventListener('click', () => {
+        const texto = legenda.value.trim();
+        if (!texto) { legenda.focus(); return; }
+
+        const feed = document.getElementById('forum-feed');
+        const novo = document.createElement('article');
+        novo.className = 'forum-post forum-post--novo';
+        novo.innerHTML = `
+          <div class="forum-post__header">
+            <img src="duolingo/logo meizinho/profile.png" alt="Avatar" class="forum-post__avatar">
+            <div>
+              <strong class="forum-post__autor">Você</strong>
+              <span class="forum-post__data">agora</span>
+            </div>
+          </div>
+          <p class="forum-post__texto">${texto.replace(/</g, '&lt;')}</p>
+          <div class="forum-post__acoes">
+            <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">👍 <span>0</span></button>
+            <button class="forum-post__acao" aria-label="Comentar">💬 <span>0</span></button>
+            <button class="forum-post__acao" aria-label="Compartilhar">🔗 Compartilhar</button>
+          </div>`;
+
+        // Insere após os filtros
+        const filtros = feed.querySelector('.forum-filtros');
+        filtros.insertAdjacentElement('afterend', novo);
+
+        legenda.value = '';
+        contador.textContent = '0 / 500';
+        uploadTexto.textContent = 'Selecionar da galeria';
+        inputImagem.value = '';
+      });
+
+      // Curtir
+      document.addEventListener('click', e => {
+        const btn = e.target.closest('.forum-post__acao--like');
+        if (!btn) return;
+        const span = btn.querySelector('span');
+        const curtido = btn.classList.toggle('curtido');
+        span.textContent = parseInt(span.textContent) + (curtido ? 1 : -1);
+      });
+    </script>
   </body>
 </html>
