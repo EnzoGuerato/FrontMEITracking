@@ -1,127 +1,13 @@
 /* =====================================================================
    Planos · Entry Point
-   Compartilhado por: planos.html e seção premium da Home.
+   Ordem: global -> hero -> cards -> interação -> tema/responsividade.
    ===================================================================== */
 @import url('../../global/Global.css');
 @import url('../../global/Navbar.css');
-@import url('./partials/Alterarplano.css');
+@import url('./partials/Hero.css');
 @import url('./partials/Cardplano.css');
 @import url('./partials/Beneficios.css');
 @import url('./partials/Botaoassinar.css');
 @import url('./partials/carddestaque.css');
+@import url('./partials/Alterarplano.css');
 @import url('./partials/Reponsividade.css');
-
-
-/* =====================================================================
-   Planos · Estrutura principal de planos.html
-   ===================================================================== */
-.pai-planos {
-  min-height: 100vh;
-  width: min(var(--container-lg), 100%);
-  margin: 0 auto;
-  padding: clamp(80px, 12vw, 110px) var(--space-lg) var(--space-2xl);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: var(--space-xl);
-  align-items: start;
-  background:
-    radial-gradient(700px 400px at 50% -10%, rgba(245,138,61,.18), transparent 60%),
-    radial-gradient(760px 420px at 0% 100%, rgba(255,179,122,.18), transparent 60%),
-    var(--color-background);
-}
-
-.muda-plano {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-}
-
-.mei-premium,
-.mega-mei-premium {
-  width: 100%;
-  padding: 32px 30px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.mei-premium {
-  background: linear-gradient(160deg, var(--mei-orange) 0%, var(--mei-orange-deep) 100%);
-  color: #fff;
-}
-
-.mega-mei-premium {
-  background: var(--color-surface);
-  border: 2px solid var(--mei-orange);
-  color: var(--color-text);
-}
-
-.mei-premium h1,
-.mega-mei-premium h1 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: var(--space-xs);
-}
-
-.mei-premium h2,
-.mega-mei-premium h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
-}
-
-.valor {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  margin: var(--space-md) 0;
-}
-
-.mei-premium .valor {
-  color: #fff;
-}
-
-.mega-mei-premium .valor {
-  color: var(--mei-orange-deep);
-}
-
-.lista-beneficios,
-.lista-beneficios-premium {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: var(--space-lg);
-}
-
-.lista-beneficios span,
-.lista-beneficios-premium span {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-weight: 700;
-}
-
-#icon-check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  color: var(--mei-orange-deep);
-  font-size: .75rem;
-}
-
-.texto-informativo {
-  grid-column: 1 / -1;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.texto-informativo p {
-  color: var(--color-text-soft);
-  margin: 0;
-}

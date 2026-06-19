@@ -1,16 +1,16 @@
 /* =====================================================================
-   Planos · Destaques visuais
+   Planos · Card em destaque e badge anual
    ===================================================================== */
-.planCard.featured,
-.featured {
+.planCard.featured {
   border: 2px solid var(--mei-orange);
-  transform: scale(1.04);
   background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+  transform: scale(1.04);
+  box-shadow: var(--shadow-md);
 }
 
-.planCard.featured:hover,
-.featured:hover {
-  transform: scale(1.04) translateY(-8px);
+.planCard.featured:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .badge-anual {
@@ -20,22 +20,19 @@
   border-radius: var(--radius-pill);
   background: var(--mei-orange-glow);
   color: var(--mei-orange-deep);
-  font-size: .8rem;
+  font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-sm);
 }
 
-.mega-mei-premium {
-  box-shadow: var(--shadow-md);
-}
-
-/* ── Dark mode: destaques ── */
-body.dark .planCard.featured,
-body.dark .featured {
+/* ── Dark mode: card destaque ── */
+body.dark .planCard.featured {
   background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
   border-color: var(--mei-orange-soft);
 }
 
 body.dark .badge-anual {
-  background: rgba(245,138,61,.2);
+  background: rgba(245, 138, 61, 0.2);
   color: var(--mei-orange-soft);
 }

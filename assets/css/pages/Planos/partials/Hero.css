@@ -1,0 +1,128 @@
+/* =====================================================================
+   Planos · Hero / seção de destaque
+   (Mesmo padrão visual do Configuracoes/partials/Hero.css)
+   ===================================================================== */
+.fundo {
+  width: 100%;
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 80px 72px;
+  background:
+    radial-gradient(700px 400px at 85% 20%, rgba(245, 138, 61, 0.3), transparent 60%),
+    radial-gradient(600px 350px at 10% 80%, rgba(255, 179, 122, 0.35), transparent 60%),
+    linear-gradient(180deg, var(--mei-cream) 0%, var(--mei-cream-2) 100%);
+  transition: background var(--motion-slow);
+}
+
+.overlay {
+  display: none;
+}
+
+.ContentText {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.ContentText h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  line-height: 1.05;
+  color: var(--mei-ink);
+  margin-bottom: 16px;
+}
+
+.ContentText h1 span,
+.ContentText h1 em {
+  color: var(--mei-orange-deep);
+  font-style: normal;
+}
+
+.ContentText p {
+  font-size: 1.1rem;
+  color: var(--mei-ink-soft);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.premiumBtn,
+.exploreBtn {
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-base), color var(--motion-base);
+}
+
+.premiumBtn {
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.premiumBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(230, 106, 31, 0.35);
+}
+
+.exploreBtn {
+  background: transparent;
+  border: 2px solid var(--mei-orange-deep);
+  color: var(--mei-orange-deep);
+}
+
+.exploreBtn:hover {
+  background: var(--mei-orange-deep);
+  color: #fff;
+}
+
+/* ── Dark mode: hero ── */
+body.dark .fundo {
+  background:
+    radial-gradient(700px 400px at 85% 20%, rgba(245, 138, 61, 0.12), transparent 60%),
+    radial-gradient(600px 350px at 10% 80%, rgba(255, 179, 122, 0.1), transparent 60%),
+    linear-gradient(180deg, var(--color-background) 0%, var(--color-surface-alt) 100%);
+}
+
+body.dark .ContentText h1 {
+  color: var(--color-text);
+}
+
+body.dark .ContentText p {
+  color: var(--color-text-soft);
+}
+
+body.dark .exploreBtn {
+  border-color: var(--mei-orange-soft);
+  color: var(--mei-orange-soft);
+}
+
+body.dark .exploreBtn:hover {
+  background: var(--mei-orange-soft);
+  color: var(--color-background);
+}
+
+/* ── Responsividade: hero ── */
+@media (max-width: 900px) {
+  .fundo {
+    min-height: auto;
+    padding: 100px 20px 52px;
+  }
+
+  .ContentText p {
+    font-size: 1rem;
+  }
+
+  .premiumBtn,
+  .exploreBtn {
+    width: 100%;
+  }
+}

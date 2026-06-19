@@ -1,86 +1,52 @@
 /* =====================================================================
    Planos · Responsividade
+   (Mesmo padrão de breakpoints do Configuracoes/partials/Responsividade.css)
    ===================================================================== */
 @media (max-width: 1024px) {
-  .pai-planos {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .pai-planos {
-    padding: 56px 16px;
-    gap: var(--space-lg);
+  .plansContainer {
+    gap: 20px;
   }
 
-  .plansSection {
-    padding: 60px 16px;
-  }
-
-  .featured,
   .planCard.featured {
     transform: scale(1);
   }
 
+  .planCard.featured:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .plansSection {
+    padding: 56px 16px 64px;
+  }
+
   .planCard {
     width: 100%;
-    max-width: 360px;
+    max-width: 380px;
     min-height: auto;
   }
 
-  .mei-premium,
-  .mega-mei-premium {
-    padding: 24px;
+  .planCard.featured {
+    transform: scale(1);
+    order: -1;
   }
 
-  .valor {
-    font-size: 2.4rem;
+  .planCard.featured:hover {
+    transform: translateY(-8px);
   }
 }
 
-/* =====================================================================
-   Planos · Tema escuro
-   ===================================================================== */
-body.dark .pai-planos {
-  background:
-    radial-gradient(700px 400px at 50% -10%, rgba(245,138,61,.1), transparent 60%),
-    radial-gradient(760px 420px at 0% 100%, rgba(255,179,122,.08), transparent 60%),
-    var(--color-background);
-}
+@media (max-width: 480px) {
+  .plansSection h2 {
+    font-size: 1.6rem;
+  }
 
-body.dark .mega-mei-premium {
-  background: var(--color-surface);
-  border-color: var(--mei-orange-soft);
-  color: var(--color-text);
-}
+  .toggleContainer {
+    width: 100%;
+  }
 
-body.dark .mega-mei-premium h1,
-body.dark .mega-mei-premium h2 {
-  color: var(--color-text);
-}
-
-body.dark .mega-mei-premium .valor {
-  color: var(--mei-orange-soft);
-}
-
-body.dark .mega-mei-premium .lista-beneficios-premium span {
-  color: var(--color-text-soft);
-}
-
-body.dark .texto-informativo {
-  background: var(--color-surface);
-  border-color: var(--color-border);
-}
-
-body.dark .texto-informativo p {
-  color: var(--color-text-soft);
-}
-
-body.dark .texto-informativo strong {
-  color: var(--color-text);
-}
-
-body.dark #icon-check {
-  background: var(--color-surface-alt);
-  color: var(--mei-orange-soft);
+  .planCard {
+    padding: 28px 20px;
+  }
 }

@@ -1,19 +1,26 @@
 /* =====================================================================
-   Planos · Seção de cards (usada na Home)
+   Planos · Seção e layout dos cards
    ===================================================================== */
+
+/* ── Seção principal ── */
 .plansSection {
-  padding: clamp(72px, 9vw, 100px) clamp(20px, 6vw, 80px);
-  background: linear-gradient(180deg, var(--mei-cream-2) 0%, var(--mei-cream) 100%);
+  padding: clamp(64px, 9vw, 100px) clamp(20px, 6vw, 80px);
+  background: linear-gradient(180deg, var(--color-surface-alt) 0%, var(--color-background) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: background var(--motion-slow);
 }
 
 .plansSection h2 {
   text-align: center;
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
   color: var(--color-text);
   margin-bottom: var(--space-xl);
 }
 
+/* ── Grid de cards ── */
 .plansContainer {
   display: flex;
   justify-content: center;
@@ -22,12 +29,12 @@
   gap: 28px;
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
 }
 
+/* ── Card individual ── */
 .planCard {
   width: 320px;
-  min-height: 540px;
+  min-height: 500px;
   padding: 36px 32px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
@@ -36,21 +43,49 @@
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  transition: transform var(--motion-base), box-shadow var(--motion-base), background var(--motion-slow);
+  transition:
+    transform var(--motion-base),
+    box-shadow var(--motion-base),
+    background var(--motion-slow),
+    border-color var(--motion-slow);
 }
 
 .planCard:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-md);
 }
 
-/* ── Dark mode: seção de planos na Home ── */
+/* ── Rodapé ── */
+.planos-footer {
+  padding: 28px 80px;
+  background: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.planos-footer p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* ── Dark mode: rodapé ── */
+body.dark .planos-footer {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+/* ── Dark mode: seção e cards ── */
 body.dark .plansSection {
   background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface-alt) 100%);
+}
+
+body.dark .plansSection h2 {
+  color: var(--color-text);
 }
 
 body.dark .planCard {
   background: var(--color-surface);
   border-color: var(--color-border);
   color: var(--color-text);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos Premium · MEI Track</title>
     <link rel="stylesheet" href="./assets/css/pages/Planos/Planos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Planos Mei-track</title>
     <script src="./assets/js/global/Preferencias.js" defer></script>
 </head>
 
 <body>
 
-    <!--NavBar-->
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="HomesInfo.html">
                 <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,10 +28,10 @@
                         <a class="nav-link" href="Home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="HomesInfo.html">Premium</a>
+                        <a class="nav-link active" aria-current="page" href="Planos.html">Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="duolingo/duolingo.html">Aprendizado</a>
+                        <a class="nav-link" href="duolingo/duolingo.html">Aprendizado</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="configuracoes.html">Configurações</a>
@@ -43,59 +43,98 @@
             </div>
         </div>
     </nav>
-    <!--Fim NavBar-->
+    <!-- ===== FIM NAVBAR ===== -->
 
-    <div class="pai-planos">
-        <div class="muda-plano">
-
-        </div>
-        <div class="mei-premium">
-            <h1>Oferta </h1>
-
-            <h2>Mei-premium</h2>
-
-            <h2 class="valor">R$20,00</h2>
-
-            <div class="lista-beneficios">
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Sem anuncio</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Vidas infinitas</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Emojis personalizados</span>
-            </div>
-
-        </div>
-
-        <div class="mega-mei-premium">
-            <h1>Oferta </h1>
-
-            <h2>Mei-premium</h2>
-
-            <h2 class="valor">R$20,00</h2>
-
-            <div class="lista-beneficios-premium">
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Sem anuncio</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Vidas infinitas</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Emojis personalizados</span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>Revisão de erros </span>
-                <span><i id="icon-check" class="fa-solid fa-check"></i>chat bot premium</span>
-            </div>
-        </div>
-
-        <div class="texto-informativo">
+    <!-- ===== HERO ===== -->
+    <section class="fundo">
+        <div class="overlay"></div>
+        <div class="ContentText">
+            <h1>Escolha seu <em>Plano</em></h1>
             <p>
-                A renovação do plano ocorre de forma automática conforme o valor padrão escolhido. 
-                Caso você utilize uma oferta promocional, o desconto será aplicado no período inicial, 
-                retornando ao preço normal após esse prazo. <strong>O cancelamento é livre e pode ser feito a qualquer momento.</strong> 
-                Note que preços, benefícios e condições podem sofrer alterações. 
-                Pagamentos não recorrentes não garantem a continuidade da promoção após o primeiro ciclo.
+                Desbloqueie o melhor do MEI Track com um plano feito para o seu ritmo de crescimento.
             </p>
+            <div class="buttons">
+                <button class="premiumBtn">TESTE GRÁTIS</button>
+                <button class="exploreBtn">VER PLANOS</button>
+            </div>
         </div>
-    </div>
+    </section>
+    <!-- ===== FIM HERO ===== -->
 
+    <!-- ===== PLANOS ===== -->
+    <main>
+        <section class="plansSection">
 
+            <h2>Planos Premium</h2>
 
+            <!-- Alternador mensal / anual -->
+            <div class="toggleContainer">
+                <button id="monthlyBtn" class="activePlan">Mensal</button>
+                <button id="yearlyBtn">Anual</button>
+            </div>
 
-    <script src="./assets/js/Pages/Planos/Planos.js"></script>
+            <!-- Cards -->
+            <div class="plansContainer">
+
+                <!-- Grátis -->
+                <div class="planCard">
+                    <h3>Grátis</h3>
+                    <h1 id="GratisPrice">R$0</h1>
+                    <p>para sempre</p>
+                    <ul>
+                        <li>Com anúncios</li>
+                        <li>Vidas limitadas</li>
+                        <li>Sem assistente I.A</li>
+                    </ul>
+                    <button>COMEÇAR GRÁTIS</button>
+                </div>
+
+                <!-- Premium -->
+                <div class="planCard">
+                    <h3>Premium</h3>
+                    <h1 id="premiumPrice">R$14,99</h1>
+                    <p id="premiumText">por mês</p>
+                    <h3 class="badge-anual" style="display: none;">2 meses grátis</h3>
+                    <ul>
+                        <li>Sem anúncios</li>
+                        <li>Vidas infinitas</li>
+                        <li>Emojis exclusivos</li>
+                        <li>Celo premium</li>
+                    </ul>
+                    <button>ASSINAR</button>
+                </div>
+
+                <!-- Premium I.A — destaque -->
+                <div class="planCard featured">
+                    <h3>Premium I.A</h3>
+                    <h1 id="premium_IAPrice">R$19,99</h1>
+                    <p id="premium_IAText">por mês</p>
+                    <h3 class="badge-anual" style="display: none;">2 meses grátis</h3>
+                    <ul>
+                        <li>Sem anúncios</li>
+                        <li>Vidas infinitas</li>
+                        <li>Emojis exclusivos</li>
+                        <li>Chat bot premium</li>
+                        <li>Revisão de erros I.A</li>
+                        <li>Celo premium I.A</li>
+                    </ul>
+                    <button>ASSINAR</button>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <!-- ===== FIM PLANOS ===== -->
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="planos-footer">
+        <p>© 2026 MEI Track · Todos os direitos reservados.</p>
+    </footer>
+    <!-- ===== FIM RODAPÉ ===== -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <script src="./assets/js/pages/Homesinfo/Homesinfo.js"></script>
 
+</body>
 </html>

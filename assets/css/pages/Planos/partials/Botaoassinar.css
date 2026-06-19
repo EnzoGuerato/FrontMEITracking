@@ -1,5 +1,6 @@
 /* =====================================================================
-   Planos · Botões de assinatura
+   Planos · Botão de assinatura
+   (Mesmo padrão dos botões de ação das outras páginas)
    ===================================================================== */
 .planCard button,
 .subscribe-btn {
@@ -12,12 +13,16 @@
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
-  transition: transform var(--motion-fast), box-shadow var(--motion-base), letter-spacing var(--motion-base);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--motion-fast),
+    box-shadow var(--motion-fast),
+    letter-spacing var(--motion-base);
 }
 
 .planCard button:hover,
 .subscribe-btn:hover {
   transform: translateY(-2px);
-  letter-spacing: .6px;
-  box-shadow: 0 14px 30px rgba(230,106,31,.35);
+  letter-spacing: 0.5px;
+  box-shadow: 0 14px 30px rgba(230, 106, 31, 0.35);
 }
