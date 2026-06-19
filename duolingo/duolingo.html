@@ -43,15 +43,15 @@
       <!-- Botão de Perfil + Dropdown -->
       <div class="perfil-wrapper" id="perfil-wrapper">
         <button class="perfil-btn" id="perfil-btn" aria-haspopup="true" aria-expanded="false" aria-controls="perfil-dropdown">
-          <img src="miguelito/miguel.jpeg" alt="Avatar" class="perfil-btn__avatar">
-          <span class="perfil-btn__nome" id="perfil-btn-nome">Jogador_01</span>
+          <img src="logo meizinho/profile.png" alt="Avatar" class="perfil-btn__avatar" data-perfil-foto>
+          <span class="perfil-btn__nome" id="perfil-btn-nome" data-perfil-nome>Jogador_01</span>
           <span class="perfil-btn__seta" aria-hidden="true">▾</span>
         </button>
 
         <div class="perfil-dropdown" id="perfil-dropdown" role="region" aria-label="Painel de perfil" hidden>
           <!-- Cabeçalho do usuário -->
           <div class="perfil-dropdown__header">
-            <img src="miguelito/miguel.jpeg" alt="Avatar" class="perfil-dropdown__avatar">
+            <img src="logo meizinho/profile.png" alt="Avatar" class="perfil-dropdown__avatar" data-perfil-foto>
             <div>
               <strong class="perfil-dropdown__nome" id="perfil-dropdown-nome">Jogador_01</strong>
               <span class="perfil-dropdown__nivel">Iniciante</span>
@@ -205,9 +205,9 @@
   <aside class="barra-direita">
 
     <div class="cartao cartao-perfil">
-      <img src="miguelito/miguel.jpeg" alt="Avatar Usuário">
+      <img src="logo meizinho/profile.png" alt="Avatar Usuário" data-perfil-foto>
       <div>
-        <h3 id="nome-exibicao-perfil">Jogador_01</h3>
+        <h3 id="nome-exibicao-perfil" data-perfil-nome>Jogador_01</h3>
         <p>Iniciante</p>
       </div>
     </div>
@@ -278,6 +278,7 @@
     </div>
   </div>
 
+  <script src="../assets/js/global/Perfil.js"></script>
   <script src="duolingo.js"></script>
 </body>
 </html>

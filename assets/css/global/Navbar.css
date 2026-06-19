@@ -101,3 +101,24 @@ body.dark .navbar-toggler {
 body.dark .navbar-toggler-icon {
   filter: invert(0.85) sepia(0.3) saturate(2) hue-rotate(340deg);
 }
+
+/* ── Item de perfil na navbar ── */
+.nav-perfil {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-perfil__foto {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--mei-orange-soft);
+  transition: border-color var(--motion-fast);
+}
+
+.nav-perfil:hover .nav-perfil__foto,
+.nav-perfil.active .nav-perfil__foto {
+  border-color: var(--mei-orange-deep);
+}

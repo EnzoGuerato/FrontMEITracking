@@ -1,0 +1,246 @@
+/* =====================================================================
+   Perfil · MEI Track
+   ===================================================================== */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color var(--motion-slow), color var(--motion-slow);
+}
+
+/* ── Hero ── */
+.perfil-hero {
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  padding: var(--space-2xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+  color: #fff;
+}
+
+/* Container do avatar com botão de edição */
+.perfil-hero__avatar-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+
+.perfil-hero__avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.7);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.perfil-hero__avatar-btn {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  transition: transform var(--motion-fast);
+}
+
+.perfil-hero__avatar-btn:hover { transform: scale(1.12); }
+
+.perfil-hero__avatar-input { display: none; }
+
+.perfil-hero__nome {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.perfil-hero__sub {
+  font-size: 0.92rem;
+  font-weight: 600;
+  opacity: 0.88;
+  margin: 0;
+}
+
+/* ── Layout principal ── */
+.perfil-main {
+  max-width: 640px;
+  width: 100%;
+  margin: var(--space-xl) auto;
+  padding: 0 var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Seções ── */
+.perfil-section {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: background var(--motion-base), border-color var(--motion-base);
+}
+
+.perfil-section__titulo {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+/* ── Campo de formulário ── */
+.perfil-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.perfil-field:last-child { margin-bottom: 0; }
+
+.perfil-field label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.perfil-input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-surface);
+  outline: none;
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.perfil-input:focus {
+  border-color: var(--mei-orange-soft);
+  box-shadow: 0 0 0 3px rgba(245,138,61,0.18);
+}
+
+.perfil-input::placeholder { color: var(--color-text-muted); }
+
+/* ── Botão salvar ── */
+.perfil-btn-salvar {
+  width: 100%;
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  border: none;
+  border-bottom: 4px solid var(--mei-orange-deep);
+  color: #fff;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: filter var(--motion-fast), transform var(--motion-fast);
+  margin-top: var(--space-sm);
+}
+
+.perfil-btn-salvar:hover  { filter: brightness(1.08); }
+.perfil-btn-salvar:active { transform: translateY(2px); border-bottom-width: 2px; }
+
+/* ── Toast de confirmação ── */
+.perfil-toast {
+  position: fixed;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--mei-success, #6BA368);
+  color: #fff;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.perfil-toast.visivel {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Preview da foto ── */
+.perfil-foto-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.perfil-foto-preview__img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.perfil-foto-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-text-soft);
+  cursor: pointer;
+  transition: border-color var(--motion-fast), background var(--motion-fast);
+}
+
+.perfil-foto-upload-label:hover {
+  border-color: var(--mei-orange-soft);
+  background: var(--color-surface);
+}
+
+.perfil-foto-upload-input { display: none; }
+
+/* ── Rodapé ── */
+.perfil-footer {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 680px) {
+  .perfil-main { padding: 0 var(--space-md); margin: var(--space-lg) auto; }
+  .perfil-hero  { padding: var(--space-xl) var(--space-md); }
+  .perfil-section { padding: var(--space-md); }
+}

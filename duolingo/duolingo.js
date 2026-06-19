@@ -6,7 +6,7 @@ let estadoApp = {
   ultimaPerdaVidaHora: null, 
   licaoAtual: 1,
   totalLicoes: 20,
-  nomeUsuario: "Jogador_01",
+  nomeUsuario: localStorage.getItem('meitrack_perfil_nome') || "Jogador_01",
   progressoM1: 0,
   progressoM2: 0,
   rankingInvertido: false,
@@ -292,6 +292,15 @@ function atualizarInterface() {
   elOfensiva.innerText = estadoApp.ofensiva;
   elVidas.innerText = estadoApp.vidasGlobais;
   nomeExibicao.innerText = estadoApp.nomeUsuario;
+
+  /* Sincroniza foto do perfil global */
+  const fotoGlobal = localStorage.getItem('meitrack_perfil_foto');
+  if (fotoGlobal) {
+    document.querySelectorAll('[data-perfil-foto]').forEach(el => { el.src = fotoGlobal; });
+  }
+  /* Sincroniza nome global */
+  const nomeGlobal = localStorage.getItem('meitrack_perfil_nome');
+  if (nomeGlobal) estadoApp.nomeUsuario = nomeGlobal;
 
   aplicarTamanhoFonte();
   renderizarTrilha();

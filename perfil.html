@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil · MEI Track</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/global/Global.css">
+  <link rel="stylesheet" href="./assets/css/global/Navbar.css">
+  <link rel="stylesheet" href="./assets/css/pages/Perfil/Perfil.css">
+  <script src="./assets/js/global/Preferencias.js" defer></script>
+</head>
+<body>
+
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="HomesInfo.html">
+        <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Planos.html">Premium</a></li>
+          <li class="nav-item"><a class="nav-link" href="duolingo/duolingo.html">Aprendizado</a></li>
+          <li class="nav-item"><a class="nav-link" href="forum.html">Fórum</a></li>
+          <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-perfil active" href="perfil.html" aria-current="page">
+              <img src="duolingo/logo meizinho/profile.png" alt="Foto de perfil"
+                   class="nav-perfil__foto" data-perfil-foto>
+              <span data-perfil-nome>Usuário</span>
+            </a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="Login.html">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Fim NavBar -->
+
+  <!-- Hero -->
+  <section class="perfil-hero">
+    <div class="perfil-hero__avatar-wrap">
+      <img
+        src="duolingo/logo meizinho/profile.png"
+        alt="Foto de perfil"
+        class="perfil-hero__avatar"
+        id="hero-avatar"
+        data-perfil-foto>
+      <button class="perfil-hero__avatar-btn" id="hero-avatar-btn" title="Alterar foto" aria-label="Alterar foto de perfil">
+        📷
+      </button>
+      <input type="file" accept="image/*" class="perfil-hero__avatar-input" id="hero-avatar-input">
+    </div>
+    <h1 class="perfil-hero__nome" id="hero-nome" data-perfil-nome>Usuário</h1>
+    <p class="perfil-hero__sub">Membro MEI Track</p>
+  </section>
+
+  <!-- Conteúdo -->
+  <main class="perfil-main">
+
+    <!-- Seção: Foto de Perfil -->
+    <section class="perfil-section">
+      <h2 class="perfil-section__titulo">📷 Foto de Perfil</h2>
+      <div class="perfil-foto-preview">
+        <img
+          src="duolingo/logo meizinho/profile.png"
+          alt="Preview"
+          class="perfil-foto-preview__img"
+          id="preview-foto"
+          data-perfil-foto>
+        <label class="perfil-foto-upload-label" for="input-foto">
+          📂 Escolher imagem
+          <input type="file" accept="image/*" class="perfil-foto-upload-input" id="input-foto">
+        </label>
+      </div>
+      <button class="perfil-btn-salvar" id="btn-salvar-foto">💾 Salvar Foto</button>
+    </section>
+
+    <!-- Seção: Dados do Perfil -->
+    <section class="perfil-section">
+      <h2 class="perfil-section__titulo">👤 Dados do Perfil</h2>
+
+      <div class="perfil-field">
+        <label for="input-nome">Nome de exibição</label>
+        <input
+          type="text"
+          id="input-nome"
+          class="perfil-input"
+          placeholder="Seu nome..."
+          maxlength="40">
+      </div>
+
+      <button class="perfil-btn-salvar" id="btn-salvar-nome">💾 Salvar Nome</button>
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="perfil-toast" id="perfil-toast" role="status" aria-live="polite"></div>
+
+  <!-- Rodapé -->
+  <footer class="perfil-footer">
+    <p>© 2025 MEI Track · Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="./assets/js/global/Perfil.js"></script>
+  <script>
+    const KEY_NOME = 'meitrack_perfil_nome';
+    const KEY_FOTO = 'meitrack_perfil_foto';
+
+    const inputNome    = document.getElementById('input-nome');
+    const btnNome      = document.getElementById('btn-salvar-nome');
+    const inputFoto    = document.getElementById('input-foto');
+    const btnFoto      = document.getElementById('btn-salvar-foto');
+    const previewFoto  = document.getElementById('preview-foto');
+    const heroAvatar   = document.getElementById('hero-avatar');
+    const heroAvatarBtn = document.getElementById('hero-avatar-btn');
+    const heroAvatarInput = document.getElementById('hero-avatar-input');
+    const heroNome     = document.getElementById('hero-nome');
+    const toast        = document.getElementById('perfil-toast');
+
+    let fotoSelecionada = null;
+
+    /* Carrega estado atual */
+    function carregarEstado() {
+      const nome = localStorage.getItem(KEY_NOME) || '';
+      const foto = localStorage.getItem(KEY_FOTO);
+      inputNome.value = nome;
+      if (foto) {
+        previewFoto.src = foto;
+        heroAvatar.src  = foto;
+      }
+    }
+
+    /* Toast */
+    function mostrarToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('visivel');
+      setTimeout(() => toast.classList.remove('visivel'), 2800);
+    }
+
+    /* Preview ao selecionar imagem */
+    function handleFileSelect(file) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        fotoSelecionada = e.target.result;
+        previewFoto.src = fotoSelecionada;
+        heroAvatar.src  = fotoSelecionada;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    inputFoto.addEventListener('change', () => handleFileSelect(inputFoto.files[0]));
+    heroAvatarInput.addEventListener('change', () => handleFileSelect(heroAvatarInput.files[0]));
+    heroAvatarBtn.addEventListener('click', () => heroAvatarInput.click());
+
+    /* Salvar foto */
+    btnFoto.addEventListener('click', () => {
+      if (!fotoSelecionada) { mostrarToast('⚠️ Selecione uma imagem primeiro'); return; }
+      localStorage.setItem(KEY_FOTO, fotoSelecionada);
+      /* Atualiza todos os elementos na página */
+      document.querySelectorAll('[data-perfil-foto]').forEach(el => el.src = fotoSelecionada);
+      fotoSelecionada = null;
+      mostrarToast('✅ Foto atualizada com sucesso!');
+    });
+
+    /* Salvar nome */
+    btnNome.addEventListener('click', () => {
+      const nome = inputNome.value.trim();
+      if (!nome) { inputNome.focus(); mostrarToast('⚠️ Digite um nome válido'); return; }
+      localStorage.setItem(KEY_NOME, nome);
+      document.querySelectorAll('[data-perfil-nome]').forEach(el => el.textContent = nome);
+      heroNome.textContent = nome;
+      mostrarToast('✅ Nome atualizado com sucesso!');
+    });
+
+    carregarEstado();
+  </script>
+</body>
+</html>
