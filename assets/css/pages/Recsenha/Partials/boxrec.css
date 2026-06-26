@@ -175,3 +175,22 @@ body.dark #result {
     margin: 0 auto var(--space-sm);
   }
 }
+
+/* =====================================================================
+   Recsenha · Botão voltar
+   ===================================================================== */
+.voltar-login {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  color: #FFE9D6;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color var(--motion-fast), text-decoration var(--motion-fast);
+}
+
+.voltar-login:hover {
+  color: #fff;
+  text-decoration: underline;
+}

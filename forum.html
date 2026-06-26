@@ -15,7 +15,7 @@
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="HomesInfo.html">
+        <a class="navbar-brand" href="Home.html">
           <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -51,39 +51,50 @@
       </div>
     </section>
 
+    <!-- Modal de criar post -->
+    <div class="forum-modal-overlay" id="forum-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+      <div class="forum-modal">
+        <div class="forum-modal__header">
+          <h2 id="modal-titulo">Criar Post</h2>
+          <button class="forum-modal__fechar" id="forum-modal-fechar" aria-label="Fechar modal">✕</button>
+        </div>
+
+        <label class="forum-label" for="forum-imagem">Imagem (opcional)</label>
+        <label class="forum-upload" for="forum-imagem" id="forum-upload-label">
+          <span class="forum-upload__icone">📷</span>
+          <span class="forum-upload__texto" id="forum-upload-texto">Selecionar da galeria</span>
+          <input type="file" id="forum-imagem" accept="image/*" class="forum-upload__input">
+        </label>
+
+        <label class="forum-label" for="forum-legenda">Legenda</label>
+        <textarea
+          id="forum-legenda"
+          class="forum-textarea"
+          placeholder="Escreva sua legenda..."
+          rows="5"
+          maxlength="500"></textarea>
+        <span class="forum-contador" id="forum-contador">0 / 500</span>
+
+        <button class="forum-btn-publicar" id="forum-btn-publicar">
+          Publicar
+        </button>
+      </div>
+    </div>
+
     <!-- Layout principal -->
     <div class="forum-layout">
 
-      <!-- Coluna esquerda: criar post -->
+      <!-- Sidebar: dicas + botão criar post -->
       <aside class="forum-sidebar">
 
-        <div class="forum-card">
-          <h2 class="forum-card__titulo">✍️ Criar Post</h2>
-
-          <label class="forum-label" for="forum-imagem">Imagem (opcional)</label>
-          <label class="forum-upload" for="forum-imagem" id="forum-upload-label">
-            <span class="forum-upload__icone">📷</span>
-            <span class="forum-upload__texto" id="forum-upload-texto">Selecionar da galeria</span>
-            <input type="file" id="forum-imagem" accept="image/*" class="forum-upload__input">
-          </label>
-
-          <label class="forum-label" for="forum-legenda">Legenda</label>
-          <textarea
-            id="forum-legenda"
-            class="forum-textarea"
-            placeholder="Escreva sua legenda..."
-            rows="5"
-            maxlength="500"></textarea>
-          <span class="forum-contador" id="forum-contador">0 / 500</span>
-
-          <button class="forum-btn-publicar" id="forum-btn-publicar">
-            🚀 Publicar
-          </button>
-        </div>
+        <!-- Botão criar post (substitui o formulário fixo) -->
+        <button class="forum-btn-criar-post" id="forum-btn-abrir-modal">
+          Criar Post
+        </button>
 
         <!-- Card de dicas -->
         <div class="forum-card forum-card--dica">
-          <h3 class="forum-card__titulo forum-card__titulo--sm">💡 Dicas da comunidade</h3>
+          <h3 class="forum-card__titulo forum-card__titulo--sm">Dicas da comunidade</h3>
           <ul class="forum-dicas">
             <li>Seja respeitoso e construtivo.</li>
             <li>Compartilhe apenas conteúdo relevante para MEIs.</li>
@@ -96,12 +107,27 @@
       <!-- Coluna direita: feed de posts -->
       <main class="forum-feed" id="forum-feed">
 
+        <!-- Barra de pesquisa -->
+        <div class="forum-busca">
+          <input
+            type="search"
+            id="forum-busca-input"
+            class="forum-busca__input"
+            placeholder="🔍 Buscar posts..."
+            aria-label="Buscar posts">
+        </div>
+
         <!-- Filtros -->
         <div class="forum-filtros">
           <button class="forum-filtro ativo" data-filtro="recentes">🕐 Recentes</button>
           <button class="forum-filtro" data-filtro="populares">🔥 Populares</button>
           <button class="forum-filtro" data-filtro="meus">👤 Meus posts</button>
         </div>
+
+        <!-- Mensagem de sem resultados -->
+        <p class="forum-sem-resultados" id="forum-sem-resultados" hidden>
+          Nenhum post encontrado para "<span id="forum-busca-termo"></span>".
+        </p>
 
         <!-- Posts exemplo -->
         <article class="forum-post">
@@ -117,12 +143,19 @@
             <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">
               👍 <span>12</span>
             </button>
-            <button class="forum-post__acao" aria-label="Comentar">
+            <button class="forum-post__acao forum-post__acao--comentar" aria-label="Comentar">
               💬 <span>3</span>
             </button>
             <button class="forum-post__acao" aria-label="Compartilhar">
               🔗 Compartilhar
             </button>
+          </div>
+          <div class="forum-comentarios" hidden>
+            <div class="forum-comentarios__lista"></div>
+            <div class="forum-comentarios__novo">
+              <input type="text" class="forum-comentarios__input" placeholder="Escreva um comentário..." maxlength="280" aria-label="Novo comentário">
+              <button class="forum-comentarios__enviar">Enviar</button>
+            </div>
           </div>
         </article>
 
@@ -139,12 +172,19 @@
             <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">
               👍 <span>4</span>
             </button>
-            <button class="forum-post__acao" aria-label="Comentar">
+            <button class="forum-post__acao forum-post__acao--comentar" aria-label="Comentar">
               💬 <span>7</span>
             </button>
             <button class="forum-post__acao" aria-label="Compartilhar">
               🔗 Compartilhar
             </button>
+          </div>
+          <div class="forum-comentarios" hidden>
+            <div class="forum-comentarios__lista"></div>
+            <div class="forum-comentarios__novo">
+              <input type="text" class="forum-comentarios__input" placeholder="Escreva um comentário..." maxlength="280" aria-label="Novo comentário">
+              <button class="forum-comentarios__enviar">Enviar</button>
+            </div>
           </div>
         </article>
 
@@ -161,12 +201,19 @@
             <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">
               👍 <span>31</span>
             </button>
-            <button class="forum-post__acao" aria-label="Comentar">
+            <button class="forum-post__acao forum-post__acao--comentar" aria-label="Comentar">
               💬 <span>9</span>
             </button>
             <button class="forum-post__acao" aria-label="Compartilhar">
               🔗 Compartilhar
             </button>
+          </div>
+          <div class="forum-comentarios" hidden>
+            <div class="forum-comentarios__lista"></div>
+            <div class="forum-comentarios__novo">
+              <input type="text" class="forum-comentarios__input" placeholder="Escreva um comentário..." maxlength="280" aria-label="Novo comentário">
+              <button class="forum-comentarios__enviar">Enviar</button>
+            </div>
           </div>
         </article>
 
@@ -174,20 +221,92 @@
     </div>
 
     <!-- Rodapé -->
-    <footer class="forum-footer">
-      <p>© 2025 MEI Track · Todos os direitos reservados.</p>
-    </footer>
+    <footer class="footer">
+
+      <div class="footer-container">
+  
+          <div class="footer-col">
+              <img src="./assets/Images/logo meizinho/Meizinhodandojoia.png" alt="Logo">
+  
+              <p>
+                  O MEI Track ajuda microempreendedores a aprender gestão,
+                  organizar o negócio e crescer com conteúdo de qualidade.
+              </p>
+          </div>
+  
+          <div class="footer-col">
+              <h3>Links</h3>
+  
+              <ul>
+                  <li><a href="Home.html">Home</a></li>
+                  <li><a href="planos.html">Premium</a></li>
+                  <li><a href="forum.html">Fórum</a></li>
+                  <li><a href="perfil.html">Perfil</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-col">
+              <h3>Contato</h3>
+  
+              <p>contato@meitrack.com</p>
+              <p>(14) 98839-3378</p>
+          </div>
+  
+      </div>
+  
+      <hr>
+  
+      <p class="copyright">
+          © 2026 MEI Track - Todos os direitos reservados.
+      </p>
+  
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
-      // Contador de caracteres da legenda
+      /* ══════════════════════════════════════════════
+         Modal de Criar Post
+      ══════════════════════════════════════════════ */
+      const modalOverlay  = document.getElementById('forum-modal-overlay');
+      const btnAbrirModal = document.getElementById('forum-btn-abrir-modal');
+      const btnFecharModal= document.getElementById('forum-modal-fechar');
+
+      function abrirModal() {
+        modalOverlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        document.getElementById('forum-legenda').focus();
+      }
+
+      function fecharModal() {
+        modalOverlay.hidden = true;
+        document.body.style.overflow = '';
+      }
+
+      btnAbrirModal.addEventListener('click', abrirModal);
+      btnFecharModal.addEventListener('click', fecharModal);
+
+      // Fechar ao clicar fora do modal
+      modalOverlay.addEventListener('click', e => {
+        if (e.target === modalOverlay) fecharModal();
+      });
+
+      // Fechar com ESC
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !modalOverlay.hidden) fecharModal();
+      });
+
+      /* ══════════════════════════════════════════════
+         Contador de caracteres
+      ══════════════════════════════════════════════ */
       const legenda = document.getElementById('forum-legenda');
-      const contador = document.getElementById('forum-contador');
+      const contador= document.getElementById('forum-contador');
       legenda.addEventListener('input', () => {
         contador.textContent = `${legenda.value.length} / 500`;
       });
 
-      // Preview do nome do arquivo selecionado
+      /* ══════════════════════════════════════════════
+         Preview do arquivo selecionado
+      ══════════════════════════════════════════════ */
       const inputImagem = document.getElementById('forum-imagem');
       const uploadTexto = document.getElementById('forum-upload-texto');
       inputImagem.addEventListener('change', () => {
@@ -196,7 +315,9 @@
           : 'Selecionar da galeria';
       });
 
-      // Filtros de feed
+      /* ══════════════════════════════════════════════
+         Filtros de feed
+      ══════════════════════════════════════════════ */
       document.querySelectorAll('.forum-filtro').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.forum-filtro').forEach(b => b.classList.remove('ativo'));
@@ -204,7 +325,9 @@
         });
       });
 
-      // Publicar post (mock)
+      /* ══════════════════════════════════════════════
+         Publicar post (mock)
+      ══════════════════════════════════════════════ */
       document.getElementById('forum-btn-publicar').addEventListener('click', () => {
         const texto = legenda.value.trim();
         if (!texto) { legenda.focus(); return; }
@@ -220,14 +343,20 @@
               <span class="forum-post__data">agora</span>
             </div>
           </div>
-          <p class="forum-post__texto">${texto.replace(/</g, '&lt;')}</p>
+          <p class="forum-post__texto">${texto.replace(/</g,'&lt;')}</p>
           <div class="forum-post__acoes">
             <button class="forum-post__acao forum-post__acao--like" aria-label="Curtir">👍 <span>0</span></button>
-            <button class="forum-post__acao" aria-label="Comentar">💬 <span>0</span></button>
+            <button class="forum-post__acao forum-post__acao--comentar" aria-label="Comentar">💬 <span>0</span></button>
             <button class="forum-post__acao" aria-label="Compartilhar">🔗 Compartilhar</button>
+          </div>
+          <div class="forum-comentarios" hidden>
+            <div class="forum-comentarios__lista"></div>
+            <div class="forum-comentarios__novo">
+              <input type="text" class="forum-comentarios__input" placeholder="Escreva um comentário..." maxlength="280" aria-label="Novo comentário">
+              <button class="forum-comentarios__enviar">Enviar</button>
+            </div>
           </div>`;
 
-        // Insere após os filtros
         const filtros = feed.querySelector('.forum-filtros');
         filtros.insertAdjacentElement('afterend', novo);
 
@@ -235,15 +364,83 @@
         contador.textContent = '0 / 500';
         uploadTexto.textContent = 'Selecionar da galeria';
         inputImagem.value = '';
+        fecharModal();
       });
 
-      // Curtir
+      /* ══════════════════════════════════════════════
+         Curtir
+      ══════════════════════════════════════════════ */
       document.addEventListener('click', e => {
         const btn = e.target.closest('.forum-post__acao--like');
         if (!btn) return;
-        const span = btn.querySelector('span');
+        const span  = btn.querySelector('span');
         const curtido = btn.classList.toggle('curtido');
         span.textContent = parseInt(span.textContent) + (curtido ? 1 : -1);
+      });
+
+      /* ══════════════════════════════════════════════
+         Comentários
+      ══════════════════════════════════════════════ */
+      document.addEventListener('click', e => {
+        // Abrir/fechar seção de comentários
+        const btnComentar = e.target.closest('.forum-post__acao--comentar');
+        if (btnComentar) {
+          const post = btnComentar.closest('.forum-post');
+          const secao = post.querySelector('.forum-comentarios');
+          const aberto = !secao.hidden;
+          secao.hidden = aberto;
+          if (!aberto) secao.querySelector('.forum-comentarios__input').focus();
+          return;
+        }
+
+        // Enviar comentário
+        const btnEnviar = e.target.closest('.forum-comentarios__enviar');
+        if (btnEnviar) {
+          const secao = btnEnviar.closest('.forum-comentarios');
+          const input = secao.querySelector('.forum-comentarios__input');
+          const texto = input.value.trim();
+          if (!texto) { input.focus(); return; }
+
+          const lista = secao.querySelector('.forum-comentarios__lista');
+          const item  = document.createElement('div');
+          item.className = 'forum-comentario';
+          item.innerHTML = `<strong>Você</strong> <span>${texto.replace(/</g,'&lt;')}</span>`;
+          lista.appendChild(item);
+
+          // Atualiza contador do botão comentar
+          const btnC = secao.closest('.forum-post').querySelector('.forum-post__acao--comentar span');
+          if (btnC) btnC.textContent = parseInt(btnC.textContent) + 1;
+
+          input.value = '';
+        }
+      });
+
+      /* ══════════════════════════════════════════════
+         Barra de pesquisa
+      ══════════════════════════════════════════════ */
+      const buscaInput     = document.getElementById('forum-busca-input');
+      const semResultados  = document.getElementById('forum-sem-resultados');
+      const buscaTermo     = document.getElementById('forum-busca-termo');
+
+      buscaInput.addEventListener('input', () => {
+        const termo = buscaInput.value.trim().toLowerCase();
+        const posts = document.querySelectorAll('#forum-feed .forum-post');
+        let encontrou = false;
+
+        posts.forEach(post => {
+          const texto = post.querySelector('.forum-post__texto')?.textContent.toLowerCase() || '';
+          const autor = post.querySelector('.forum-post__autor')?.textContent.toLowerCase() || '';
+          const match = !termo || texto.includes(termo) || autor.includes(termo);
+          post.hidden = !match;
+          if (match) encontrou = true;
+        });
+
+        if (termo && !encontrou) {
+          buscaTermo.textContent = buscaInput.value.trim();
+          semResultados.hidden   = false;
+        } else {
+          semResultados.hidden = true;
+        }
       });
     </script>
   </body>

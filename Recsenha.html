@@ -20,16 +20,75 @@
                     <h1>Recuperar Senha</h1>
 
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail" autocomplete="email">
 
-                    <button type="submit">Enviar</button>
+                    <label for="nova-senha">Nova Senha:</label>
+                    <input type="password" id="nova-senha" name="nova_senha" placeholder="Nova senha (mín. 8 caracteres)" autocomplete="new-password">
+
+                    <label for="confirma-senha">Confirmar Senha:</label>
+                    <input type="password" id="confirma-senha" name="confirma_senha" placeholder="Confirmar nova senha" autocomplete="new-password">
+
+                    <button type="submit" id="btn-enviar">Enviar</button>
 
                     <div id="result"></div>
+
+                    <a class="voltar-login" href="Login.html">← Voltar para o login</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="./assets/js/pages/Recsenha/Partials/recsenha.js"></script>
+    <script>
+      // Validação client-side da página de recuperação de senha
+      document.getElementById('btn-enviar').addEventListener('click', function(e) {
+        e.preventDefault();
+        const result       = document.getElementById('result');
+        const email        = document.getElementById('email').value.trim();
+        const novaSenha    = document.getElementById('nova-senha').value;
+        const confirma     = document.getElementById('confirma-senha').value;
+
+        result.style.color = '#FFE9D6';
+
+        // Validar e-mail
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          result.style.color = '#ffb3b3';
+          result.textContent = '⚠️ Digite um e-mail válido.';
+          return;
+        }
+
+        // Validar campos de senha preenchidos
+        if (!novaSenha) {
+          result.style.color = '#ffb3b3';
+          result.textContent = '⚠️ O campo senha é obrigatório.';
+          document.getElementById('nova-senha').focus();
+          return;
+        }
+
+        // Comprimento mínimo
+        if (novaSenha.length < 8) {
+          result.style.color = '#ffb3b3';
+          result.textContent = '⚠️ A senha deve ter no mínimo 8 caracteres.';
+          document.getElementById('nova-senha').focus();
+          return;
+        }
+
+        // Confirmação
+        if (novaSenha !== confirma) {
+          result.style.color = '#ffb3b3';
+          result.textContent = '⚠️ As senhas não coincidem.';
+          document.getElementById('confirma-senha').focus();
+          return;
+        }
+
+        // Tudo válido — prossegue com o envio real (lógica do recsenha.js)
+        result.style.color = '#b3ffb3';
+        result.textContent = '✅ Validação OK. Enviando solicitação...';
+        // Disparar submit real via backend, se disponível
+        if (typeof enviarRecuperacao === 'function') {
+          enviarRecuperacao(email, novaSenha);
+        }
+      });
+    </script>
 </body>
 </html>

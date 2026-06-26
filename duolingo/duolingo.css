@@ -1065,14 +1065,14 @@ body.modo-escuro .botao-secundario { background: var(--color-surface-alt); borde
    Responsividade · Mobile (≤ 768px)
    ===================================================================== */
 @media (max-width: 768px) {
-  body { flex-direction: column; padding-bottom: 66px; }
+  body { flex-direction: column; padding-bottom: 72px; }
 
   .barra-lateral {
     position: fixed;
     bottom: 0; left: 0; top: auto;
-    width: 100%; height: 64px;
+    width: 100%; height: 70px;
     flex-direction: row;
-    padding: 6px 12px;
+    padding: 4px 8px;
     gap: 0;
     border-right: none;
     border-top: 1px solid var(--color-border);
@@ -1088,9 +1088,12 @@ body.modo-escuro .botao-secundario { background: var(--color-surface-alt); borde
     width: 100%;
   }
 
-  .menu { flex-direction: column; justify-content: center; padding: 5px 8px; gap: 1px; flex: 1; }
-  .menu__label { font-size: 10px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .menu__icone { font-size: 20px; }
+  .menu { flex-direction: column; justify-content: center; padding: 5px 4px; gap: 2px; flex: 1; min-width: 0; }
+  .menu__label { font-size: 9px; text-align: center; white-space: normal; overflow: visible; text-overflow: unset; line-height: 1.2; word-break: keep-all; }
+  .menu__icone { font-size: 22px; line-height: 1; }
+
+  /* Oculta o cartão de perfil duplicado na barra direita no mobile */
+  .cartao-perfil { display: none; }
 
   .barra-direita {
     position: static;

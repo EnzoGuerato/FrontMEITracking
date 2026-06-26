@@ -10,13 +10,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Home</title>
     <script src="./assets/js/global/Preferencias.js" defer></script>
+    <style>
+      /* ── Fix mobile: planos na Home ── */
+      @media (max-width: 768px) {
+        .plansContainer {
+          flex-direction: column;
+          align-items: center;
+        }
+        .planCard {
+          width: 100%;
+          max-width: 380px;
+          min-height: auto;
+        }
+        .planCard.featured {
+          transform: scale(1) !important;
+          order: -1;
+        }
+      }
+    </style>
 </head>
 <body>
     
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="HomesInfo.html">
+            <a class="navbar-brand" href="Home.html">
                 <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,91 +104,65 @@
             Escolha seu Plano Premium
         </h2>
 
-        <div style="    display: flex;
-        justify-content: center;">
+        <div style="display: flex; justify-content: center;">
             <!-- Alternador -->
             <div class="toggleContainer">
-
-                <!-- Mensal -->
-                <button id="monthlyBtn" class="activePlan">
-                    Mensal
-                </button>
-
-                <!-- Anual -->
-                <button id="yearlyBtn">
-                    Anual
-                </button>
-
+                <button id="monthlyBtn" class="activePlan">Mensal</button>
+                <button id="yearlyBtn">Anual</button>
             </div>
         </div>
 
         <!-- Cards -->
         <div class="plansContainer">
 
-            <!-- Plano -->
+            <!-- Plano Grátis -->
             <div class="planCard">
+                <h3>Grátis</h3>
+                <h1>R$0</h1>
+                <p>para sempre</p>
+                <ul>
+                    <li>Acesso básico às lições</li>
+                    <li>5 vidas por dia</li>
+                    <li>Missões diárias</li>
+                </ul>
+                <a href="Login.html"><button>COMEÇAR</button></a>
+            </div>
 
+            <!-- Plano Premium -->
+            <div class="planCard">
                 <h3>Premium</h3>
-
-                <h1 id="premiumPrice">
-                    R$14,99
-                </h1>
-
-                <p id="premiumText">
-                    por mês
-                </p>
-
+                <h1 id="premiumPrice">R$14,99</h1>
+                <p id="premiumText">por mês</p>
                 <ul>
-
                     <li>Sem anúncios</li>
-
-                    <li>vida infinita</li>
-
-                    <li>emojis personalizados</li>
-
-                    <li>revisão de erros simples</li>
-
+                    <li>Vida infinita</li>
+                    <li>Emojis personalizados</li>
+                    <li>Revisão de erros simples</li>
                 </ul>
-
-                <button>
-                    ASSINAR
-                </button>
-
+                <a href="Pagamento.html"><button>ASSINAR</button></a>
             </div>
 
-            <!-- Plano -->
+            <!-- Plano Premium I.A -->
             <div class="planCard featured">
-
                 <h3>Premium I.A</h3>
-
-                <h1 id="premium_IAPrice">
-                    R$19,99
-                </h1>
-
-                <p id="premium_IAText">
-                    por mês
-                </p>
-
+                <h1 id="premium_IAPrice">R$19,99</h1>
+                <p id="premium_IAText">por mês</p>
                 <ul>
-
                     <li>Sem anúncios</li>
-
-                    <li>vida infinita</li>
-
-                    <li>emojis excluvios</li>
-
-                    <li>revisão de erros detalhada</li>
-
-                    <li>chat bot premium</li>
-
+                    <li>Vida infinita</li>
+                    <li>Emojis exclusivos</li>
+                    <li>Revisão de erros detalhada</li>
+                    <li>Chat bot premium</li>
                 </ul>
-
-                <button>
-                    ASSINAR
-                </button>
-
+                <a href="Pagamento.html"><button>ASSINAR</button></a>
             </div>
 
+        </div>
+
+        <div style="text-align:center; margin-top: 1rem;">
+            <a href="planos.html" style="color: var(--mei-orange); font-weight: 800; font-size: 0.95rem;">
+                Ver todos os planos →
+            </a>
         </div>
 
     </section>

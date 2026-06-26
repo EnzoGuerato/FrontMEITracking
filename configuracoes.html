@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurações · MEI Track</title>
+    <link rel="stylesheet" href="./assets/css/global/Footer.css">
     <link rel="stylesheet" href="./assets/css/pages/Configuracoes/Configuracoes.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="./assets/js/global/Preferencias.js" defer></script>
@@ -14,7 +15,7 @@
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="HomesInfo.html">
+            <a class="navbar-brand" href="Home.html">
                 <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,6 +62,49 @@
 
     <!-- ===== CONTEÚDO PRINCIPAL ===== -->
     <main class="config-main">
+
+        <!-- ── CONTA ── -->
+        <section class="config-section">
+            <div class="config-section__header">
+                <div>
+                    <h2>Conta</h2>
+                    <p>Gerencie seus dados de acesso.</p>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="config-card">
+                <div class="config-card__info">
+                    <h3>E-mail</h3>
+                    <p>Endereço de e-mail associado à sua conta.</p>
+                </div>
+                <div class="config-field-group">
+                    <input type="email" id="emailInput" class="config-input"
+                           placeholder="seu@email.com" autocomplete="email">
+                    <p class="config-field-error" id="emailErro"></p>
+                    <button class="config-btn-salvar" id="btnSalvarEmail">Salvar e-mail</button>
+                </div>
+            </div>
+
+            <!-- Alterar senha -->
+            <div class="config-card">
+                <div class="config-card__info">
+                    <h3>Alterar Senha</h3>
+                    <p>Defina uma nova senha de acesso.</p>
+                </div>
+                <div class="config-field-group">
+                    <input type="password" id="senhaAtual" class="config-input"
+                           placeholder="Senha atual" autocomplete="current-password">
+                    <input type="password" id="novaSenha" class="config-input"
+                           placeholder="Nova senha (mín. 8 caracteres)" autocomplete="new-password">
+                    <input type="password" id="confirmaSenha" class="config-input"
+                           placeholder="Confirmar nova senha" autocomplete="new-password">
+                    <p class="config-field-error" id="senhaErro"></p>
+                    <button class="config-btn-salvar" id="btnAlterarSenha">Alterar Senha</button>
+                </div>
+            </div>
+
+        </section>
 
         <!-- ── APARÊNCIA ── -->
         <section class="config-section">
@@ -122,24 +166,38 @@
             <div class="config-card config-card--plan">
                 <div class="plan-badge">Plano Atual</div>
                 <div class="plan-info">
-                    <h3 class="plan-name">Premium I.A</h3>
-                    <p class="plan-price">R$19,99 <span>/mês</span></p>
-                    <ul class="plan-features">
-                        <li>✓ Sem anúncios</li>
-                        <li>✓ Vida infinita</li>
-                        <li>✓ Emojis exclusivos</li>
-                        <li>✓ Chat bot premium</li>
-                        <li>✓ Revisão de erros</li>
-                    </ul>
+                    <h3 class="plan-name" id="config-plan-nome">Carregando...</h3>
+                    <p class="plan-price" id="config-plan-preco"></p>
+                    <ul class="plan-features" id="config-plan-features"></ul>
                 </div>
                 <div class="plan-actions">
-                    <button class="btn-plan btn-plan--change" disabled title="Em breve">
+                    <a href="planos.html" class="btn-plan btn-plan--change">
                         Mudar Plano
-                    </button>
-                    <button class="btn-plan btn-plan--cancel" disabled title="Em breve">
+                    </a>
+                    <button class="btn-plan btn-plan--cancel" id="btnCancelarAssinatura">
                         Cancelar Assinatura
                     </button>
-                    <p class="plan-actions__note">Gerenciamento de assinatura em breve.</p>
+                </div>
+            </div>
+
+            <!-- Upgrade sugerido -->
+            <div class="config-card config-card--upgrade" id="config-upgrade-card" hidden>
+                <div class="config-card__info">
+                    <h3>Faça um upgrade!</h3>
+                    <p id="config-upgrade-texto">Desbloqueie mais recursos com o plano superior.</p>
+                </div>
+                <a href="planos.html" class="btn-plan btn-plan--change">Ver planos</a>
+            </div>
+
+            <!-- Modal cancelamento -->
+            <div class="config-modal-overlay" id="config-modal-cancelar" hidden role="dialog" aria-modal="true">
+                <div class="config-modal">
+                    <h3>Cancelar Assinatura</h3>
+                    <p>Tem certeza que deseja cancelar? Você perderá acesso a todos os benefícios do plano atual.</p>
+                    <div class="config-modal__acoes">
+                        <button class="btn-plan btn-plan--change" id="btnConfirmarCancelamento">Sim, cancelar</button>
+                        <button class="btn-plan btn-plan--cancel" id="btnFecharModalCancelamento">Não, manter</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -147,12 +205,159 @@
     </main>
 
     <!-- ===== RODAPÉ ===== -->
-    <footer class="config-footer">
-        <p>© 2026 MEI Track · Todos os direitos reservados.</p>
+    <footer class="footer">
+
+        <div class="footer-container">
+    
+            <div class="footer-col">
+                <img src="./assets/Images/logo meizinho/Meizinhodandojoia.png" alt="Logo">
+    
+                <p>
+                    O MEI Track ajuda microempreendedores a aprender gestão,
+                    organizar o negócio e crescer com conteúdo de qualidade.
+                </p>
+            </div>
+    
+            <div class="footer-col">
+                <h3>Links</h3>
+    
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="planos.html">Premium</a></li>
+                    <li><a href="forum.html">Fórum</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-col">
+                <h3>Contato</h3>
+    
+                <p>contato@meitrack.com</p>
+                <p>(14) 98839-3378</p>
+            </div>
+    
+        </div>
+    
+        <hr>
+    
+        <p class="copyright">
+            © 2026 MEI Track - Todos os direitos reservados.
+        </p>
+    
     </footer>
 
     <script src="./assets/js/pages/Configuracoes/Configuracoes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+    /* ── Termos proibidos ── */
+    const TERMOS_PROIBIDOS_CONFIG = [
+      'puta','merda','caralho','porra','viado','fdp','buceta','cu',
+      'arrombado','babaca','idiota','imbecil','cuzao','vagabunda',
+      'pinto','piroca','rola','xereca','boiola','viadinho','otario',
+      'corno','nojento','safado'
+    ];
+    function normTexto(s) {
+      return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+              .replace(/[@4]/g,'a').replace(/3/g,'e').replace(/[1!|]/g,'i')
+              .replace(/0/g,'o').replace(/[5$]/g,'s').replace(/[^a-z0-9\s]/g,'');
+    }
+
+    /* ── Toast de configurações ── */
+    function toastConfig(msg, ok) {
+      let t = document.getElementById('config-toast');
+      if (!t) {
+        t = document.createElement('div');
+        t.id = 'config-toast';
+        t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+          background:var(--color-surface);border:1.5px solid var(--color-border);
+          border-radius:var(--radius-pill);padding:10px 24px;font-weight:800;
+          font-size:.9rem;z-index:9999;box-shadow:var(--shadow-md);
+          color:var(--color-text);opacity:0;transition:opacity .3s;pointer-events:none;`;
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.borderColor = ok ? '#4caf50' : 'var(--mei-orange)';
+      t.style.opacity = '1';
+      setTimeout(() => { t.style.opacity = '0'; }, 3000);
+    }
+
+    /* ── E-mail ── */
+    const KEY_EMAIL = 'meitrack_email';
+    const emailInput = document.getElementById('emailInput');
+    const emailErro  = document.getElementById('emailErro');
+
+    if (emailInput) {
+      emailInput.value = localStorage.getItem(KEY_EMAIL) || '';
+      document.getElementById('btnSalvarEmail').addEventListener('click', () => {
+        const v = emailInput.value.trim();
+        emailErro.textContent = '';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          emailErro.textContent = '⚠️ Digite um e-mail válido.';
+          return;
+        }
+        localStorage.setItem(KEY_EMAIL, v);
+        toastConfig('✅ E-mail salvo!', true);
+      });
+    }
+
+    /* ── Alterar senha ── */
+    const senhaErro = document.getElementById('senhaErro');
+    const btnSenha  = document.getElementById('btnAlterarSenha');
+    if (btnSenha) {
+      btnSenha.addEventListener('click', () => {
+        const atual    = document.getElementById('senhaAtual').value;
+        const nova     = document.getElementById('novaSenha').value;
+        const confirma = document.getElementById('confirmaSenha').value;
+        senhaErro.textContent = '';
+
+        if (!atual) { senhaErro.textContent = '⚠️ Informe a senha atual.'; return; }
+        if (nova.length < 8) { senhaErro.textContent = '⚠️ A nova senha deve ter no mínimo 8 caracteres.'; return; }
+        if (nova !== confirma) { senhaErro.textContent = '⚠️ As senhas não coincidem.'; return; }
+
+        /* Sem backend real, apenas simulação */
+        toastConfig('✅ Senha alterada com sucesso!', true);
+        ['senhaAtual','novaSenha','confirmaSenha'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+      });
+    }
+
+    /* ── Assinatura dinâmica ── */
+    const PLANOS = {
+      gratis:    { nome: 'Grátis',      preco: 'R$0 / mês',    features: ['Acesso básico','5 vidas por dia','Missões diárias'],        upgrade: 'Faça upgrade para o Premium e tenha vidas infinitas, sem anúncios e muito mais!' },
+      premium:   { nome: 'Premium',     preco: 'R$14,99 / mês', features: ['Sem anúncios','Vida infinita','Emojis personalizados','Revisão simples'], upgrade: 'Faça upgrade para o Premium I.A e tenha chat bot + revisão detalhada!' },
+      premiumia: { nome: 'Premium I.A', preco: 'R$19,99 / mês', features: ['Sem anúncios','Vida infinita','Emojis exclusivos','Chat bot premium','Revisão detalhada'], upgrade: null }
+    };
+
+    const planoAtual = localStorage.getItem('meitrack_plano') || 'premium';
+    const p = PLANOS[planoAtual] || PLANOS.premium;
+
+    const nomEl  = document.getElementById('config-plan-nome');
+    const preEl  = document.getElementById('config-plan-preco');
+    const featEl = document.getElementById('config-plan-features');
+    const upgEl  = document.getElementById('config-upgrade-card');
+    const upgTxt = document.getElementById('config-upgrade-texto');
+
+    if (nomEl) nomEl.textContent = p.nome;
+    if (preEl) preEl.textContent = p.preco;
+    if (featEl) featEl.innerHTML = p.features.map(f => `<li>✓ ${f}</li>`).join('');
+    if (p.upgrade && upgEl) { upgEl.hidden = false; upgTxt.textContent = p.upgrade; }
+
+    /* Modal cancelamento */
+    const modalCancelar = document.getElementById('config-modal-cancelar');
+    document.getElementById('btnCancelarAssinatura')?.addEventListener('click', () => {
+      if (modalCancelar) modalCancelar.hidden = false;
+    });
+    document.getElementById('btnFecharModalCancelamento')?.addEventListener('click', () => {
+      if (modalCancelar) modalCancelar.hidden = true;
+    });
+    document.getElementById('btnConfirmarCancelamento')?.addEventListener('click', () => {
+      localStorage.setItem('meitrack_plano', 'gratis');
+      if (modalCancelar) modalCancelar.hidden = true;
+      toastConfig('Assinatura cancelada. Seu plano foi alterado para Grátis.', false);
+      setTimeout(() => location.reload(), 2500);
+    });
+    </script>
 
 </body>
 </html>

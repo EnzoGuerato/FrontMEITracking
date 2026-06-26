@@ -262,3 +262,116 @@ body.dark .config-footer {
   background: var(--color-surface);
   border-color: var(--color-border);
 }
+
+/* =====================================================================
+   Configuracoes · Novos estilos: conta, assinatura dinâmica, modal
+   ===================================================================== */
+
+/* ── card com campos de input ── */
+.config-card {
+  flex-wrap: wrap;
+}
+
+.config-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+  flex: 1;
+  max-width: 380px;
+}
+
+.config-input {
+  height: 42px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0 var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  outline: none;
+  transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.config-input:focus {
+  border-color: var(--mei-orange-soft);
+  box-shadow: 0 0 0 3px rgba(245,138,61,.18);
+}
+
+.config-input::placeholder { color: var(--color-text-muted); }
+
+.config-field-error {
+  color: #e05252;
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-height: 18px;
+}
+
+.config-btn-salvar {
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--mei-orange), var(--mei-orange-deep));
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: filter var(--motion-fast);
+  padding: 0 var(--space-lg);
+  align-self: flex-start;
+}
+
+.config-btn-salvar:hover { filter: brightness(1.08); }
+
+/* ── Card de upgrade ── */
+.config-card--upgrade {
+  border: 2px solid var(--mei-orange-soft);
+  background: linear-gradient(135deg, rgba(245,138,61,.06), rgba(245,138,61,.02));
+}
+
+/* ── Modal de cancelamento ── */
+.config-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-md);
+}
+
+.config-modal-overlay[hidden] { display: none; }
+
+.config-modal {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  width: min(460px, 96vw);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.config-modal h3 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.config-modal p {
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.config-modal__acoes {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}

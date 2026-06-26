@@ -15,7 +15,7 @@
   <!-- NavBar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="HomesInfo.html">
+      <a class="navbar-brand" href="Home.html">
         <img src="duolingo/logo meizinho/meizinhoescrito.png" alt="MEI Track">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -53,7 +53,7 @@
         id="hero-avatar"
         data-perfil-foto>
       <button class="perfil-hero__avatar-btn" id="hero-avatar-btn" title="Alterar foto" aria-label="Alterar foto de perfil">
-        📷
+        
       </button>
       <input type="file" accept="image/*" class="perfil-hero__avatar-input" id="hero-avatar-input">
     </div>
@@ -66,7 +66,7 @@
 
     <!-- Seção: Foto de Perfil -->
     <section class="perfil-section">
-      <h2 class="perfil-section__titulo">📷 Foto de Perfil</h2>
+      <h2 class="perfil-section__titulo">Foto de Perfil</h2>
       <div class="perfil-foto-preview">
         <img
           src="duolingo/logo meizinho/profile.png"
@@ -75,16 +75,16 @@
           id="preview-foto"
           data-perfil-foto>
         <label class="perfil-foto-upload-label" for="input-foto">
-          📂 Escolher imagem
+          Escolher imagem
           <input type="file" accept="image/*" class="perfil-foto-upload-input" id="input-foto">
         </label>
       </div>
-      <button class="perfil-btn-salvar" id="btn-salvar-foto">💾 Salvar Foto</button>
+      <button class="perfil-btn-salvar" id="btn-salvar-foto">Salvar Foto</button>
     </section>
 
     <!-- Seção: Dados do Perfil -->
     <section class="perfil-section">
-      <h2 class="perfil-section__titulo">👤 Dados do Perfil</h2>
+      <h2 class="perfil-section__titulo">Dados do Perfil</h2>
 
       <div class="perfil-field">
         <label for="input-nome">Nome de exibição</label>
@@ -96,7 +96,7 @@
           maxlength="40">
       </div>
 
-      <button class="perfil-btn-salvar" id="btn-salvar-nome">💾 Salvar Nome</button>
+      <button class="perfil-btn-salvar" id="btn-salvar-nome">Salvar Nome</button>
     </section>
 
   </main>
@@ -112,19 +112,41 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="./assets/js/global/Perfil.js"></script>
   <script>
+    /* ── Termos proibidos (mesma lista do cadastro) ── */
+    const TERMOS_PROIBIDOS = [
+      'puta','merda','caralho','porra','viado','fdp','fudeu','buceta',
+      'cu','arrombado','babaca','idiota','imbecil','cuzao','vagabunda',
+      'pinto','piroca','rola','xereca','boiola','viadinho','otario',
+      'corno','nojento','safado'
+    ];
+
+    function normalizarTexto(str) {
+      return str
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[@4]/g,'a').replace(/[3]/g,'e')
+        .replace(/[1!|]/g,'i').replace(/[0]/g,'o')
+        .replace(/[5\$]/g,'s').replace(/[^a-z0-9\s]/g,'');
+    }
+
+    function contemTermoProibido(nome) {
+      const norm = normalizarTexto(nome);
+      return TERMOS_PROIBIDOS.some(t => norm.includes(t));
+    }
+
     const KEY_NOME = 'meitrack_perfil_nome';
     const KEY_FOTO = 'meitrack_perfil_foto';
 
-    const inputNome    = document.getElementById('input-nome');
-    const btnNome      = document.getElementById('btn-salvar-nome');
-    const inputFoto    = document.getElementById('input-foto');
-    const btnFoto      = document.getElementById('btn-salvar-foto');
-    const previewFoto  = document.getElementById('preview-foto');
-    const heroAvatar   = document.getElementById('hero-avatar');
-    const heroAvatarBtn = document.getElementById('hero-avatar-btn');
+    const inputNome       = document.getElementById('input-nome');
+    const btnNome         = document.getElementById('btn-salvar-nome');
+    const inputFoto       = document.getElementById('input-foto');
+    const btnFoto         = document.getElementById('btn-salvar-foto');
+    const previewFoto     = document.getElementById('preview-foto');
+    const heroAvatar      = document.getElementById('hero-avatar');
+    const heroAvatarBtn   = document.getElementById('hero-avatar-btn');
     const heroAvatarInput = document.getElementById('hero-avatar-input');
-    const heroNome     = document.getElementById('hero-nome');
-    const toast        = document.getElementById('perfil-toast');
+    const heroNome        = document.getElementById('hero-nome');
+    const toast           = document.getElementById('perfil-toast');
 
     let fotoSelecionada = null;
 
@@ -140,15 +162,29 @@
     }
 
     /* Toast */
-    function mostrarToast(msg) {
+    function mostrarToast(msg, erro) {
       toast.textContent = msg;
+      toast.classList.toggle('visivel--erro', !!erro);
       toast.classList.add('visivel');
-      setTimeout(() => toast.classList.remove('visivel'), 2800);
+      setTimeout(() => {
+        toast.classList.remove('visivel');
+        toast.classList.remove('visivel--erro');
+      }, 3000);
     }
 
     /* Preview ao selecionar imagem */
     function handleFileSelect(file) {
       if (!file) return;
+      /* Validação básica de tipo */
+      if (!file.type.startsWith('image/')) {
+        mostrarToast('⚠️ Selecione um arquivo de imagem válido.', true);
+        return;
+      }
+      /* Limite de 5 MB */
+      if (file.size > 5 * 1024 * 1024) {
+        mostrarToast('⚠️ A imagem deve ter no máximo 5 MB.', true);
+        return;
+      }
       const reader = new FileReader();
       reader.onload = e => {
         fotoSelecionada = e.target.result;
@@ -164,9 +200,8 @@
 
     /* Salvar foto */
     btnFoto.addEventListener('click', () => {
-      if (!fotoSelecionada) { mostrarToast('⚠️ Selecione uma imagem primeiro'); return; }
+      if (!fotoSelecionada) { mostrarToast('⚠️ Selecione uma imagem primeiro', true); return; }
       localStorage.setItem(KEY_FOTO, fotoSelecionada);
-      /* Atualiza todos os elementos na página */
       document.querySelectorAll('[data-perfil-foto]').forEach(el => el.src = fotoSelecionada);
       fotoSelecionada = null;
       mostrarToast('✅ Foto atualizada com sucesso!');
@@ -175,7 +210,11 @@
     /* Salvar nome */
     btnNome.addEventListener('click', () => {
       const nome = inputNome.value.trim();
-      if (!nome) { inputNome.focus(); mostrarToast('⚠️ Digite um nome válido'); return; }
+      if (!nome) { inputNome.focus(); mostrarToast('⚠️ Digite um nome válido', true); return; }
+      if (contemTermoProibido(nome)) {
+        mostrarToast('⚠️ Nome não permitido: contém termos inadequados.', true);
+        return;
+      }
       localStorage.setItem(KEY_NOME, nome);
       document.querySelectorAll('[data-perfil-nome]').forEach(el => el.textContent = nome);
       heroNome.textContent = nome;

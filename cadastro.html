@@ -15,21 +15,25 @@
       <h1>Cadastre-se</h1>
           <!--Inputs de cadastro-->
 
-          <input id="nome" name="user" type="text" placeholder="Nome de Usuário">
-          <input id="email" name="email" type="email" placeholder="email">
-          <p id="aviso" style="color: white; font-size: 13px;"></p>
+          <input id="nome" name="user" type="text" placeholder="Nome de Usuário" maxlength="40" autocomplete="username">
+          <p id="avisonome" style="color: #ffe0a0; font-size: 13px;"></p>
 
-          <input id="senha" name="senha" type="password" placeholder="Senha">
+          <input id="email" name="email" type="email" placeholder="Email" autocomplete="email">
+          <p id="aviso" style="color: #ffe0a0; font-size: 13px;"></p>
 
-          <input id="confirma-senha" name="conf_senha" type="password" placeholder="Confirmar senha">
-          
+          <input id="senha" name="senha" type="password" placeholder="Senha (mín. 8 caracteres)" autocomplete="new-password">
+
+          <input id="confirma-senha" name="conf_senha" type="password" placeholder="Confirmar senha" autocomplete="new-password">
+          <p id="avisosenha" style="color: #ffe0a0; font-size: 13px;"></p>
+          <p id="avisogeral" style="color: #ffe0a0; font-size: 13px;"></p>
+
           <!--Botão de entrada-->
           <button class="cadastrar-se" onclick="fazerCadastro(event)">
             <h2>Cadastrar-se</h2>
           </button>
           <br>
 
-          <a class="voltar" href="Login.html">Voltar</a>
+          <a class="voltar" href="Login.html">← Voltar para o login</a>
     </div>
 
     <script src="./assets/js/API/Rest.js"></script>
